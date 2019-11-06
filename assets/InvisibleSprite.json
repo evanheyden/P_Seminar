@@ -1,0 +1,20 @@
+{"frames": {
+
+"invisible.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "InvisibleSprite.png",
+	"format": "RGBA8888",
+	"size": {"w":34,"h":34},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:126cc97376a67aff958c6ba3db5cb42d:86d78467865d74b3273bb02344c97ba1:e79b7d5e727348984d5c14dca9a23b1e$"
+}
+}

@@ -1,5 +1,7 @@
 //game.js erstellt die ganzen states
-var game = new Phaser.Game(800, 600, Phaser.AUTO, "gameDiv");
+var Caverunner = Caverunner || {};
+
+game = new Phaser.Game(800, 600, Phaser.AUTO, "gameDiv");
 
 game.state.add("boot", bootState);
 game.state.add("preload", preloadState);

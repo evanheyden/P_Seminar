@@ -1,5 +1,7 @@
 //in preload.js werden die assets geladen
-var preloadState = {
+var Caverunner = Caverunner || {};
+preloadState = function(){};
+preloadState.prototype = {
   preload: function () {
     //hier kommt der Ladebalken
     var Ladebalken = game.add.text(80, 150, "Spiel wird geladen...",{font: "33px Times", fill: "#fcbc38"});
@@ -19,5 +21,5 @@ var preloadState = {
 },
 create: function () {
   game.state.start("menu")
-}
+},
 };

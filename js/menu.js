@@ -1,5 +1,7 @@
 //Startmenu wo man das Spiel starten kann
-var menuState = {
+var Caverunner = Caverunner || {};
+menuState = function() {};
+menuState.prototype = {
   create: function () {
     //Hier erscheint dann der Name des SPiels
     var nameLabel = game.add.text(80, 80, "Caverunner", {font: "60px Courier", fill: "#fcbc38"});

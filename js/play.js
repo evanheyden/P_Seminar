@@ -1,33 +1,37 @@
-
+var Caverunner = Caverunner || {};
+playState = function(){};
+playState.prototype = {
 //ein paar Variablen, die wir später brauchen:
 
-var player1;
-var player2;
-var platforms;
-var cursors;
-var stars;
-var score = 0;
-var scoreText;
-var frameTime = 0;
-var frames;
-var prevCamX = 0;
-var prevCamY = 0;
-var ncounter = 0;
-//var timer;
-var camera;
-//var Zunahme;
-var levels;
-var functionArray;
-var b;
-var x;
-var a;
-var c;
-var platform1;
-var platform2;
 
-function create() {
+create: function () {
+	var player1;
+	var player2;
+	var platforms;
+	var cursors;
+	var stars;
+	var score = 0;
+	var scoreText;
+	var frameTime = 0;
+	var frames;
+	var prevCamX = 0;
+	var prevCamY = 0;
+	//var ncounter = 0;
+	//var timer;
+	var camera;
+	//var Zunahme;
+	var levels;
+	var functionArray;
+	var b;
+	var x;
+	var a;
+	var c;
+	var platform1;
+	var platform2;
 
-
+	function gameover() {
+	  game.state.start("gameover");
+	}
 	//hier werden die Grenzen der Welt gesetzt:
 	game.world.setBounds(0, 0, 800*100000000000, 600);
 
@@ -91,18 +95,18 @@ function create() {
 
 	//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
-    player1 = game.add.sprite(0, 200, 'bloblin');
+  player1 = game.add.sprite(0, 200, 'bloblin');
 
 	player2 = game.add.sprite(32, 100, 'roblin');
 
-	player3 = game.add.sprite(400,  300, 'invisible');
+	kameramann = game.add.sprite(400,  300, 'invisible');
 
 	//ab hier werden einfach immer die Eigenschaften doppelt genannt (nur die Schwerkraft ist für player2 negativ):
 
     // We need to enable physics on the player
     game.physics.arcade.enable(player1);
     game.physics.arcade.enable(player2);
-	game.physics.arcade.enable(player3);
+	game.physics.arcade.enable(kameramann);
 	game.physics.arcade.enable(wall1);
 	//game.physics.arcade.enable(level1);
 
@@ -157,16 +161,16 @@ function create() {
 	x2 = player2.body.position.x / 800;
 
 
-	//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
+	//hier wird festgelegt, dass die Kamera immer mit kameramann mitläuft:
 
-	game.camera.follow(player3, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+	game.camera.follow(kameramann, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 	a = game.camera.x % 800;
 
     //  The score
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
-	scoreText1 = game.add.text(200, 16, 'nscore: 0', { fontSize: '32px', fill: '#000' });
+//	scoreText1 = game.add.text(200, 16, 'nscore: 0', { fontSize: '32px', fill: '#000' });
 
 
 
@@ -180,12 +184,34 @@ function create() {
     rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
 	ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
 	neverPress = game.input.keyboard.addKey(Phaser.Keyboard.P);
-}
+},
 
 
 
-function update() {
-
+update: function () {
+	var player1;
+	var player2;
+	var platforms;
+	var cursors;
+	var stars;
+	var score = 0;
+	var scoreText;
+	var frameTime = 0;
+	var frames;
+	var prevCamX = 0;
+	var prevCamY = 0;
+	var ncounter = 0;
+	//var timer;
+	var camera;
+	//var Zunahme;
+	var levels;
+	var functionArray;
+	var b;
+	var x;
+	var a;
+	var c;
+	var platform1;
+	var platform2;
 
 	if (neverPress.isDown)
 	{
@@ -220,7 +246,7 @@ function update() {
 
 
 
-	player3.body.acceleration.x = 3
+	kameramann.body.acceleration.x = 3
 	wall1.body.acceleration.x = 5;
 
 
@@ -234,7 +260,7 @@ function update() {
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     game.physics.arcade.overlap(player1, stars, collectStar, null, this);
 
-	game.physics.arcade.overlap(player2, stars, collectStar, null, this);
+	  game.physics.arcade.overlap(player2, stars, collectStar, null, this);
 
     //  Reset the players velocity (movement)
     player1.body.velocity.x = 0;
@@ -357,11 +383,51 @@ function update() {
 
 	prevCamX = game.camera.x;
 
+  if ((player1.body.position.x - game.camera.x) > 800)
+  {
+    gameover();
+  }
 
-}
+  if ((player1.body.position.x + 32 - game.camera.x) < 0)
+  {
+    gameover();
 
-function collectStar (player1, star) {
+  }
+  if ((player2.body.position.x - game.camera.x) > 800)
+  {
+    gameover();
+  }
 
+  if ((player2.body.position.x + 32 - game.camera.x) < 0)
+  {
+    gameover();
+  }
+},
+
+collectStar: function (player1, star) {
+	var player1;
+	var player2;
+	var platforms;
+	var cursors;
+	var stars;
+	var score = 0;
+	var scoreText;
+	var frameTime = 0;
+	var frames;
+	var prevCamX = 0;
+	var prevCamY = 0;
+	var ncounter = 0;
+	//var timer;
+	var camera;
+	//var Zunahme;
+	var levels;
+	var functionArray;
+	var b;
+	var x;
+	var a;
+	var c;
+	var platform1;
+	var platform2;
     // Removes the star from the screen
     star.kill();
 
@@ -369,10 +435,32 @@ function collectStar (player1, star) {
     score += 10;
     scoreText.text = 'Score: ' + score;
 
-}
+},
 
-function collectStar (player2, star) {
-
+collectStar: function (player2, star) {
+	var player1;
+	var player2;
+	var platforms;
+	var cursors;
+	var stars;
+	var score = 0;
+	var scoreText;
+	var frameTime = 0;
+	var frames;
+	var prevCamX = 0;
+	var prevCamY = 0;
+	var ncounter = 0;
+	//var timer;
+	var camera;
+	//var Zunahme;
+	var levels;
+	var functionArray;
+	var b;
+	var x;
+	var a;
+	var c;
+	var platform1;
+	var platform2;
     // Removes the star from the screen
     star.kill();
 
@@ -382,28 +470,49 @@ function collectStar (player2, star) {
 
 
 
-}
+},
 
-<!-- function random()
-{
+//<!-- function random()
+//{
 
 	//var i  = Math.floor(Math.random() *2)+1;
 	//if(i<=0) return random();
 	//return i; -->
-}
-function execute()
-{
+//},
+execute: function (){
 	//var i = random();
 	for (i = 0; i < 1; i = i+1)
 	{
 		var b  = Math.floor(Math.random())+1;
 	}
 		eval('platform'+b+'()');
-}
+},
 
 
-function platform1()
-	{
+platform1: function (){
+	var player1;
+	var player2;
+	var platforms;
+	var cursors;
+	var stars;
+	var score = 0;
+	var scoreText;
+	var frameTime = 0;
+	var frames;
+	var prevCamX = 0;
+	var prevCamY = 0;
+	var ncounter = 0;
+	//var timer;
+	var camera;
+	//var Zunahme;
+	var levels;
+	var functionArray;
+	var b;
+	var x;
+	var a;
+	var c;
+	var platform1;
+	var platform2;
 	//for (i = 0; i > 1; i = i+1)
 	//{
 		platform1 = platforms.create(c * 800, 100,'ground');
@@ -424,12 +533,11 @@ function platform1()
 	//level1.body.immpassable = true;
 
 	//game.physics.arcade.enable(level1);
-	}
+},
 
 	//level1.scale.setTo(1,1);
 
-function platform2()
-	{
+platform2: function (){
 	//for (i = 0; i > 1; i = i+1)
 	//{
 		platform2 = platforms.create(c * 800, 300,'ground');
@@ -439,31 +547,9 @@ function platform2()
 		platform2.scale.setTo(0.5,2);
 
 		platform2.body.immovable = true;
-	//}
-	}
+	},
 
 	//ncounter = ncounter += 1;
 	//scoreText1.text = 'Score: ' + ncounter;
-function gameover() {
-  game.state.start("gameover");
-}
 
-if ((player1.body.position.x - game.camera.x) > 800)
-{
-  gameover();
-}
-
-if ((player1.body.position.x + 32 - game.camera.x) < 0)
-{
-  gameover();
-
-}
-if ((player2.body.position.x - game.camera.x) > 800)
-{
-  gameover();
-}
-
-if ((player2.body.position.x + 32 - game.camera.x) < 0)
-{
-  gameover();
-}
+};

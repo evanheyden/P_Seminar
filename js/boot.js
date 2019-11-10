@@ -1,13 +1,14 @@
 //boot.js macht die Physics und dann wird preload gestartet
-var Caverunner = Caverunner || {};
+/*var Caverunner = Caverunner || {};
 bootState = function () {};
-bootState.prototype = {
-
+bootState.prototype = { */
+var bootState = {
   create: function () {
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-    game.stage.backgroundColour = "#fcbc38";
+    this.game.physics.startSystem(Phaser.Physics.ARCADE);
+    this.game.stage.backgroundColour = "#fcbc38";
 //    scale.pageAlignHorizontally = true;
-
-    game.state.start("preload")
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
+    this.state.start("preload")
   }
 };

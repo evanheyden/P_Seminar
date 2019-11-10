@@ -1,7 +1,7 @@
-var Caverunner = Caverunner || {};
+/*var Caverunner = Caverunner || {};
 gameoverState = function() {};
-gameoverState.prototype = {
-
+gameoverState.prototype = {*/
+var gameoverState = {
   create: function() {
     var gameoverLabel = game.add.text(80, 80, "Game Over", {font: "50px Arial", fill: ""});
 

@@ -1,39 +1,41 @@
-var Caverunner = Caverunner || {};
+/*var Caverunner = Caverunner || {};
 playState = function(){};
-playState.prototype = {
+playState.prototype = {*/
 //ein paar Variablen, die wir später brauchen:
+var player1;
+var player2;
+var platforms;
+var cursors;
+var stars;
+var score = 0;
+var scoreText;
+var frameTime = 0;
+var frames;
+var prevCamX = 0;
+var prevCamY = 0;
+//var ncounter = 0;
+//var timer;
+var camera;
+//var Zunahme;
+var levels;
+var functionArray;
+var b;
+var x;
+var a;
+var c;
+var platform1;
+var platform2;
 
+var playState = {
 
 create: function () {
-	var player1;
-	var player2;
-	var platforms;
-	var cursors;
-	var stars;
-	var score = 0;
-	var scoreText;
-	var frameTime = 0;
-	var frames;
-	var prevCamX = 0;
-	var prevCamY = 0;
-	//var ncounter = 0;
-	//var timer;
-	var camera;
-	//var Zunahme;
-	var levels;
-	var functionArray;
-	var b;
-	var x;
-	var a;
-	var c;
-	var platform1;
-	var platform2;
+
 
 	function gameover() {
 	  game.state.start("gameover");
 	}
 	//hier werden die Grenzen der Welt gesetzt:
-	game.world.setBounds(0, 0, 800*100000000000, 600);
+	this.setBounds = game.world.setBounds(0, 0, 800*100000000000, 600);
 
 	//var newArray = [platform1(), platform2()];
 
@@ -95,11 +97,11 @@ create: function () {
 
 	//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
-  player1 = game.add.sprite(0, 200, 'bloblin');
+  this.player1 = this.game.add.sprite(0, 200, 'bloblin');
 
-	player2 = game.add.sprite(32, 100, 'roblin');
+	this.player2 = this.game.add.sprite(32, 100, 'roblin');
 
-	kameramann = game.add.sprite(400,  300, 'invisible');
+	this.kameramann = this.game.add.sprite(400,  300, 'invisible');
 
 	//ab hier werden einfach immer die Eigenschaften doppelt genannt (nur die Schwerkraft ist für player2 negativ):
 
@@ -189,38 +191,12 @@ create: function () {
 
 
 update: function () {
-	var player1;
-	var player2;
-	var platforms;
-	var cursors;
-	var stars;
-	var score = 0;
-	var scoreText;
-	var frameTime = 0;
-	var frames;
-	var prevCamX = 0;
-	var prevCamY = 0;
-	var ncounter = 0;
-	//var timer;
-	var camera;
-	//var Zunahme;
-	var levels;
-	var functionArray;
-	var b;
-	var x;
-	var a;
-	var c;
-	var platform1;
-	var platform2;
 
 	if (neverPress.isDown)
 	{
 		player1.scale.y *= -1;
 		player2.scale.y *= -1;
 	}
-
-
-
 
 
 	if ((player1.body.position.x - game.camera.x) > 800)
@@ -405,29 +381,7 @@ update: function () {
 },
 
 collectStar: function (player1, star) {
-	var player1;
-	var player2;
-	var platforms;
-	var cursors;
-	var stars;
-	var score = 0;
-	var scoreText;
-	var frameTime = 0;
-	var frames;
-	var prevCamX = 0;
-	var prevCamY = 0;
-	var ncounter = 0;
-	//var timer;
-	var camera;
-	//var Zunahme;
-	var levels;
-	var functionArray;
-	var b;
-	var x;
-	var a;
-	var c;
-	var platform1;
-	var platform2;
+
     // Removes the star from the screen
     star.kill();
 
@@ -438,29 +392,7 @@ collectStar: function (player1, star) {
 },
 
 collectStar: function (player2, star) {
-	var player1;
-	var player2;
-	var platforms;
-	var cursors;
-	var stars;
-	var score = 0;
-	var scoreText;
-	var frameTime = 0;
-	var frames;
-	var prevCamX = 0;
-	var prevCamY = 0;
-	var ncounter = 0;
-	//var timer;
-	var camera;
-	//var Zunahme;
-	var levels;
-	var functionArray;
-	var b;
-	var x;
-	var a;
-	var c;
-	var platform1;
-	var platform2;
+
     // Removes the star from the screen
     star.kill();
 
@@ -490,29 +422,7 @@ execute: function (){
 
 
 platform1: function (){
-	var player1;
-	var player2;
-	var platforms;
-	var cursors;
-	var stars;
-	var score = 0;
-	var scoreText;
-	var frameTime = 0;
-	var frames;
-	var prevCamX = 0;
-	var prevCamY = 0;
-	var ncounter = 0;
-	//var timer;
-	var camera;
-	//var Zunahme;
-	var levels;
-	var functionArray;
-	var b;
-	var x;
-	var a;
-	var c;
-	var platform1;
-	var platform2;
+
 	//for (i = 0; i > 1; i = i+1)
 	//{
 		platform1 = platforms.create(c * 800, 100,'ground');

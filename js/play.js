@@ -31,9 +31,7 @@ var playState = {
 create: function () {
 
 
-	function gameover() {
-	  game.state.start("gameover");
-	}
+
 	//hier werden die Grenzen der Welt gesetzt:
 	this.setBounds = game.world.setBounds(0, 0, 800*100000000000, 600);
 
@@ -192,6 +190,10 @@ create: function () {
 
 update: function () {
 
+	function gameover() {
+		game.state.start("gameover");
+	}
+
 	if (neverPress.isDown)
 	{
 		player1.scale.y *= -1;
@@ -219,7 +221,25 @@ update: function () {
 		player2.kill();
 	}
 
+	if ((player1.body.position.x - game.camera.x) > 800)
+  {
+    gameover();
+  }
 
+  if ((player1.body.position.x + 32 - game.camera.x) < 0)
+  {
+    gameover();
+
+  }
+  if ((player2.body.position.x - game.camera.x) > 800)
+  {
+    gameover();
+  }
+
+  if ((player2.body.position.x + 32 - game.camera.x) < 0)
+  {
+    gameover();
+  }
 
 
 	kameramann.body.acceleration.x = 3
@@ -359,25 +379,7 @@ update: function () {
 
 	prevCamX = game.camera.x;
 
-  if ((player1.body.position.x - game.camera.x) > 800)
-  {
-    gameover();
-  }
 
-  if ((player1.body.position.x + 32 - game.camera.x) < 0)
-  {
-    gameover();
-
-  }
-  if ((player2.body.position.x - game.camera.x) > 800)
-  {
-    gameover();
-  }
-
-  if ((player2.body.position.x + 32 - game.camera.x) < 0)
-  {
-    gameover();
-  }
 },
 
 collectStar: function (player1, star) {

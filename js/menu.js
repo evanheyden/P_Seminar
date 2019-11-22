@@ -26,6 +26,6 @@ menuState.prototype = { */
 //game.state.start("play");
 //},
   start: function () {
-    game.state.start("playtest");
+    game.state.start("play");
   },
 };

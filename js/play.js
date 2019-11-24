@@ -95,18 +95,18 @@ create: function () {
 
 	//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
-  this.player1 = this.game.add.sprite(0, 200, 'bloblin');
+  player1 = this.game.add.sprite(0, 200, 'bloblin');
 
-	this.player2 = this.game.add.sprite(32, 100, 'roblin');
+	player2 = this.game.add.sprite(32, 100, 'roblin');
 
-	this.kameramann = this.game.add.sprite(400,  300, 'invisible');
+	player3 = this.game.add.sprite(400,  300, 'invisible');
 
 	//ab hier werden einfach immer die Eigenschaften doppelt genannt (nur die Schwerkraft ist für player2 negativ):
 
     // We need to enable physics on the player
     game.physics.arcade.enable(player1);
     game.physics.arcade.enable(player2);
-	game.physics.arcade.enable(kameramann);
+	game.physics.arcade.enable(player3);
 	game.physics.arcade.enable(wall1);
 	//game.physics.arcade.enable(level1);
 
@@ -161,9 +161,9 @@ create: function () {
 	x2 = player2.body.position.x / 800;
 
 
-	//hier wird festgelegt, dass die Kamera immer mit kameramann mitläuft:
+	//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-	game.camera.follow(kameramann, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+	game.camera.follow(player3, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 	a = game.camera.x % 800;
 
@@ -194,6 +194,7 @@ update: function () {
 		game.state.start("gameover");
 	}
 
+
 	if (neverPress.isDown)
 	{
 		player1.scale.y *= -1;
@@ -221,6 +222,7 @@ update: function () {
 		player2.kill();
 	}
 
+
 	if ((player1.body.position.x - game.camera.x) > 800)
   {
     gameover();
@@ -242,7 +244,7 @@ update: function () {
   }
 
 
-	kameramann.body.acceleration.x = 3
+	player3.body.acceleration.x = 3
 	wall1.body.acceleration.x = 5;
 
 
@@ -254,9 +256,9 @@ update: function () {
     game.physics.arcade.collide(stars, platforms);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-    game.physics.arcade.overlap(player1, stars, collectStar, null, this);
+    game.physics.arcade.overlap(player1, stars, this.collectStar, null, this);
 
-	  game.physics.arcade.overlap(player2, stars, collectStar, null, this);
+	  game.physics.arcade.overlap(player2, stars, this.collectStar, null, this);
 
     //  Reset the players velocity (movement)
     player1.body.velocity.x = 0;

@@ -19,6 +19,7 @@ var preloadState = {
 	game.load.spritesheet('wall', 'assets/WallSprite.png',32,600);
 	game.load.spritesheet('bloblin', 'assets/Bloblin4.png',32,32);
 	game.load.spritesheet('roblin', 'assets/Roblin.png',32,32);
+  game.load.spritesheet('pickaxe', 'assets/picksmall.png', 20,32);
 },
 create: function () {
   game.state.start("menu")

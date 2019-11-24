@@ -48,6 +48,8 @@ create: function () {
 	//platform1(), platform2()
 	//];
 
+
+
     //The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
@@ -95,7 +97,7 @@ create: function () {
 
 	//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
-  player1 = this.game.add.sprite(0, 200, 'bloblin');
+  player1 = this.game.add.sprite(0, 200, 'pickaxe');
 
 	player2 = this.game.add.sprite(32, 100, 'roblin');
 
@@ -125,12 +127,13 @@ create: function () {
 	player2.body.mass = 100;
 
     //  Our two animations, walking left and right.
-    player1.animations.add('leftdown1', [9,5,9,4], 6, true);
+  /*  player1.animations.add('leftdown1', [9,5,9,4], 6, true);
     player1.animations.add('rightdown1', [8,1,8,0], 6, true);
 
 	player1.animations.add('leftup1', [10,7,10,6], 6, true);
-    player1.animations.add('rightup1', [11,3,11,2], 6, true);
-
+    player1.animations.add('rightup1', [11,3,11,2], 6, true);*/
+		player1.animations.add('left1', [0, 1, 2, 3], 10, true);
+		player1.animations.add('right1', [5, 6, 7, 8], 10, true);
 
 	player2.animations.add('left', [0,1], 10, true);
     player2.animations.add('right', [2,3], 10, true);
@@ -205,43 +208,27 @@ update: function () {
 	if ((player1.body.position.x - game.camera.x) > 800)
 	{
 		player1.kill();
+		gameover();
 	}
 
 	if ((player1.body.position.x + 32 - game.camera.x) < 0)
 	{
 		player1.kill();
-
+		gameover();
 	}
 	if ((player2.body.position.x - game.camera.x) > 800)
 	{
 		player2.kill();
+		gameover();
 	}
 
 	if ((player2.body.position.x + 32 - game.camera.x) < 0)
 	{
 		player2.kill();
+		gameover();
 	}
 
 
-	if ((player1.body.position.x - game.camera.x) > 800)
-  {
-    gameover();
-  }
-
-  if ((player1.body.position.x + 32 - game.camera.x) < 0)
-  {
-    gameover();
-
-  }
-  if ((player2.body.position.x - game.camera.x) > 800)
-  {
-    gameover();
-  }
-
-  if ((player2.body.position.x + 32 - game.camera.x) < 0)
-  {
-    gameover();
-  }
 
 
 	player3.body.acceleration.x = 3
@@ -266,19 +253,19 @@ update: function () {
 
 	//if (player1.body.gravity.y = 300 && player1.body.touching.down)
 
-		if (cursors.left.isDown)
+		if (cursors.right.isDown)
 		{
 			//  Move to the left
-			player1.body.velocity.x = -150;
-
-			player1.animations.play('leftdown1');
-		}
-		else if (cursors.right.isDown)
-		{
-			//  Move to the right
 			player1.body.velocity.x = 150;
 
-			player1.animations.play('rightdown1');
+			player1.animations.play('right1');
+		}
+		else if (cursors.left.isDown)
+		{
+			//  Move to the right
+			player1.body.velocity.x = -150;
+
+			player1.animations.play('left1');
 		}
 
 	else
@@ -286,7 +273,7 @@ update: function () {
 		//  Stand still
 		player1.animations.stop();
 
-		player1.frame = 4;
+		player1.frame = 8;
 	}
 
 

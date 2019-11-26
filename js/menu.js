@@ -1,7 +1,6 @@
-//Startmenu wo man das Spiel starten kann
-/*var Caverunner = Caverunner || {};
-menuState = function() {};
-menuState.prototype = { */
+
+
+
   var menuState = {
   create: function () {
 
@@ -21,11 +20,16 @@ menuState.prototype = { */
     var pkey = game.input.keyboard.addKey(Phaser.Keyboard.P);
     pkey.onDown.addOnce(this.start, this);
 
+     var playButton = this.game.add.button(game.world.width*0.5, game.world.height*0.5, 'playbutton', this.start, this, 1, 0);
+
+
+},
+start: function () {
+  game.state.start("play");
 },
 //actionOnclick: function() {
 //game.state.start("play");
 //},
-  start: function () {
-    game.state.start("play");
-  },
+
+
 };

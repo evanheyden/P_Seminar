@@ -27,6 +27,7 @@ var preloadState = {
   	game.load.spritesheet('background', 'assets/Hintergrund.png', 480, 640);
     game.load.spritesheet('pickaxe', 'assets/picksmall.png', 20,32);
     game.load.spritesheet('sword', 'assets/swordsmall.png', 23,32);
+    game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);
 
 },
 create: function () {

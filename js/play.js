@@ -1,6 +1,4 @@
-/*var Caverunner = Caverunner || {};
-playState = function(){};
-playState.prototype = {*/
+
 var player1;
 var player2;
 var platforms;
@@ -21,6 +19,7 @@ var x;
 var a;
 var c;
 var f;
+
 var platform1;
 var platform2;
 var block1;
@@ -125,18 +124,18 @@ create: function () {
 	player2.body.mass = 100;
 
 		//  Our two animations, walking left and right.
-		player1.animations.add('leftup1', [9, 11, 12, 13], 20, true);
-		player1.animations.add('rightup1', [15, 16, 17, 18], 20, true);
+		player1.animations.add('leftdown1', [9, 10, 11, 12], 10, true);
+		player1.animations.add('rightdown1', [14, 15, 16, 17], 10, true);
 
-		player1.animations.add('leftdown1', [0, 1, 2, 3], 20, true);
-		player1.animations.add('rightdown1', [5, 6, 7, 8], 20, true);
+		player1.animations.add('leftup1', [0, 1, 2, 3], 10, true);
+		player1.animations.add('rightup1', [5, 6, 7, 8], 10, true);
 
 
-	player2.animations.add('leftdown2', [0, 1, 2, 3], 10, true);
+		player2.animations.add('leftdown2', [0, 1, 2, 3], 10, true);
 		player2.animations.add('rightdown2', [5, 6, 7, 8], 10, true);
 
-/*	player2.animations.add('leftdown2', [9,5,9,4], 6, true);
-		player2.animations.add('rightdown2', [8,1,8,0], 6, true);*/
+		player2.animations.add('leftup2', [9, 10, 11, 12], 10, true);
+		player2.animations.add('rightup2', [14, 15, 16, 17], 10, true);
 
 		//  Finally some stars to collect
 		stars = this.game.add.group();
@@ -248,7 +247,7 @@ update: function () {
 		//  Stand still
 		player1.animations.stop();
 
-		player1.frame = 4;
+		player1.frame = 13;
 	}
 
 	//hier soll der ButtonGravity für player1 programmiert werden, allerdings kann er bisher nur positive Schwerkraft (man wird nach unten gezogen) in Negative (man wird nach oben gezogen) umwandeln:

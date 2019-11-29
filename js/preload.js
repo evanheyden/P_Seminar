@@ -8,7 +8,7 @@ var preloadState = {
     var Ladebalken = game.add.text(200, 250, "Spiel wird geladen...",{font: "33px Times", fill: "#fcbc38"});
 
     //hier werden die assets geladen
-    game.load.image('sky', 'assets/sky.png');
+    game.load.image('backgroundmenu', 'assets/backgroundmenu.png');
     game.load.image('ground', 'assets/platform.png');
   	game.load.image('block', 'assets/Block.png');
   	game.load.image('block2hoch', 'assets/Block2Hoch');

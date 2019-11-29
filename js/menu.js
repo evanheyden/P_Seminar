@@ -17,8 +17,8 @@
 
     //  game.stage.backgroundColour = '#fcbc38';
 
-    var pkey = game.input.keyboard.addKey(Phaser.Keyboard.P);
-    pkey.onDown.addOnce(this.start, this);
+    //var pkey = game.input.keyboard.addKey(Phaser.Keyboard.P);
+    //pkey.onDown.addOnce(this.start, this);
 
      var playButton = this.game.add.button(370, 300, 'playbutton', this.start, this, 1, 0);
 

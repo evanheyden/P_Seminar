@@ -9,6 +9,7 @@ var preloadState = {
 
     //hier werden die assets geladen
     game.load.image('backgroundmenu', 'assets/backgroundmenu.png');
+    game.load.image('backgroundgameover', 'assets/backgroundgameover.png');
     game.load.image('ground', 'assets/platform.png');
   	game.load.image('block', 'assets/Block.png');
   	game.load.image('block2hoch', 'assets/Block2Hoch');
@@ -28,7 +29,8 @@ var preloadState = {
     game.load.spritesheet('pickaxe', 'assets/picksmall.png', 20,32);
     game.load.spritesheet('sword', 'assets/swordsmall.png', 23,32);
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);
-
+    game.load.spritesheet('restartbutton', 'assets/restartbutton.png', 64, 64);
+    game.load.spritesheet('menubutton', 'assets/menubutton.png', 64, 64);
 },
 create: function () {
   game.state.start("menu")

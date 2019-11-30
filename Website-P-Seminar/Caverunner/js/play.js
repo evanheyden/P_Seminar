@@ -1,9 +1,12 @@
-
+//leftup1
 var player1;
 var player2;
 var platforms;
+var playerSpeed = 150;
+var playerJump = 400;
 var cursors;
-var stars;
+var booster;
+var boost;
 var score = 0;
 var scoreText;
 var frameTime = 0;
@@ -125,11 +128,11 @@ var playState = {
 		player2.body.mass = 100;
 
 		//  Our two animations, walking left and right.
-		player1.animations.add('leftdown1', [9, 10, 11, 12], 10, true);
-		player1.animations.add('rightdown1', [14, 15, 16, 17], 10, true);
+		player1.animations.add('leftup1', [9, 10, 11, 12], 10, true);
+		player1.animations.add('rightup1', [14, 15, 16, 17], 10, true);
 
-		player1.animations.add('leftup1', [0, 1, 2, 3], 10, true);
-		player1.animations.add('rightup1', [5, 6, 7, 8], 10, true);
+		player1.animations.add('leftdown1', [0, 1, 2, 3], 10, true);
+		player1.animations.add('rightdown1', [5, 6, 7, 8], 10, true);
 
 
 		player2.animations.add('leftdown2', [0, 1, 2, 3], 10, true);
@@ -138,29 +141,29 @@ var playState = {
 		player2.animations.add('leftup2', [9, 10, 11, 12], 10, true);
 		player2.animations.add('rightup2', [14, 15, 16, 17], 10, true);
 
-		//  Finally some stars to collect
-		stars = this.game.add.group();
+		//  Finally some booster to collect
+		booster = this.game.add.group();
 
-		//  We will enable physics for any star that is created in this group
-		stars.enableBody = true;
+		//  We will enable physics for any  that is created in this group
+		booster.enableBody = true;
 
 		//  Here we'll create 12 of them evenly spaced apart
 		for (var i = 0; i < 12; i++)
 		{
-			//  Create a star inside of the 'stars' group
-			var star = stars.create(i * 10, 0, 'star');
+			//  Create a  inside of the 'booster' group
+			var boost = booster.create(i * 10, 0, 'booster');
 
 			//  Let gravity do its thing
-			star.body.gravity.y = 300;
+			boost.body.gravity.y = 0;
 
-			//  This just gives each star a slightly random bounce value
-			star.body.bounce.y = 0.7 + Math.random() * 0.2;
+			//  This just gives each  a slightly random bounce value
+			boost.body.bounce.y = 0.7 + Math.random() * 0.2;
 		}
 
 
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-		game.camera.follow(player3, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+		game.camera.follow(player1, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fcbc38' });
@@ -218,17 +221,17 @@ var playState = {
 		player3.body.velocity.x = 75;
 
 
-		//  Collide the player and the stars with the platforms
+		//  Collide the player and the booster with the platforms
 		game.physics.arcade.collide(player1, platforms);
-		game.physics.arcade.collide(stars, platforms);
+		game.physics.arcade.collide(booster, platforms);
 
 		game.physics.arcade.collide(player2, platforms);
-		game.physics.arcade.collide(stars, platforms);
+		game.physics.arcade.collide(booster, platforms);
 
-		//  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-		game.physics.arcade.overlap(player1, stars, this.collectStar, null, this);
+		//  Checks to see if the player overlaps with any of the booster, if he does call the collect function
+		game.physics.arcade.overlap(player1, booster, this.Boost, null, this);
 
-		game.physics.arcade.overlap(player2, stars, this.collectStar, null, this);
+		game.physics.arcade.overlap(player2, booster, this.Boost, null, this);
 
 		//  Reset the players velocity (movement)
 		player1.body.velocity.x = 0;
@@ -238,16 +241,16 @@ var playState = {
 		if (cursors.left.isDown)
 		{
 			//  Move to the left
-			player1.body.velocity.x = -150;
+			player1.body.velocity.x = -playerSpeed;
 
-			player1.animations.play('leftdown1');
+			player1.animations.play('leftup1');
 		}
 		else if (cursors.right.isDown)
 		{
 			//  Move to the right
-			player1.body.velocity.x = 150;
+			player1.body.velocity.x = playerSpeed;
 
-			player1.animations.play('rightdown1');
+			player1.animations.play('rightup1');
 		}
 
 		else
@@ -257,14 +260,14 @@ var playState = {
 
 			player1.frame = 13;
 		}
-	
+
 		//hier soll der ButtonGravity für player1 programmiert werden, allerdings kann er bisher nur positive Schwerkraft (man wird nach unten gezogen) in Negative (man wird nach oben gezogen) umwandeln:
-		if (ButtonGravity.isDown && player1.body.touching.down && gravity(-300))
+		if (ButtonGravity.isDown && player1.body.touching.down && this.gravity(-300))
 		{
 			player1.body.velocity.y = -300;
 		}
 
-		if (ButtonGravity.isDown && player2.body.touching.down && gravity(300))
+		if (ButtonGravity.isDown && player2.body.touching.down && this.gravity(300))
 		{
 			player1.body.velocity.y = -410;
 		}
@@ -272,25 +275,25 @@ var playState = {
 		// hier soll die Sprungrichtung an die Schwerkraft-Richtung angepasst werden, allerdings funktioniert das momentan nur bei positiver Schwerkraft:
 		if (upButton.isDown && player2.body.touching.down)
 		{
-			player2.body.velocity.y = -410;
+			player2.body.velocity.y = -playerJump;
 
 		}
 
 		if (cursors.up.isDown && player1.body.touching.up)
 		{
-			player1.body.velocity.y = 410;
+			player1.body.velocity.y = playerJump;
 
 		}
 
 		if (upButton.isDown && player2.body.touching.up)
 		{
-			player2.body.velocity.y = 410;
+			player2.body.velocity.y = playerJump;
 
 		}
 
 		if (cursors.up.isDown && player1.body.touching.down)
 		{
-			player1.body.velocity.y = -410;
+			player1.body.velocity.y = -playerJump;
 
 		}
 
@@ -302,14 +305,14 @@ var playState = {
 		if (leftButton.isDown)
 		{
 			//  Move to the left
-			player2.body.velocity.x = -150;
+			player2.body.velocity.x = -playerSpeed;
 
 			player2.animations.play('leftdown2');
 		}
 		else if (rightButton.isDown)
 		{
 			//  Move to the right
-			player2.body.velocity.x = 150;
+			player2.body.velocity.x = playerSpeed;
 
 			player2.animations.play('rightdown2');
 		}
@@ -324,7 +327,7 @@ var playState = {
 		//  Allow the player to jump if they are touching the ground.
 		if (upButton.isDown) //&& player2.body.touching.down)
 		{
-			player2.body.velocity.y = -200;
+			player2.body.velocity.y = -playerJump;
 		}
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
@@ -387,6 +390,7 @@ var playState = {
 
 	platform2: function ()
 	{
+		boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
 
 		block1 = platforms.create(c * 960, 0,'block3breit');
 
@@ -554,7 +558,7 @@ var playState = {
 
 	platform1: function ()
 	{
-
+		boost2 = booster.create(c * 960, 68, 'booster')
 		platform1 = platforms.create(c * 960, 100,'ground');
 
 		c += 1;
@@ -635,6 +639,15 @@ var playState = {
 		}
 	},
 
-
+	Boost: function(player, boost)
+	{
+		boost.kill();
+		playerSpeed += 20
+		playerJump += 50
+		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
+		playerSpeed -= 20
+		playerJump -= 50
+		});
+	},
 
 };

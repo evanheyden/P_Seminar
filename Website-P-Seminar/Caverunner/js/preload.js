@@ -17,7 +17,7 @@ var preloadState = {
   	game.load.image('block3hoch', 'assets/Block3Hoch.png');
   	game.load.image('block3breit', 'assets/Block3Breit.png');
   	game.load.image('blockquadrat', 'assets/BlockQuadrat.png');
-    game.load.image('star', 'assets/star.png');
+    game.load.image('booster', 'assets/booster.png');
   	game.load.spritesheet('level', 'assets/Dreiplattformen.png', 800, 400);
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
   	game.load.spritesheet('baddie','assets/baddie.png', 32, 32);

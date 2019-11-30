@@ -1,0 +1,20 @@
+{"frames": {
+
+"Wall.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":600},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":600},
+	"sourceSize": {"w":32,"h":600}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "WallSprite.png",
+	"format": "RGBA8888",
+	"size": {"w":34,"h":602},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:627fa2d954c68cc97dafa47084a764d6:5efcecfa9ed5443a21799048fbed7693:e77987a13cdb6d46d30309ec770d8149$"
+}
+}

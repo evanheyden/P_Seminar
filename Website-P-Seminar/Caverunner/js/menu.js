@@ -6,7 +6,6 @@
     var menuback = game.add.image(0, 0, 'backgroundmenu');
     //Hier erscheint dann der Name des SPiels
     var nameLabel = game.add.text(100, 150, "Caverunner", {font: "100px Courier", fill: "#fcbc38"});
-    var score = 0;
     //hier wird der playbutton eingefügt, ist im moment noch hässlich aber nur zum testen
   //  var button = game.add.button(game.world.centerX = 100, 300, "playbutton", this.actionOnclick, this);
 
@@ -26,6 +25,7 @@
 },
 start: function () {
   game.state.start("play");
+  score = 0;
 },
 
 

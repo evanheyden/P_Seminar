@@ -7,7 +7,7 @@ var playerJump = 200;
 var cursors;
 var booster;
 var boost;
-var score = 0;
+var score;
 var scoreText;
 var frameTime = 0;
 var frames;
@@ -78,9 +78,10 @@ var playState = {
 		//hier werden die Grenzen der Welt gesetzt:
 		this.game.world.setBounds(0, 0, 960*100000000000, 640);
 
-
-		this.game.add.sprite(0, 0, 'background');
-
+		for (var i = 0; i < 1000; i++)
+		{
+			this.game.add.sprite(4000*i, 0, 'background');
+		}
 		c = 1;
 
 		timer1 = 0;
@@ -101,13 +102,13 @@ var playState = {
 		for (var i = 0; i < 1000; i++)
 		{
 			var unten = unten + i;
-			unten = platforms.create(i*30, 600,'platform');
+			unten = platforms.create(i*300, 600,'flaeche');
 			unten.body.immovable = true;
 		}
 		for (var i = 0; i < 1000; i++)
 		{
 			var nice = nice + i;
-			nice = platforms.create(i*30, -31.9,'platform');
+			nice = platforms.create(i*200, -29.9,'flaeche');
 			nice.body.immovable = true;
 		}
 		//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
@@ -176,10 +177,10 @@ var playState = {
 
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-		game.camera.follow(player1, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+		game.camera.follow(player3, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 		//  The score
-		scoreText = this.game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fcbc38' });
+		scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fcbc38' });
 		scoreText.fixedToCamera = true;
 		//  Our controls.
 		//hier werden zusätzlich zu den Standard-Pfeiltasten noch die WASD-Tasten für player2 und der ButtonGravity definiert:
@@ -230,7 +231,7 @@ var playState = {
 
 		//Hier wird der pro Sekunde erhöht
 
-		game.time.events.add(Phaser.Timer.SECOND *5, this.score, this) ;
+		game.time.events.add(Phaser.Timer.SECOND *1, this.score, this) ;
 
 		//  Collide the player and the booster with the platforms
 		game.physics.arcade.collide(player1, platforms);
@@ -274,17 +275,17 @@ var playState = {
 
 		//hier soll der ButtonGravity für player1 programmiert werden, allerdings kann er bisher nur positive Schwerkraft (man wird nach unten gezogen) in Negative (man wird nach oben gezogen) umwandeln:
 		if (ButtonGravity.isDown && player1.body.touching.down )
-	{
-		player1.body.gravity.y = -300;
-		player2.body.gravity.y = 300;
-	}
+		{
+			player1.body.gravity.y = -300;
+			player2.body.gravity.y = 300;
+		}
 
 
-	if (ButtonGravity.isDown && player2.body.touching.down)
-	{
-		player1.body.gravity.y = 300;
-		player2.body.gravity.y = -300;
-	}
+		if (ButtonGravity.isDown && player2.body.touching.down)
+		{
+			player1.body.gravity.y = 300;
+			player2.body.gravity.y = -300;
+		}
 
 		// hier soll die Sprungrichtung an die Schwerkraft-Richtung angepasst werden, allerdings funktioniert das momentan nur bei positiver Schwerkraft:
 		if (upButton.isDown && player2.body.touching.down)
@@ -652,8 +653,8 @@ var playState = {
 		playerSpeed += 20
 		playerJump += 50
 		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
-		playerSpeed -= 20
-		playerJump -= 50
+			playerSpeed -= 20
+			playerJump -= 50
 		});
 	},
 

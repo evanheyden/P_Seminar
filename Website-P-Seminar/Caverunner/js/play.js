@@ -3,7 +3,7 @@ var player1;
 var player2;
 var platforms;
 var playerSpeed = 150;
-var playerJump = 400;
+var playerJump = 200;
 var cursors;
 var booster;
 var boost;
@@ -65,6 +65,7 @@ var block38;
 var block39;
 var localStorageName = "crackalien";
 var highScore;
+var timeCheck;
 var playState = {
 
 	create: function () {
@@ -96,7 +97,19 @@ var playState = {
 		//We will enable physics for any object that is created in this group
 		platforms.enableBody = true;
 
-
+		// hier werden die platformen für oben und unten erstellt
+		for (var i = 0; i < 1000; i++)
+		{
+			var unten = unten + i;
+			unten = platforms.create(i*30, 600,'platform');
+			unten.body.immovable = true;
+		}
+		for (var i = 0; i < 1000; i++)
+		{
+			var nice = nice + i;
+			nice = platforms.create(i*30, -31.9,'platform');
+			nice.body.immovable = true;
+		}
 		//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
 		player1 = this.game.add.sprite(200, 300, 'pickaxe');
@@ -167,7 +180,7 @@ var playState = {
 
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fcbc38' });
-
+		scoreText.fixedToCamera = true;
 		//  Our controls.
 		//hier werden zusätzlich zu den Standard-Pfeiltasten noch die WASD-Tasten für player2 und der ButtonGravity definiert:
 
@@ -200,12 +213,7 @@ var playState = {
 			player1.kill();
 			gameover();
 		}
-		else {
-			setInterval(function(){
-				score += 1;
-				scoreText.text = 'Score: ' + score;
-			} , 9000);
-		}
+
 		if ((player2.body.position.x - game.camera.x) > 960)
 		{
 			//player2.kill();
@@ -220,6 +228,9 @@ var playState = {
 
 		player3.body.velocity.x = 75;
 
+		//Hier wird der pro Sekunde erhöht
+
+		game.time.events.add(Phaser.Timer.SECOND *5, this.score, this) ;
 
 		//  Collide the player and the booster with the platforms
 		game.physics.arcade.collide(player1, platforms);
@@ -262,15 +273,18 @@ var playState = {
 		}
 
 		//hier soll der ButtonGravity für player1 programmiert werden, allerdings kann er bisher nur positive Schwerkraft (man wird nach unten gezogen) in Negative (man wird nach oben gezogen) umwandeln:
-		if (ButtonGravity.isDown && player1.body.touching.down && this.gravity(-300))
-		{
-			player1.body.velocity.y = -300;
-		}
+		if (ButtonGravity.isDown && player1.body.touching.down )
+	{
+		player1.body.gravity.y = -300;
+		player2.body.gravity.y = 300;
+	}
 
-		if (ButtonGravity.isDown && player2.body.touching.down && this.gravity(300))
-		{
-			player1.body.velocity.y = -410;
-		}
+
+	if (ButtonGravity.isDown && player2.body.touching.down)
+	{
+		player1.body.gravity.y = 300;
+		player2.body.gravity.y = -300;
+	}
 
 		// hier soll die Sprungrichtung an die Schwerkraft-Richtung angepasst werden, allerdings funktioniert das momentan nur bei positiver Schwerkraft:
 		if (upButton.isDown && player2.body.touching.down)
@@ -324,11 +338,7 @@ var playState = {
 			player2.frame = 4;
 		}
 
-		//  Allow the player to jump if they are touching the ground.
-		if (upButton.isDown) //&& player2.body.touching.down)
-		{
-			player2.body.velocity.y = -playerJump;
-		}
+
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
@@ -363,13 +373,6 @@ var playState = {
 
 
 
-	gravity: function (b)
-	{
-
-		player1.body.gravity.y = b;
-		player2.body.gravity.y = -b;
-
-	},
 	execute: function ()
 	{
 		//var i = random();
@@ -385,7 +388,11 @@ var playState = {
 		timer1 += 1;
 	},
 
+	score: function(){
 
+		score += 1;
+		scoreText.text = 'Score: ' + score;
+	},
 
 
 	platform2: function ()

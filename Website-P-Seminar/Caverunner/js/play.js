@@ -7,7 +7,7 @@ var playerJump = 200;
 var cursors;
 var booster;
 var boost;
-var score;
+var score = 0;
 var scoreText;
 var frameTime = 0;
 var frames;

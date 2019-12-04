@@ -1,11 +1,20 @@
-//in preload.js werden die assets geladen
-/*var Caverunner = Caverunner || {};
-preloadState = function(){};
-preloadState.prototype = {*/
+/*let latitude = 0;
+let longitude = 0;
+var schule = false;*/
 var preloadState = {
-  preload: function () {
+
+preload: function () {
     //hier kommt der Ladebalken
+  /*  var location = this.getlocation();
     var Ladebalken = game.add.text(200, 250, "Spiel wird geladen...",{font: "33px Times", fill: "#fcbc38"});
+
+    if (schule = true) {
+      game.load.image('booster', 'assets/booster.png');
+
+    } else {
+      game.load.image('klausur', 'assets/klausur.png');
+
+    }*/
 
     //hier werden die assets geladen
     game.load.image('backgroundmenu', 'assets/backgroundmenu.png');
@@ -17,6 +26,7 @@ var preloadState = {
   	game.load.image('block3hoch', 'assets/Block3Hoch.png');
   	game.load.image('block3breit', 'assets/Block3Breit.png');
   	game.load.image('blockquadrat', 'assets/BlockQuadrat.png');
+    game.load.image('klausur', 'assets/klausur.png');
     game.load.image('booster', 'assets/booster.png');
   	game.load.spritesheet('level', 'assets/Dreiplattformen.png', 800, 400);
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
@@ -31,8 +41,25 @@ var preloadState = {
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);
     game.load.spritesheet('restartbutton', 'assets/restartbutton.png', 64, 64);
     game.load.spritesheet('menubutton', 'assets/menubutton.png', 64, 64);
+    this.time.events.add(Phaser.Timer.SECOND * 5, function(){
+      start();
+    });
 },
 create: function () {
-  game.state.start("menu")
+game.state.start("menu")
 },
+/*getlocation: function (){
+  navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
+  this.schule();
+  console.log('layer')
+},
+schule: function() {
+if (latitude > 40 && latitude < 50) {
+  var schule = true;
+  console.log('success')
+}
+},
+start: function(){
+  game.state.start("menu")
+},*/
 };

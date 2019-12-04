@@ -1,6 +1,7 @@
 
 
 
+
   var menuState = {
   create: function () {
     var menuback = game.add.image(0, 0, 'backgroundmenu');
@@ -21,13 +22,19 @@
     //pkey.onDown.addOnce(this.start, this);
 
      var playButton = this.game.add.button(370, 300, 'playbutton', this.start, this, 1, 0);
-
+  //var location = this.getlocation();
 
 },
 start: function () {
   game.state.start("play");
 },
 
+getlocation: function (){
+	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 
+	if (latitude > 40.10130112483088 && latitude < 50.687777818108254) {
+		playerSpeed -= 100
+	}
+},
 
 };

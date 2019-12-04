@@ -3,7 +3,7 @@ var player1;
 var player2;
 var platforms;
 var playerSpeed = 150;
-var playerJump = 400;
+var playerJump = 50;
 var cursors;
 var booster;
 var boost;
@@ -65,9 +65,22 @@ var block38;
 var block39;
 var localStorageName = "crackalien";
 var highScore;
+let latitude = 0;
+let longitude = 0;
+var schule = false;
 var playState = {
-
+	getlocation: function (){
+		navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
+		console.log('layer1')
+	},
+	schule: function() {
+	if (latitude > 40.10130112483088 && latitude < 50.687777818108254) {
+		var schule = true;
+		console.log('success')
+	}
+},
 	create: function () {
+		var location = this.getlocation();
 
 		this.game.time.events.repeat(Phaser.Timer.SECOND * 6.4, 10000, this.timer1Up, this);
 
@@ -160,7 +173,22 @@ var playState = {
 			boost.body.bounce.y = 0.7 + Math.random() * 0.2;
 		}
 
+		klausuren = this.game.add.group();
 
+		//  We will enable physics for any  that is created in this group
+		klausuren.enableBody = true;
+
+		for (var i = 0; i < 12; i++)
+		{
+			//  Create a  inside of the 'booster' group
+			var klausur = klausuren.create(i * 10, 20, 'klausur');
+
+			//  Let gravity do its thing
+			klausur.body.gravity.y = 0;
+
+			//  This just gives each  a slightly random bounce value
+			klausur.body.bounce.y = 0.7 + Math.random() * 0.2;
+		}
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
 		game.camera.follow(player1, Phaser.Camera.FOLLOW_LOCKON, 0.1);
@@ -233,6 +261,9 @@ var playState = {
 
 		game.physics.arcade.overlap(player2, booster, this.Boost, null, this);
 
+		game.physics.arcade.overlap(player1, klausuren, this.Stress, null, this);
+
+		game.physics.arcade.overlap(player2, klausuren, this.Stress, null, this);
 		//  Reset the players velocity (movement)
 		player1.body.velocity.x = 0;
 
@@ -240,6 +271,7 @@ var playState = {
 
 		if (cursors.left.isDown)
 		{
+			this.schule();
 			//  Move to the left
 			player1.body.velocity.x = -playerSpeed;
 
@@ -641,13 +673,27 @@ var playState = {
 
 	Boost: function(player, boost)
 	{
-		boost.kill();
-		playerSpeed += 20
-		playerJump += 50
-		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
-		playerSpeed -= 20
-		playerJump -= 50
-		});
+		if (schule = false) {
+			boost.kill();
+			playerSpeed += 20
+			playerJump += 50
+			this.time.events.add(Phaser.Timer.SECOND * 3, function(){
+			playerSpeed -= 20
+			playerJump -= 50
+			});
+		}
 	},
+Stress: function(player, klausur) {
+	if (schule = true) {
+		klausur.kill();
+		playerSpeed -= 100
+		playerJump -= 25
+		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
+		playerSpeed += 100
+		playerJump += 25
+		});
+	}
+},
+
 
 };

@@ -3,11 +3,7 @@ var player1;
 var player2;
 var platforms;
 var playerSpeed = 150;
-<<<<<<< HEAD
-var playerJump = 50;
-=======
 var playerJump = 200;
->>>>>>> 5d2bafa87792bd1cde730dffaa066c5a8f813c70
 var cursors;
 var booster;
 var boost;
@@ -69,23 +65,20 @@ var block38;
 var block39;
 var localStorageName = "crackalien";
 var highScore;
-<<<<<<< HEAD
 let latitude = 0;
 let longitude = 0;
 var schule = false;
-=======
 var timeCheck;
->>>>>>> 5d2bafa87792bd1cde730dffaa066c5a8f813c70
 var playState = {
 	getlocation: function (){
 		navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 		console.log('layer1')
 	},
 	schule: function() {
-	if (latitude > 40.10130112483088 && latitude < 50.687777818108254) {
+	if (latitude > 40 && latitude < 50) {
 		var schule = true;
-		console.log('success')
 	}
+	console.log('success')
 },
 	create: function () {
 		var location = this.getlocation();
@@ -182,10 +175,10 @@ var playState = {
 		booster.enableBody = true;
 
 		//  Here we'll create 12 of them evenly spaced apart
-		for (var i = 0; i < 12; i++)
+		for (var i = 0; i < 1; i++)
 		{
 			//  Create a  inside of the 'booster' group
-			var boost = booster.create(i * 10, 0, 'booster');
+			var boost = booster.create(i * 1, 0, 'booster');
 
 			//  Let gravity do its thing
 			boost.body.gravity.y = 0;
@@ -199,10 +192,10 @@ var playState = {
 		//  We will enable physics for any  that is created in this group
 		klausuren.enableBody = true;
 
-		for (var i = 0; i < 12; i++)
+		for (var i = 0; i < 1; i++)
 		{
 			//  Create a  inside of the 'booster' group
-			var klausur = klausuren.create(i * 10, 20, 'klausur');
+			var klausur = klausuren.create(i * 10, 40, 'klausur');
 
 			//  Let gravity do its thing
 			klausur.body.gravity.y = 0;
@@ -212,7 +205,7 @@ var playState = {
 		}
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-		game.camera.follow(player3, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+		game.camera.follow(player1	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fcbc38' });
@@ -290,7 +283,6 @@ var playState = {
 
 		if (cursors.left.isDown)
 		{
-			this.schule();
 			//  Move to the left
 			player1.body.velocity.x = -playerSpeed;
 
@@ -437,7 +429,15 @@ var playState = {
 
 	platform2: function ()
 	{
-		boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
+			console.log('klause')
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
+			console.log('rotte')
+		}
+
 
 		block1 = platforms.create(c * 960, 0,'block3breit');
 
@@ -605,7 +605,15 @@ var playState = {
 
 	platform1: function ()
 	{
-		boost2 = booster.create(c * 960, 68, 'booster')
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960, 68, 'klausur');
+			console.log('klause')
+		} else if (schule == false) {
+			boost2 = booster.create(c * 960, 68, 'booster')
+			console.log('rotte')
+		}
+
 		platform1 = platforms.create(c * 960, 100,'ground');
 
 		c += 1;
@@ -688,7 +696,7 @@ var playState = {
 
 	Boost: function(player, boost)
 	{
-		if (schule = false) {
+		if (schule == false) {
 			boost.kill();
 			playerSpeed += 20
 			playerJump += 50
@@ -699,18 +707,13 @@ var playState = {
 		}
 	},
 Stress: function(player, klausur) {
-	if (schule = true) {
+	if (schule == true) {
 		klausur.kill();
 		playerSpeed -= 100
 		playerJump -= 25
 		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
-<<<<<<< HEAD
 		playerSpeed += 100
 		playerJump += 25
-=======
-			playerSpeed -= 20
-			playerJump -= 50
->>>>>>> 5d2bafa87792bd1cde730dffaa066c5a8f813c70
 		});
 	}
 },

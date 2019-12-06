@@ -1,4 +1,4 @@
-//leftup1
+Hallo
 var player1;
 var player2;
 var platforms;
@@ -251,6 +251,7 @@ pause: function() {
 
 	update: function () {
 
+		var unpause = this.game.input.onDown.add(unpause, self);
 		function gameover() {
 			game.state.start("gameover");
 		}

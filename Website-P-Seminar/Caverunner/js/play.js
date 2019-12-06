@@ -3,6 +3,7 @@ var player1;
 var player2;
 var platforms;
 var playerSpeed = 150;
+var playerSpeedJumping = 75;
 var playerJump = 230;
 var cursors;
 var booster;
@@ -22,7 +23,6 @@ var x;
 var a;
 var c;
 var f;
-
 var platform1;
 var platform2;
 var block1;
@@ -149,7 +149,7 @@ pause: function() {
 		}
 		//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
-		player1 = this.game.add.sprite(200, 300, 'pickaxe');
+		player1 = this.game.add.sprite(600, 300, 'pickaxe');
 
 		player2 = this.game.add.sprite(200, 300, 'sword');
 
@@ -305,17 +305,45 @@ pause: function() {
 
 
 
-		if (cursors.left.isDown)
+		if (cursors.left.isDown && player1.body.touching.down == true)
 		{
 			//  Move to the left
 			player1.body.velocity.x = -playerSpeed;
 
 			player1.animations.play('leftup1');
 		}
-		else if (cursors.right.isDown)
+		else if (cursors.left.isDown && player1.body.touching.up == true)
+		{
+			player1.body.velocity.x = -playerSpeed;
+
+			player1.animations.play('leftup1');
+		}
+
+		else if (cursors.left.isDown && player1.body.touching.down == false)
+		{
+			player1.body.velocity.x = -playerSpeedJumping;
+
+			player1.animations.play('leftup1');
+		}
+		else if (cursors.right.isDown && player1.body.touching.down == true)
 		{
 			//  Move to the right
 			player1.body.velocity.x = playerSpeed;
+
+			player1.animations.play('rightup1');
+		}
+
+		else if (cursors.right.isDown && player1.body.touching.up == true)
+		{
+			//  Move to the right
+			player1.body.velocity.x = playerSpeed;
+
+			player1.animations.play('rightup1');
+		}
+
+		else if (cursors.right.isDown && player1.body.touching.down == false)
+		{
+			player1.body.velocity.x = playerSpeedJumping;
 
 			player1.animations.play('rightup1');
 		}
@@ -822,7 +850,7 @@ pause: function() {
 	},
 	destroyPlatform3: function ()
 	{
-		if (player3.x - platform1.x >= 480)
+		if (player3.x - platform3.x >= 480)
 		{
 			platform3.destroy();
 		}

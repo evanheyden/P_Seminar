@@ -3,7 +3,7 @@ var player1;
 var player2;
 var platforms;
 var playerSpeed = 150;
-var playerJump = 200;
+var playerJump = 230;
 var cursors;
 var booster;
 var boost;
@@ -71,18 +71,19 @@ var schule = false;
 var timeCheck;
 var playState = {
 	getlocation: function (){
-		navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
+	//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 		console.log('layer1')
 	},
 	schule: function() {
 	if (latitude > 40 && latitude < 50) {
 		var schule = true;
+	} else {
+		var schule = false;
 	}
 	console.log('success')
 },
 	create: function () {
 		var location = this.getlocation();
-
 		this.game.time.events.repeat(Phaser.Timer.SECOND * 6.4, 10000, this.timer1Up, this);
 
 		//  We're going to be using physics, so enable the Arcade Physics system
@@ -220,7 +221,7 @@ var playState = {
 		rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
 		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
 
-
+		var bau = this.platform3();
 	},
 
 
@@ -432,166 +433,164 @@ var playState = {
 		var testen = this.schule();
 		if (schule == true) {
 			klausur1 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
-			console.log('klause')
 		} else if (schule == false) {
 			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
-			console.log('rotte')
 		}
 
 
-		block1 = platforms.create(c * 960, 0,'block3breit');
+		block1 = platforms.create(c * 960, 0,'3b');
 
 		block1.body.immovable = true;
 
-		block2 = platforms.create(c * 960 + 3 * 32, 0,'block2breit');
+		block2 = platforms.create(c * 960 + 3 * 32, 0,'2b');
 
 		block2.body.immovable = true;
 
-		block3 = platforms.create(c * 960 + 7 * 32, 0,'block3hoch');
+		block3 = platforms.create(c * 960 + 7 * 32, 0,'3h');
 
 		block3.body.immovable = true;
 
-		block4 = platforms.create(c * 960 + 8 * 32, 0,'block2breit');
+		block4 = platforms.create(c * 960 + 8 * 32, 0,'2b');
 
 		block4.body.immovable = true;
 
-		block5 = platforms.create(c * 960 + 11 * 32, 0,'block');
+		block5 = platforms.create(c * 960 + 11 * 32, 0,'1');
 
 		block5.body.immovable = true;
 
-		block6 = platforms.create(c * 960 + 13 * 32, 1 * 32,'block');
+		block6 = platforms.create(c * 960 + 13 * 32, 1 * 32,'1');
 
 		block6.body.immovable = true;
 
-		block7 = platforms.create(c * 960 + 1 * 32, 2 * 32,'block');
+		block7 = platforms.create(c * 960 + 1 * 32, 2 * 32,'1');
 
 		block7.body.immovable = true;
 
-		block8 = platforms.create(c * 960 + 3 * 32, 3 * 32,'block');
+		block8 = platforms.create(c * 960 + 3 * 32, 3 * 32,'1');
 
 		block8.body.immovable = true;
 
-		block9 = platforms.create(c * 960 + 4 * 32, 4 * 32,'block');
+		block9 = platforms.create(c * 960 + 4 * 32, 4 * 32,'1');
 
 		block9.body.immovable = true;
 
-		block10 = platforms.create(c * 960 + 8 * 32, 4 * 32,'block');
+		block10 = platforms.create(c * 960 + 8 * 32, 4 * 32,'1');
 
 		block10.body.immovable = true;
 
-		block11 = platforms.create(c * 960 + 10 * 32, 5 * 32,'block');
+		block11 = platforms.create(c * 960 + 10 * 32, 5 * 32,'1');
 
 		block11.body.immovable = true;
 
-		block12 = platforms.create(c * 960 + 13 * 32, 4 * 32,'block2breit');
+		block12 = platforms.create(c * 960 + 13 * 32, 4 * 32,'2b');
 
 		block12.body.immovable = true;
 
-		block13 = platforms.create(c * 960 + 14 * 32, 6 * 32,'block');
+		block13 = platforms.create(c * 960 + 14 * 32, 6 * 32,'1');
 
 		block13.body.immovable = true;
 
-		block14 = platforms.create(c * 960 + 8 * 32, 7 * 32,'block');
+		block14 = platforms.create(c * 960 + 8 * 32, 7 * 32,'1');
 
 		block14.body.immovable = true;
 
-		block15 = platforms.create(c * 960 + 9 * 32, 8 * 32,'block');
+		block15 = platforms.create(c * 960 + 9 * 32, 8 * 32,'1');
 
 		block15.body.immovable = true;
 
-		block16 = platforms.create(c * 960 + 10 * 32, 9 * 32,'block2breit');
+		block16 = platforms.create(c * 960 + 10 * 32, 9 * 32,'2b');
 
 		block16.body.immovable = true;
 
-		block17 = platforms.create(c * 960 + 13 * 32, 9 * 32,'blockquadrat');
+		block17 = platforms.create(c * 960 + 13 * 32, 9 * 32,'1');
 
 		block17.body.immovable = true;
 
-		block18 = platforms.create(c * 960 + 1 * 32, 14 * 32,'block');
+		block18 = platforms.create(c * 960 + 1 * 32, 14 * 32,'1');
 
 		block18.body.immovable = true;
 
-		block19 = platforms.create(c * 960 + 4 * 32, 4 * 32,'block2breit');
+		block19 = platforms.create(c * 960 + 4 * 32, 4 * 32,'2b');
 
 		block19.body.immovable = true;
 
-		block20 = platforms.create(c * 960 + 8 * 32, 14 * 32,'block3breit');
+		block20 = platforms.create(c * 960 + 8 * 32, 14 * 32,'3b');
 
 		block20.body.immovable = true;
 
-		block21 = platforms.create(c * 960 + 7 * 32, 11 * 32,'block2hoch');
+		block21 = platforms.create(c * 960 + 7 * 32, 11 * 32,'2h');
 
 		block21.body.immovable = true;
 
-		block22 = platforms.create(c * 960 + 9 * 32, 11 * 32,'block');
+		block22 = platforms.create(c * 960 + 9 * 32, 11 * 32,'1');
 
 		block22.body.immovable = true;
 
-		block23 = platforms.create(c * 960 + 12 * 32, 15 * 32,'block');
+		block23 = platforms.create(c * 960 + 12 * 32, 15 * 32,'1');
 
 		block23.body.immovable = true;
 
-		block24 = platforms.create(c * 960 + 14 * 32, 15 * 32,'block');
+		block24 = platforms.create(c * 960 + 14 * 32, 15 * 32,'1');
 
 		block24.body.immovable = true;
 
-		block25 = platforms.create(c * 960 + 6 * 32, 16 * 32,'block3breit');
+		block25 = platforms.create(c * 960 + 6 * 32, 16 * 32,'3b');
 
 		block25.body.immovable = true;
 
-		block26 = platforms.create(c * 960 + 3 * 32, 17 * 32,'block2breit');
+		block26 = platforms.create(c * 960 + 3 * 32, 17 * 32,'2b');
 
 		block26.body.immovable = true;
 
-		block27 = platforms.create(c * 960 + 5 * 32, 18 * 32,'block');
+		block27 = platforms.create(c * 960 + 5 * 32, 18 * 32,'1');
 
 		block27.body.immovable = true;
 
-		block28 = platforms.create(c * 960 + 3 * 32, 19 * 32,'block3breit');
+		block28 = platforms.create(c * 960 + 3 * 32, 19 * 32,'3b');
 
 		block28.body.immovable = true;
 
-		block29 = platforms.create(c * 960 + 6 * 32, 19 * 32,'block');
+		block29 = platforms.create(c * 960 + 6 * 32, 19 * 32,'1');
 
 		block29.body.immovable = true;
 
-		block30 = platforms.create(c * 960 + 0 * 32, 19 * 32,'block2breit');
+		block30 = platforms.create(c * 960 + 0 * 32, 19 * 32,'2b');
 
 		block30.body.immovable = true;
 
-		block31 = platforms.create(c * 960 + 9 * 32, 19 * 32,'block');
+		block31 = platforms.create(c * 960 + 9 * 32, 19 * 32,'1');
 
 		block31.body.immovable = true;
 
-		block32 = platforms.create(c * 960 + 11 * 32, 19 * 32,'block2breit');
+		block32 = platforms.create(c * 960 + 11 * 32, 19 * 32,'2b');
 
 		block32.body.immovable = true;
 
-		block33 = platforms.create(c * 960 + 14 * 32, 19 * 32,'block');
+		block33 = platforms.create(c * 960 + 14 * 32, 19 * 32,'1');
 
 		block33.body.immovable = true;
 
-		block34 = platforms.create(c * 960 + 3 * 32, 9 * 32,'blockquadrat');
+		block34 = platforms.create(c * 960 + 3 * 32, 9 * 32,'1');
 
 		block34.body.immovable = true;
 
-		block35 = platforms.create(c * 960 + 5 * 32, 9 * 32,'blockquadrat');
+		block35 = platforms.create(c * 960 + 5 * 32, 9 * 32,'1');
 
 		block35.body.immovable = true;
 
-		block36 = platforms.create(c * 960 + 7 * 32, 9 * 32,'block2hoch');
+		block36 = platforms.create(c * 960 + 7 * 32, 9 * 32,'2h');
 
 		block36.body.immovable = true;
 
-		block37 = platforms.create(c * 960 + 8 * 32, 10 * 32,'block');
+		block37 = platforms.create(c * 960 + 8 * 32, 10 * 32,'1');
 
 		block37.body.immovable = true;
 
-		block38 = platforms.create(c * 960 + 0 * 32, 9 * 32,'block2hoch');
+		block38 = platforms.create(c * 960 + 0 * 32, 9 * 32,'2h');
 
 		block38.body.immovable = true;
 
-		block39 = platforms.create(c * 960 + 1 * 32, 10 * 32,'block');
+		block39 = platforms.create(c * 960 + 1 * 32, 10 * 32,'1');
 
 		block39.body.immovable = true;
 
@@ -602,16 +601,168 @@ var playState = {
 		//timer2.reset();
 
 	},
+	platform3: function ()
+	{
+		var testen = this.schule();
 
+		block1 = platforms.create(c * 960, 18 * 32,'2b');
+
+		block1.body.immovable = true;
+
+		block2 = platforms.create(c * 960 + 5 * 32, 18 * 32,'2b');
+
+		block2.body.immovable = true;
+
+		block3 = platforms.create(c * 960 + 12 * 32, 18 * 32,'1');
+
+		block3.body.immovable = true;
+
+		block4 = platforms.create(c * 960 + 3 * 32, 17 * 32,'1');
+
+		block4.body.immovable = true;
+
+		block5 = platforms.create(c * 960 + 8 * 32, 17 * 32,'1');
+
+		block5.body.immovable = true;
+
+		block6 = platforms.create(c * 960 + 13 * 32, 16 * 32,'2b');
+
+		block6.body.immovable = true;
+
+		block7 = platforms.create(c * 960 + 4 * 32, 15 * 32,'2b');
+
+		block7.body.immovable = true;
+
+		block8 = platforms.create(c * 960 + 0 * 32, 13 * 32,'2h');
+
+		block8.body.immovable = true;
+
+		block9 = platforms.create(c * 960 + 8 * 32, 14 * 32,'1');
+
+		block9.body.immovable = true;
+
+		block10 = platforms.create(c * 960 + 12 * 32, 14 * 32,'1');
+
+		block10.body.immovable = true;
+
+		block11 = platforms.create(c * 960 + 2 * 32, 13 * 32,'1');
+
+		block11.body.immovable = true;
+
+	if (schule == true) {
+		klausur1 = klausuren.create(c * 960 + 4 * 32, 12 * 32, 'klausur');
+	} else if (schule == false) {
+		boost1 = booster.create(c * 960 + 4 * 32, 12 * 32, 'booster');
+	}
+
+		block12 = platforms.create(c * 960 + 7 * 32, 11 * 32,'2b');
+
+		block12.body.immovable = true;
+
+		block13 = platforms.create(c * 960 + 3 * 32, 8 * 32,'3h');
+
+		block13.body.immovable = true;
+
+		block14 = platforms.create(c * 960 + 12 * 32, 10 * 32,'3b');
+
+		block14.body.immovable = true;
+
+		block15 = platforms.create(c * 960 + 1 * 32, 9* 32,'3b');
+
+		block15.body.immovable = true;
+
+		block16 = platforms.create(c * 960 + 6 * 32, 8 * 32,'2h');
+
+		block16.body.immovable = true;
+
+		block17 = platforms.create(c * 960 + 7 * 32, 8 * 32,'1');
+
+		block17.body.immovable = true;
+
+		block18 = platforms.create(c * 960 + 8 * 32, 8 * 32,'3b');
+
+		block18.body.immovable = true;
+
+		block19 = platforms.create(c * 960 + 4 * 32, 7 * 32,'2b');
+
+		block19.body.immovable = true;
+
+		block20 = platforms.create(c * 960 + 1 * 32, 5 * 32,'1');
+
+		block20.body.immovable = true;
+
+		block21 = platforms.create(c * 960 + 8 * 32, 5 * 32,'2b');
+
+		block21.body.immovable = true;
+
+		block22 = platforms.create(c * 960 + 13 * 32, 5 * 32,'2b');
+
+		block22.body.immovable = true;
+
+		block23 = platforms.create(c * 960 + 0 * 32, 3 * 32,'2h');
+
+		block23.body.immovable = true;
+
+		block24 = platforms.create(c * 960 + 6 * 32, 4 * 32,'1');
+
+		block24.body.immovable = true;
+
+		block25 = platforms.create(c * 960 + 11 * 32, 4 * 32,'1');
+
+		block25.body.immovable = true;
+
+		block26 = platforms.create(c * 960 + 5 * 32, 3 * 32,'2b');
+
+		block26.body.immovable = true;
+
+		block27 = platforms.create(c * 960 + 3 * 32, 2 * 32,'2h');
+
+		block27.body.immovable = true;
+
+	if (schule == true) {
+	klausur1 = klausuren.create(c * 960 + 6 * 32, 2 * 32, 'klausur');
+} else if (schule == false) {
+	boost1 = booster.create(c * 960 + 6 * 32, 2 * 32, 'booster');
+}
+
+		block28 = platforms.create(c * 960 + 7 * 32, 1 * 32,'1');
+
+		block28.body.immovable = true;
+
+		block29 = platforms.create(c * 960 + 1 * 32, 1 * 32,'1');
+
+		block29.body.immovable = true;
+
+		block30 = platforms.create(c * 960 + 12 * 32, 0 * 32,'2h');
+
+		block30.body.immovable = true;
+
+		block31 = platforms.create(c * 960 + 0 * 32, 0 * 32,'3b');
+
+		block31.body.immovable = true;
+
+		block32 = platforms.create(c * 960 + 3 * 32, 0 * 32,'2b');
+
+		block32.body.immovable = true;
+
+		block33 = platforms.create(c * 960 + 9 * 32, 0 * 32,'2b');
+
+		block33.body.immovable = true;
+
+		c += 1;
+
+		timer1 = 0;
+
+		//timer2.reset();
+
+	},
 	platform1: function ()
 	{
 		var testen = this.schule();
 		if (schule == true) {
 			klausur1 = klausuren.create(c * 960, 68, 'klausur');
-			console.log('klause')
 		} else if (schule == false) {
 			boost2 = booster.create(c * 960, 68, 'booster')
-			console.log('rotte')
 		}
 
 		platform1 = platforms.create(c * 960, 100,'ground');
@@ -631,7 +782,10 @@ var playState = {
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform1, this);
 	},
-
+	destroyPlatform3Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform3, this);
+	},
 
 	destroyPlatform1: function ()
 	{
@@ -640,7 +794,13 @@ var playState = {
 			platform1.destroy();
 		}
 	},
-
+	destroyPlatform3: function ()
+	{
+		if (player3.x - platform1.x >= 480)
+		{
+			platform3.destroy();
+		}
+	},
 	destroyPlatform2Loader:	function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform2, this);

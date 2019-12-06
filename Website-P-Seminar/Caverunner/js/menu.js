@@ -28,13 +28,4 @@ start: function () {
   game.state.start("play");
   score = 0;
 },
-
-getlocation: function (){
-	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
-
-	if (latitude > 40.10130112483088 && latitude < 50.687777818108254) {
-		playerSpeed -= 100
-	}
-},
-
 };

@@ -20,13 +20,13 @@ preload: function () {
     game.load.image('backgroundmenu', 'assets/backgroundmenu.png');
     game.load.image('backgroundgameover', 'assets/backgroundgameover.png');
     game.load.image('ground', 'assets/platform.png');
-  	game.load.image('block', 'assets/Block.png');
+  	game.load.image('1', 'assets/Block.png');
     game.load.image('flaeche','assets/unten.png');
-  	game.load.image('block2hoch', 'assets/Block2Hoch');
-  	game.load.image('block2breit', 'assets/Block2Breit.png');
-  	game.load.image('block3hoch', 'assets/Block3Hoch.png');
-  	game.load.image('block3breit', 'assets/Block3Breit.png');
-  	game.load.image('blockquadrat', 'assets/BlockQuadrat.png');
+  	game.load.image('2h', 'assets/Block2Hoch');
+  	game.load.image('2b', 'assets/Block2Breit.png');
+  	game.load.image('3h', 'assets/Block3Hoch.png');
+  	game.load.image('3b', 'assets/Block3Breit.png');
+  	game.load.image('4x4', 'assets/BlockQuadrat.png');
     game.load.image('klausur', 'assets/klausur.png');
     game.load.image('booster', 'assets/booster.png');
   	game.load.spritesheet('level', 'assets/Dreiplattformen.png', 800, 400);
@@ -42,9 +42,7 @@ preload: function () {
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);
     game.load.spritesheet('restartbutton', 'assets/restartbutton.png', 64, 64);
     game.load.spritesheet('menubutton', 'assets/menubutton.png', 64, 64);
-    this.time.events.add(Phaser.Timer.SECOND * 5, function(){
-      start();
-    });
+  
 },
 create: function () {
 game.state.start("menu")

@@ -42,7 +42,8 @@ preload: function () {
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);
     game.load.spritesheet('restartbutton', 'assets/restartbutton.png', 64, 64);
     game.load.spritesheet('menubutton', 'assets/menubutton.png', 64, 64);
-  
+    game.load.spritesheet('pausebutton', 'assets/pausebutton.png', 64, 64);
+
 },
 create: function () {
 game.state.start("menu")

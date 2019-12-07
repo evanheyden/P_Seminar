@@ -134,6 +134,86 @@ pause: function() {
 		//We will enable physics for any object that is created in this group
 		platforms.enableBody = true;
 
+		blockA = platforms.create(0, 0,'3b');
+
+		blockA.body.immovable = true;
+
+		blockB = platforms.create( 3 * 32, 0,'3b');
+
+		blockB.body.immovable = true;
+
+		blockC = platforms.create(6 * 32, 0,'3b');
+
+		blockC.body.immovable = true;
+
+		blockD = platforms.create(9 * 32, 0,'3b');
+
+		blockD.body.immovable = true;
+
+		blockE = platforms.create(12 * 32, 0,'3b');
+
+		blockE.body.immovable = true;
+
+		blockF = platforms.create(0 * 32, 19 * 32,'3b');
+
+		blockF.body.immovable = true;
+
+		blockG = platforms.create(3 * 32, 19* 32,'3b');
+
+		blockG.body.immovable = true;
+
+		blockH = platforms.create(6 * 32, 19 * 32,'3b');
+
+		blockH.body.immovable = true;
+
+		blockI = platforms.create( 9 * 32, 19 * 32,'3b');
+
+		blockI.body.immovable = true;
+
+		blockJ = platforms.create( 12 * 32, 19 * 32,'3b');
+
+		blockJ.body.immovable = true;
+
+		blockK = platforms.create(15*32, 0,'3b');
+
+		blockK.body.immovable = true;
+
+		blockL = platforms.create( 18 * 32, 0,'3b');
+
+		blockL.body.immovable = true;
+
+		blockM = platforms.create(21 * 32, 0,'3b');
+
+		blockM.body.immovable = true;
+
+		blockN = platforms.create(24 * 32, 0,'3b');
+
+		blockN.body.immovable = true;
+
+		blockO = platforms.create(27 * 32, 0,'3b');
+
+		blockO.body.immovable = true;
+
+		blockP = platforms.create(27 * 32, 19 * 32,'3b');
+
+		blockP.body.immovable = true;
+
+		blockQ = platforms.create(15 * 32, 19* 32,'3b');
+
+		blockQ.body.immovable = true;
+
+		blockR = platforms.create(18 * 32, 19 * 32,'3b');
+
+		blockR.body.immovable = true;
+
+		blockS = platforms.create( 21 * 32, 19 * 32,'3b');
+
+		blockS.body.immovable = true;
+
+		blockT = platforms.create( 24 * 32, 19 * 32,'3b');
+
+		blockT.body.immovable = true;
+
 		// hier werden die platformen für oben und unten erstellt
 		for (var i = 0; i < 1000; i++)
 		{
@@ -362,6 +442,8 @@ pause: function() {
 		{
 			player1.body.gravity.y = -300;
 			player2.body.gravity.y = 300;
+			player1.scale.y *= -1;
+			player2.scale.y *= -1;
 		}
 
 
@@ -369,6 +451,8 @@ pause: function() {
 		{
 			player1.body.gravity.y = 300;
 			player2.body.gravity.y = -300;
+			player1.scale.y *= -1;
+			player2.scale.y *= -1;
 		}
 
 		// hier soll die Sprungrichtung an die Schwerkraft-Richtung angepasst werden, allerdings funktioniert das momentan nur bei positiver Schwerkraft:
@@ -729,7 +813,7 @@ pause: function() {
 
 		block39.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 
@@ -907,7 +991,7 @@ pause: function() {
 
 		block81.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 
@@ -1033,7 +1117,7 @@ pause: function() {
 
 		block111 = platforms.create(c * 960 + 11.5 * 32, 16 * 32,'2h');
 
-		block1111.body.immovable = true;
+		block111.body.immovable = true;
 
 		block112 = platforms.create(c * 960 + 4 * 32, 17 * 32,'1');
 
@@ -1059,7 +1143,7 @@ pause: function() {
 
 		block117.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 	},
@@ -1210,7 +1294,7 @@ pause: function() {
 
 		block153.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 	},
@@ -1337,7 +1421,7 @@ pause: function() {
 
 		block183.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 	},
@@ -1444,7 +1528,7 @@ pause: function() {
 
 		block208.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 	},
@@ -1601,7 +1685,7 @@ pause: function() {
 
 		block33.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 

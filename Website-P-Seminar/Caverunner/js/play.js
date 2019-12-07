@@ -459,7 +459,7 @@ pause: function() {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*2)+1;
+			x = Math.floor(Math.random()*7)+1;
 
 			switch (x)
 			{
@@ -475,6 +475,36 @@ pause: function() {
 					//c += 1;
 					this.platform2();
 					this.destroyPlatform2Loader();
+					break;
+				}
+				case 3:
+				{
+					this.platform3();
+					this.destroyPlatform3Loader();
+					break;
+				}
+				case 4:
+				{
+					this.platform4();
+					this.destroyPlatform4Loader();
+					break;
+				}
+				case 5:
+				{
+					this.platform5();
+					this.destroyPlatform5Loader();
+					break;
+				}
+				case 6:
+				{
+					this.platform6();
+					this.destroyPlatform6Loader();
+					break;
+				}
+				case 7:
+				{
+					this.platform7();
+					this.destroyPlatform7Loader();
 					break;
 				}
 			}
@@ -881,7 +911,7 @@ pause: function() {
 
 		timer1 = 0;
 
-	}
+	},
 
 	platform4: function()
 	{
@@ -1032,7 +1062,7 @@ pause: function() {
 		c += 1;
 
 		timer1 = 0;
-	}
+	},
 
 	platform5: function ()
 	{
@@ -1124,9 +1154,9 @@ pause: function() {
 
 		block139.body.immovable = true;
 
-		block40 = platforms.create(c * 960 + 4 * 32, 12 * 32,'1');
+		block140 = platforms.create(c * 960 + 4 * 32, 12 * 32,'1');
 
-		block40.body.immovable = true;
+		block140.body.immovable = true;
 
 		block141 = platforms.create(c * 960 + 5 * 32, 13 * 32,'1');
 
@@ -1179,7 +1209,11 @@ pause: function() {
 		block153 = platforms.create(c * 960 + 14 * 32, 19 * 32,'1');
 
 		block153.body.immovable = true;
-	}
+
+		c += 1;
+
+		timer1 = 0;
+	},
 
 	platform6: function()
 	{
@@ -1239,7 +1273,7 @@ pause: function() {
 
 		block167.body.immovable = true;
 
-		block168 = platforms.create(c * 960 + 0 * 32, 8 * 32,'2');
+		block168 = platforms.create(c * 960 + 0 * 32, 8 * 32,'2h');
 
 		block168.body.immovable = true;
 
@@ -1302,9 +1336,118 @@ pause: function() {
 		block183= platforms.create(c * 960 + 14 * 32, 19 * 32,'1');
 
 		block183.body.immovable = true;
-	}
 
-	
+		c += 1;
+
+		timer1 = 0;
+	},
+
+	platform7: function ()
+	{
+		block184= platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
+
+		block184.body.immovable = true;
+
+		block185= platforms.create(c * 960 + 6 * 32, 0 * 32,'2b');
+
+		block185.body.immovable = true;
+
+		block186= platforms.create(c * 960 + 10 * 32, 0 * 32,'3b');
+
+		block186.body.immovable = true;
+
+		block187= platforms.create(c * 960 + 13 * 32, 0 * 32,'2b');
+
+		block187.body.immovable = true;
+
+		block188= platforms.create(c * 960 + 2 * 32, 2 * 32,'1');
+
+		block188.body.immovable = true;
+
+		block189= platforms.create(c * 960 + 13 * 32, 2.5 * 32,'1');
+
+		block189.body.immovable = true;
+
+		block190= platforms.create(c * 960 + 12 * 32, 3 * 32,'3h');
+
+		block190.body.immovable = true;
+
+		block191= platforms.create(c * 960 + 5 * 32, 4 * 32,'1');
+
+		block191.body.immovable = true;
+
+		block192= platforms.create(c * 960 + 11 * 32, 6 * 32,'2h');
+
+		block192.body.immovable = true;
+
+		block193= platforms.create(c * 960 + 10 * 32, 8 * 32,'1');
+
+		block193.body.immovable = true;
+
+		block194= platforms.create(c * 960 + 0 * 32, 9 * 32,'4x4');
+
+		block194.body.immovable = true;
+
+		block195= platforms.create(c * 960 + 9 * 32, 9 * 32,'1');
+
+		block195.body.immovable = true;
+
+		block196= platforms.create(c * 960 + 10 * 32, 9 * 32,'2h');
+
+		block196.body.immovable = true;
+
+		block197= platforms.create(c * 960 + 13 * 32, 9 * 32,'4x4');
+
+		block197.body.immovable = true;
+
+		block198= platforms.create(c * 960 + 6 * 32, 9.5 * 32,'3b');
+
+		block198.body.immovable = true;
+
+		block199= platforms.create(c * 960 + 5 * 32, 10 * 32,'1');
+
+		block199.body.immovable = true;
+
+		block200= platforms.create(c * 960 + 4 * 32, 11 * 32,'1');
+
+		block200.body.immovable = true;
+
+		block201= platforms.create(c * 960 + 10 * 32, 11 * 32,'3h');
+
+		block201.body.immovable = true;
+
+		block202= platforms.create(c * 960 + 3 * 32, 12 * 32,'2h');
+
+		block202.body.immovable = true;
+
+		block203= platforms.create(c * 960 + 2 * 32, 14 * 32,'3h');
+
+		block203.body.immovable = true;
+
+		block204= platforms.create(c * 960 + 1 * 32, 16.5 * 32,'1');
+
+		block204.body.immovable = true;
+
+		block205= platforms.create(c * 960 + 0 * 32, 19 * 32,'3b');
+
+		block205.body.immovable = true;
+
+		block206= platforms.create(c * 960 + 3 * 32, 19 * 32,'3b');
+
+		block206.body.immovable = true;
+
+		block207= platforms.create(c * 960 + 9 * 32, 19 * 32,'2b');
+
+		block207.body.immovable = true;
+
+		block208= platforms.create(c * 960 + 14 * 32, 19 * 32,'1');
+
+		block208.body.immovable = true;
+
+		c += 1;
+
+		timer1 = 0;
+	},
 
 	platform8: function ()
 	{
@@ -1477,6 +1620,31 @@ pause: function() {
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform2, this);
 	},
 
+	destroyPlatform3Loader:	function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform3, this);
+	},
+
+	destroyPlatform4Loader:	function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform4, this);
+	},
+
+	destroyPlatform5Loader:	function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform5, this);
+	},
+
+	destroyPlatform6Loader:	function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform6, this);
+	},
+
+	destroyPlatform7Loader:	function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform7, this);
+	},
+
 	destroyPlatform8Loader: function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform8, this);
@@ -1489,6 +1657,9 @@ pause: function() {
 			platform1.destroy();
 		}
 	},
+
+
+
 	destroyPlatform8: function ()
 	{
 		if (player3.x - platform3.x >= 480)
@@ -1502,7 +1673,7 @@ pause: function() {
 
 	destroyPlatform2:	function ()
 	{
-		//if (player3.x - platform1.x <= 960)
+		if (player3.x - block1.x >= 480)
 		{
 			block1.destroy();
 			block2.destroy();
@@ -1545,6 +1716,213 @@ pause: function() {
 			block39.destroy();
 		}
 	},
+
+	destroyPlatform3: function ()
+	{
+		if (player3.x - block40.x >= 480)
+		{
+			block40.destroy();
+			block41.destroy();
+			block42.destroy();
+			block43.destroy();
+			block44.destroy();
+			block45.destroy();
+			block46.destroy();
+			block47.destroy();
+			block48.destroy();
+			block49.destroy();
+			block50.destroy();
+			block51.destroy();
+			block52.destroy();
+			block53.destroy();
+			block54.destroy();
+			block55.destroy();
+			block56.destroy();
+			block57.destroy();
+			block58.destroy();
+			block59.destroy();
+			block60.destroy();
+			block61.destroy();
+			block62.destroy();
+			block63.destroy();
+			block64.destroy();
+			block65.destroy();
+			block66.destroy();
+			block67.destroy();
+			block68.destroy();
+			block69.destroy();
+			block70.destroy();
+			block71.destroy();
+			block72.destroy();
+			block73.destroy();
+			block74.destroy();
+			block75.destroy();
+			block76.destroy();
+			block77.destroy();
+			block78.destroy();
+			block79.destroy();
+			block80.destroy();
+			block81.destroy();
+		}
+	},
+
+	destroyPlatform4: function ()
+	{
+		if (player3.x - block82.x >= 480)
+		{
+			block82.destroy();
+			block83.destroy();
+			block84.destroy();
+			block85.destroy();
+			block86.destroy();
+			block87.destroy();
+			block88.destroy();
+			block89.destroy();
+			block90.destroy();
+			block91.destroy();
+			block92.destroy();
+			block93.destroy();
+			block94.destroy();
+			block95.destroy();
+			block96.destroy();
+			block97.destroy();
+			block98.destroy();
+			block99.destroy();
+			block100.destroy();
+			block101.destroy();
+			block102.destroy();
+			block103.destroy();
+			block104.destroy();
+			block105.destroy();
+			block106.destroy();
+			block107.destroy();
+			block108.destroy();
+			block109.destroy();
+			block110.destroy();
+			block111.destroy();
+			block112.destroy();
+			block113.destroy();
+			block114.destroy();
+			block115.destroy();
+			block116.destroy();
+			block117.destroy();
+		}
+	},
+
+	destroyPlatform5: function ()
+	{
+		if (player3.x - block118.x >= 480)
+		{
+			block118.destroy();
+			block119.destroy();
+			block120.destroy();
+			block121.destroy();
+			block122.destroy();
+			block123.destroy();
+			block124.destroy();
+			block125.destroy();
+			block126.destroy();
+			block127.destroy();
+			block128.destroy();
+			block129.destroy();
+			block130.destroy();
+			block131.destroy();
+			block132.destroy();
+			block133.destroy();
+			block134.destroy();
+			block135.destroy();
+			block136.destroy();
+			block137.destroy();
+			block138.destroy();
+			block139.destroy();
+			block140.destroy();
+			block141.destroy();
+			block142.destroy();
+			block143.destroy();
+			block144.destroy();
+			block145.destroy();
+			block146.destroy();
+			block147.destroy();
+			block148.destroy();
+			block149.destroy();
+			block150.destroy();
+			block151.destroy();
+			block152.destroy();
+			block153.destroy();
+		}
+	},
+
+
+
+	destroyPlatform6: function ()
+	{
+		if (player3.x - block154.x >= 480)
+		{
+			block154.destroy();
+			block155.destroy();
+			block156.destroy();
+			block157.destroy();
+			block158.destroy();
+			block159.destroy();
+			block160.destroy();
+			block161.destroy();
+			block162.destroy();
+			block163.destroy();
+			block164.destroy();
+			block165.destroy();
+			block166.destroy();
+			block167.destroy();
+			block168.destroy();
+			block169.destroy();
+			block170.destroy();
+			block171.destroy();
+			block172.destroy();
+			block173.destroy();
+			block174.destroy();
+			block175.destroy();
+			block176.destroy();
+			block177.destroy();
+			block178.destroy();
+			block179.destroy();
+			block180.destroy();
+			block181.destroy();
+			block182.destroy();
+			block183.destroy();
+		}
+	},
+
+	destroyPlatform7: function ()
+	{
+		if (player3.x - block184.x >= 480)
+		{
+			block184.destroy();
+			block185.destroy();
+			block186.destroy();
+			block187.destroy();
+			block189.destroy();
+			block190.destroy();
+			block191.destroy();
+			block192.destroy();
+			block193.destroy();
+			block194.destroy();
+			block195.destroy();
+			block196.destroy();
+			block197.destroy();
+			block198.destroy();
+			block199.destroy();
+			block200.destroy();
+			block201.destroy();
+			block202.destroy();
+			block202.destroy();
+			block203.destroy();
+			block204.destroy();
+			block205.destroy();
+			block206.destroy();
+			block207.destroy();
+			block208.destroy();
+		}
+	},
+
 
 	Boost: function(player, boost)
 	{

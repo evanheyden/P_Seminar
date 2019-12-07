@@ -1,4 +1,4 @@
-Hallo
+//Hallo
 var player1;
 var player2;
 var platforms;
@@ -70,6 +70,7 @@ let longitude = 0;
 var schule = false;
 var timeCheck;
 var playState = {
+
 	getlocation: function (){
 	//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 		console.log('layer1')
@@ -245,13 +246,14 @@ pause: function() {
 
 		var bau = this.platform3();
 		var pausebutton = this.game.add.button(870, 30, 'pausebutton', this.pause, this, 1, 0);
+		pausebutton.fixedToCamera = true;
 	},
 
 
 
 	update: function () {
 
-		var unpause = this.game.input.onDown.add(unpause, self);
+	//	var unpause = this.game.input.onDown.add(unpause, self);
 		function gameover() {
 			game.state.start("gameover");
 		}
@@ -1033,7 +1035,7 @@ pause: function() {
 
 		block111 = platforms.create(c * 960 + 11.5 * 32, 16 * 32,'2h');
 
-		block1111.body.immovable = true;
+		block111.body.immovable = true;
 
 		block112 = platforms.create(c * 960 + 4 * 32, 17 * 32,'1');
 

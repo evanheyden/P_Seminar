@@ -22,10 +22,10 @@ preload: function () {
     game.load.image('ground', 'assets/platform.png');
   	game.load.image('1', 'assets/Block.png');
     game.load.image('flaeche','assets/unten.png');
-  	game.load.image('2h', 'assets/2h');
-  	game.load.image('2b', 'assets/2b.png');
-  	game.load.image('3h', 'assets/3h.png');
-  	game.load.image('3b', 'assets/3b.png');
+  	game.load.image('2h', 'assets/Block2Hoch.png');
+  	game.load.image('2b', 'assets/Block2Breit.png');
+  	game.load.image('3h', 'assets/Block3Hoch.png');
+  	game.load.image('3b', 'assets/Block3Breit.png');
   	game.load.image('4x4', 'assets/BlockQuadrat.png');
     game.load.image('klausur', 'assets/klausur.png');
     game.load.image('booster', 'assets/booster.png');
@@ -36,7 +36,7 @@ preload: function () {
   	game.load.spritesheet('wall', 'assets/WallSprite.png',32,600);
   	game.load.spritesheet('bloblin', 'assets/Bloblin4.png',32,32);
   	game.load.spritesheet('roblin', 'assets/Roblin.png',32,32);
-  	game.load.spritesheet('background', 'assets/Hintergrund.png', 4000, 600);
+  	game.load.spritesheet('background', 'assets/Hintergrund.png', 4000, 640);
     game.load.spritesheet('pickaxe', 'assets/picksmall.png', 20,32);
     game.load.spritesheet('sword', 'assets/swordsmall.png', 23,32);
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);

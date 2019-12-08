@@ -72,38 +72,38 @@ var timeCheck;
 var playState = {
 
 	getlocation: function (){
-	//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
+		//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 		console.log('layer1')
 	},
 	schule: function() {
-	if (latitude > 40 && latitude < 50) {
-		var schule = true;
-	} else {
-		var schule = false;
-	}
+		if (latitude > 40 && latitude < 50) {
+			var schule = true;
+		} else {
+			var schule = false;
+		}
 
-},
+	},
 
-pause: function() {
-	game.paused = true;
-	this.input.disabled = true;
+	pause: function() {
+		game.paused = true;
+		this.input.disabled = true;
 
-	this.game.physics.gravity.y = 0;
+		this.game.physics.gravity.y = 0;
 
-	player1.body.velocity.x = 0;
+		player1.body.velocity.x = 0;
 
-	player1.body.velocity.y = 0;
+		player1.body.velocity.y = 0;
 
-	player2.body.velocity.x = 0;
+		player2.body.velocity.x = 0;
 
-	player2.body.velocity.y = 0;
+		player2.body.velocity.y = 0;
 
-	player3.body.velocity.x = 0;
+		player3.body.velocity.x = 0;
 
-	player3.body.velocity.y = 0;
+		player3.body.velocity.y = 0;
 
 		console.log('success')
-},
+	},
 
 	create: function () {
 		var location = this.getlocation();
@@ -216,17 +216,17 @@ pause: function() {
 		blockT.body.immovable = true;
 
 		/*for (var i = 0; i < 1000; i++)
-			{
-				var unten = unten + i;
-				unten = platforms.create(i*30, 600,'platform');
-				unten.body.immovable = true;
-			}
-			for (var i = 0; i < 1000; i++)
-			{
-				var nice = nice + i;
-				nice = platforms.create(i*30, -30.9,'platform');
-				nice.body.immovable = true;
-			}*/
+		{
+			var unten = unten + i;
+			unten = platforms.create(i*30, 600,'platform');
+			unten.body.immovable = true;
+		}
+		for (var i = 0; i < 1000; i++)
+		{
+			var nice = nice + i;
+			nice = platforms.create(i*30, -30.9,'platform');
+			nice.body.immovable = true;
+		}*/
 		//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
 		player1 = this.game.add.sprite(200, 300, 'pickaxe');
@@ -332,7 +332,7 @@ pause: function() {
 
 	update: function () {
 
-	//	var unpause = this.game.input.onDown.add(unpause, self);
+		//	var unpause = this.game.input.onDown.add(unpause, self);
 		function gameover() {
 			game.state.start("gameover");
 		}
@@ -496,17 +496,17 @@ pause: function() {
 
 		else if (leftButton.isDown && player2.body.touching.up == true)
 		{
-		//  Move to the left
-		player2.body.velocity.x = -playerSpeed;
+			//  Move to the left
+			player2.body.velocity.x = -playerSpeed;
 
-		player2.animations.play('leftdown2');
+			player2.animations.play('leftdown2');
 		}
 
 		else if (leftButton.isDown && player2.body.touching.down == false)
 		{
-		player2.body.velocity.x = -playerSpeedJumping;
+			player2.body.velocity.x = -playerSpeedJumping;
 
-		player2.animations.play('leftdown2');
+			player2.animations.play('leftdown2');
 		}
 
 		else if (rightButton.isDown && player2.body.touching.down == true)
@@ -518,18 +518,18 @@ pause: function() {
 		}
 
 		else if (rightButton.isDown && player2.body.touching.up == true)
-	    {
-	        //  Move to the right
-	        player2.body.velocity.x = playerSpeed;
+		{
+			//  Move to the right
+			player2.body.velocity.x = playerSpeed;
 
-	        player2.animations.play('rightdown2');
-	    }
+			player2.animations.play('rightdown2');
+		}
 
 		else if (rightButton.isDown && player2.body.touching.down == false)
 		{
-	        player2.body.velocity.x = playerSpeedJumping;
+			player2.body.velocity.x = playerSpeedJumping;
 
-	        player2.animations.play('rightdown2');
+			player2.animations.play('rightdown2');
 		}
 
 		else
@@ -544,7 +544,7 @@ pause: function() {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*8)+1;
+			x = Math.floor(Math.random()*1)+1;
 
 			switch (x)
 			{
@@ -602,6 +602,12 @@ pause: function() {
 				{
 					this.platform9();
 					this.destroyPlatform9Loader();
+					break;
+				}
+				case 10:
+				{
+					this.platform10();
+					this.destroyPlatform10Loader();
 					break;
 				}
 			}
@@ -1594,11 +1600,11 @@ pause: function() {
 
 		block11.body.immovable = true;
 
-	if (schule == true) {
-		klausur1 = klausuren.create(c * 960 + 4 * 32, 13 * 32, 'klausur');
-	} else if (schule == false) {
-		boost1 = booster.create(c * 960 + 4 * 32, 13 * 32, 'booster');
-	}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 4 * 32, 13 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 4 * 32, 13 * 32, 'booster');
+		}
 
 		block12 = platforms.create(c * 960 + 7 * 32, 12 * 32,'2b');
 
@@ -1664,11 +1670,11 @@ pause: function() {
 
 		block27.body.immovable = true;
 
-	if (schule == true) {
-	klausur1 = klausuren.create(c * 960 + 6 * 32, 3 * 32, 'klausur');
-} else if (schule == false) {
-	boost1 = booster.create(c * 960 + 6 * 32, 3 * 32, 'booster');
-}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 6 * 32, 3 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 6 * 32, 3 * 32, 'booster');
+		}
 
 		block28 = platforms.create(c * 960 + 7 * 32, 2 * 32,'1');
 
@@ -1876,6 +1882,96 @@ pause: function() {
 		timer1 = 0;
 	},
 
+	platform10: function ()
+	{
+		block250= platforms.create(c * 960 + 0 * 32, 0 * 32,'3b');
+
+		block250.body.immovable = true;
+
+		block251= platforms.create(c * 960 + 3 * 32, 0 * 32,'3b');
+
+		block251.body.immovable = true;
+
+		block252= platforms.create(c * 960 + 6 * 32, 0 * 32,'2b');
+
+		block252.body.immovable = true;
+
+		block253= platforms.create(c * 960 + 9 * 32, 0 * 32,'3b');
+
+		block253.body.immovable = true;
+
+		block254= platforms.create(c * 960 + 12 * 32, 0 * 32,'3b');
+
+		block254.body.immovable = true;
+
+		block255= platforms.create(c * 960 + 0 * 32, 19 * 32,'3b');
+
+		block255.body.immovable = true;
+
+		block256= platforms.create(c * 960 + 3 * 32, 19 * 32,'3b');
+
+		block256.body.immovable = true;
+
+		block257= platforms.create(c * 960 + 6 * 32, 19 * 32,'2b');
+
+		block257.body.immovable = true;
+
+		block258= platforms.create(c * 960 + 9 * 32, 19 * 32,'3b');
+
+		block258.body.immovable = true;
+
+		block259= platforms.create(c * 960 + 12 * 32, 19 * 32,'3b');
+
+		block259.body.immovable = true;
+
+		block260= platforms.create(c * 960 + 8 * 32, 0 * 32,'3h');
+
+		block260.body.immovable = true;
+
+		block261= platforms.create(c * 960 + 8 * 32, 3 * 32,'3h');
+
+		block261.body.immovable = true;
+
+		block262= platforms.create(c * 960 + 8 * 32, 6 * 32,'2h');
+
+		block262.body.immovable = true;
+
+		block263= platforms.create(c * 960 + 8 * 32, 17 * 32,'3h');
+
+		block263.body.immovable = true;
+
+		block264= platforms.create(c * 960 + 8 * 32, 14 * 32,'3h');
+
+		block264.body.immovable = true;
+
+		block265= platforms.create(c * 960 + 8 * 32, 12 * 32,'2h');
+
+		block265.body.immovable = true;
+
+		block266= platforms.create(c * 960 + 10 * 32, 6 * 32,'2b');
+
+		block266.body.immovable = true;
+
+		block267= platforms.create(c * 960 + 10 * 32, 13 * 32,'2b');
+
+		block267.body.immovable = true;
+
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 12 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 12 * 32, 'booster');
+		}
+
+		c += 0.5;
+
+		timer1 = 0;
+	},
+
 	destroyPlatform1Loader: function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform1, this);
@@ -1916,9 +2012,13 @@ pause: function() {
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform8, this);
 	},
 	destroyPlatform9Loader: function ()
-		{
-			game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform9, this);
-		},
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform9, this);
+	},
+	destroyPlatform10Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform10, this);
+	},
 	destroyPlatform1: function ()
 	{
 		if (player3.x - platform1.x >= 480)
@@ -2240,6 +2340,31 @@ pause: function() {
 		}
 	},
 
+	destroyPlatform10: function ()
+	{
+		if (player3.x - block250.x >= 480)
+		{
+			block250.destroy();
+			block251.destroy();
+			block252.destroy();
+			block253.destroy();
+			block254.destroy();
+			block255.destroy();
+			block256.destroy();
+			block257.destroy();
+			block258.destroy();
+			block259.destroy();
+			block260.destroy();
+			block261.destroy();
+			block262.destroy();
+			block263.destroy();
+			block264.destroy();
+			block265.destroy();
+			block266.destroy();
+			block267.destroy();
+		//	block268.destroy();
+		}
+	},
 
 	Boost: function(player, boost)
 	{
@@ -2248,22 +2373,22 @@ pause: function() {
 			playerSpeed += 20
 			playerJump += 50
 			this.time.events.add(Phaser.Timer.SECOND * 3, function(){
-			playerSpeed -= 20
-			playerJump -= 50
+				playerSpeed -= 20
+				playerJump -= 50
 			});
 		}
 	},
-Stress: function(player, klausur) {
-	if (schule == true) {
-		klausur.kill();
-		playerSpeed -= 100
-		playerJump -= 25
-		this.time.events.add(Phaser.Timer.SECOND * 3, function(){
-		playerSpeed += 100
-		playerJump += 25
-		});
-	}
-},
+	Stress: function(player, klausur) {
+		if (schule == true) {
+			klausur.kill();
+			playerSpeed -= 100
+			playerJump -= 25
+			this.time.events.add(Phaser.Timer.SECOND * 3, function(){
+				playerSpeed += 100
+				playerJump += 25
+			});
+		}
+	},
 
 
 };

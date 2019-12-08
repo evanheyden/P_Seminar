@@ -1877,7 +1877,7 @@ var playState = {
 
 		block249.body.immovable = true;
 
-		c += 1;
+		c += 0.5;
 
 		timer1 = 0;
 	},

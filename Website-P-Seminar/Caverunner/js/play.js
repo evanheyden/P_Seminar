@@ -544,7 +544,7 @@ var playState = {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*1)+1;
+			x = Math.floor(Math.random()*9)+1;
 
 			switch (x)
 			{

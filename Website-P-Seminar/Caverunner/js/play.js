@@ -215,7 +215,7 @@ pause: function() {
 
 		blockT.body.immovable = true;
 
-		for (var i = 0; i < 1000; i++)
+		/*for (var i = 0; i < 1000; i++)
 			{
 				var unten = unten + i;
 				unten = platforms.create(i*30, 600,'platform');
@@ -226,7 +226,7 @@ pause: function() {
 				var nice = nice + i;
 				nice = platforms.create(i*30, -30.9,'platform');
 				nice.body.immovable = true;
-			}
+			}*/
 		//hier werden die beiden Spieler erschaffen (die zweite Zahl ist anders, damit sie nicht auf der gleichen Stelle spawnen):
 
 		player1 = this.game.add.sprite(200, 300, 'pickaxe');

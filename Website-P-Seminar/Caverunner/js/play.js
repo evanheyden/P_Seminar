@@ -88,7 +88,7 @@ var playState = {
 		game.paused = true;
 		this.input.disabled = true;
 
-		this.game.physics.gravity.y = 0;
+		this.game.physics.gravity = 0;
 
 		player1.body.velocity.x = 0;
 
@@ -332,7 +332,7 @@ var playState = {
 
 	update: function () {
 
-		//	var unpause = this.game.input.onDown.add(unpause, self);
+		//var unpause = this.game.input.onDown.add(unpause, self);
 		function gameover() {
 			game.state.start("gameover");
 		}
@@ -544,7 +544,7 @@ var playState = {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*9)+1;
+			x = Math.floor(Math.random()*10)+1;
 
 			switch (x)
 			{
@@ -608,6 +608,12 @@ var playState = {
 				{
 					this.platform10();
 					this.destroyPlatform10Loader();
+					break;
+				}
+				case 11:
+				{
+					this.platform11();
+					this.destroyPlatform11Loader();
 					break;
 				}
 			}
@@ -1882,6 +1888,8 @@ var playState = {
 		timer1 = 0;
 	},
 
+
+
 	platform10: function ()
 	{
 		block250= platforms.create(c * 960 + 0 * 32, 0 * 32,'3b');
@@ -1972,6 +1980,147 @@ var playState = {
 		timer1 = 0;
 	},
 
+	platform11: function ()
+	{
+		block268= platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
+
+		block268.body.immovable = true;
+
+		block269= platforms.create(c * 960 + 0 * 32, 10 * 32,'3b');
+
+		block269.body.immovable = true;
+
+		block270= platforms.create(c * 960 + 0 * 32, 19 * 32,'1');
+
+		block270.body.immovable = true;
+
+		block271= platforms.create(c * 960 + 2 * 32, 1 * 32,'2b');
+
+		block271.body.immovable = true;
+
+		block272= platforms.create(c * 960 + 4* 32, 0 * 32,'1');
+
+		block272.body.immovable = true;
+
+		block273= platforms.create(c * 960 + 5 * 32, 1 * 32,'1');
+
+		block273.body.immovable = true;
+
+		block274= platforms.create(c * 960 + 7 * 32, 2 * 32,'1');
+
+		block274.body.immovable = true;
+
+		block275= platforms.create(c * 960 + 9 * 32, 1 * 32,'1');
+
+		block275.body.immovable = true;
+
+		block276= platforms.create(c * 960 + 10 * 32, 0 * 32,'1');
+
+		block276.body.immovable = true;
+
+		block277= platforms.create(c * 960 + 11 * 32, 1 * 32,'2b');
+
+		block277.body.immovable = true;
+
+		block278= platforms.create(c * 960 + 14 * 32, 0 * 32,'1');
+
+		block278.body.immovable = true;
+
+		block279= platforms.create(c * 960 + 2 * 32, 4 * 32,'3b');
+
+		block279.body.immovable = true;
+
+		block280= platforms.create(c * 960 + 2 * 32, 10 * 32,'3b');
+
+		block280.body.immovable = true;
+
+		block281= platforms.create(c * 960 + 6 * 32, 7 * 32,'3b');
+
+		block281.body.immovable = true;
+
+		block282= platforms.create(c * 960 + 3 * 32, 9 * 32,'4x4');
+
+		block282.body.immovable = true;
+
+		block283= platforms.create(c * 960 + 10 * 32, 9 * 32,'4x4');
+
+		block283.body.immovable = true;
+
+		block284= platforms.create(c * 960 + 12 * 32, 10 * 32,'3b');
+
+		block284.body.immovable = true;
+
+		block285= platforms.create(c * 960 + 6 * 32, 13 * 32,'3b');
+
+		block285.body.immovable = true;
+
+		block286= platforms.create(c * 960 + 2 * 32, 15 * 32,'3b');
+
+		block286.body.immovable = true;
+
+		block287= platforms.create(c * 960 + 10 * 32, 15 * 32,'3b');
+
+		block287.body.immovable = true;
+
+		block288= platforms.create(c * 960 + 2 * 32, 18 * 32,'2b');
+
+		block288.body.immovable = true;
+
+		block289= platforms.create(c * 960 + 4 * 32, 19 * 32,'1');
+
+		block289.body.immovable = true;
+
+		block290= platforms.create(c * 960 + 5 * 32, 18 * 32,'1');
+
+		block290.body.immovable = true;
+
+		block291= platforms.create(c * 960 + 7 * 32, 17 * 32,'1');
+
+		block291.body.immovable = true;
+
+		block292= platforms.create(c * 960 + 9 * 32, 18 * 32,'1');
+
+		block292.body.immovable = true;
+
+		block293= platforms.create(c * 960 + 8 * 32, 19 * 32,'1');
+
+		block293.body.immovable = true;
+
+		block294= platforms.create(c * 960 + 11 * 32, 18 * 32,'2b');
+
+		block294.body.immovable = true;
+
+		block295= platforms.create(c * 960 + 14 * 32, 19 * 32,'1');
+
+		block295.body.immovable = true;
+
+		block296= platforms.create(c * 960 + 10 * 32, 19 * 32,'1');
+
+		block296.body.immovable = true;
+
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 1 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 1 * 32, 'booster');
+		}
+
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 14 * 32, 9 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 14 * 32, 9 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 7 * 32, 12 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 7 * 32, 12 * 32, 'booster');
+		}
+
+		c += 0.5;
+
+		timer1 = 0;
+	},
+
+
 	destroyPlatform1Loader: function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform1, this);
@@ -2018,6 +2167,10 @@ var playState = {
 	destroyPlatform10Loader: function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform10, this);
+	},
+	destroyPlatform11Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform11, this);
 	},
 	destroyPlatform1: function ()
 	{
@@ -2362,7 +2515,42 @@ var playState = {
 			block265.destroy();
 			block266.destroy();
 			block267.destroy();
-		//	block268.destroy();
+		}
+	},
+
+	destroyPlatform10: function ()
+	{
+		if (player3.x - block268.x >= 480)
+		{
+			block268.destroy();
+			block269.destroy();
+			block270.destroy();
+			block271.destroy();
+			block272.destroy();
+			block273.destroy();
+			block274.destroy();
+			block275.destroy();
+			block276.destroy();
+			block277.destroy();
+			block278.destroy();
+			block279.destroy();
+			block280.destroy();
+			block281.destroy();
+			block282.destroy();
+			block283.destroy();
+			block284.destroy();
+			block285.destroy();
+			block286.destroy();
+			block287.destroy();
+			block288.destroy();
+			block289.destroy();
+			block290.destroy();
+			block291.destroy();
+			block292.destroy();
+			block293.destroy();
+			block294.destroy();
+			block295.destroy();
+			block296.destroy();
 		}
 	},
 

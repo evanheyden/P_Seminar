@@ -36,7 +36,7 @@ preload: function () {
   	game.load.spritesheet('wall', 'assets/WallSprite.png',32,600);
   	game.load.spritesheet('bloblin', 'assets/Bloblin4.png',32,32);
   	game.load.spritesheet('roblin', 'assets/Roblin.png',32,32);
-  	game.load.spritesheet('background', 'assets/Hintergrund.png', 4000, 600);
+  	game.load.spritesheet('background', 'assets/HintergrundKurz.png', 4000, 600);
     game.load.spritesheet('pickaxe', 'assets/picksmall.png', 20,32);
     game.load.spritesheet('sword', 'assets/swordsmall.png', 23,32);
     game.load.spritesheet('playbutton', 'assets/playbutton.png', 64, 64);

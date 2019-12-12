@@ -307,7 +307,7 @@ var playState = {
 		}
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-		game.camera.follow(player1	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+		game.camera.follow(player3	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fcbc38' });
@@ -321,8 +321,7 @@ var playState = {
 		downButton = game.input.keyboard.addKey(Phaser.Keyboard.S);
 		rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
 		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
-
-		var bau = this.platform3();
+		
 		var pausebutton = this.game.add.button(870, 30, 'pausebutton', this.pause, this, 1, 0);
 		pausebutton.fixedToCamera = true;
 	},
@@ -336,27 +335,33 @@ var playState = {
 			game.state.start("gameover");
 		}
 
-		if ((player1.body.position.x - game.camera.x) > 960)
-		{
-			//player1.kill();
-			//gameover();
-		}
-
 		if ((player1.body.position.x + 32 - game.camera.x) < 0)
 		{
-			player1.kill();
 			gameover();
-		}
-
-		if ((player2.body.position.x - game.camera.x) > 960)
-		{
-			//player2.kill();
-			//gameover();
 		}
 
 		if ((player2.body.position.x + 32 - game.camera.x) < 0)
 		{
-			player2.kill();
+			gameover();
+		}
+
+		if ((player1.body.position.y) > 607)
+		{
+			gameover();
+		}
+
+		if ((player2.body.position.y) > 607)
+		{
+			gameover();
+		}
+
+		if ((player1.body.position.y) < 1)
+		{
+			gameover();
+		}
+
+		if ((player2.body.position.y) < 1)
+		{
 			gameover();
 		}
 
@@ -543,7 +548,7 @@ var playState = {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*10)+1;
+			x = Math.floor(Math.random()*10)+2;
 
 			switch (x)
 			{
@@ -628,15 +633,7 @@ var playState = {
 
 
 
-	execute: function ()
-	{
-		//var i = random();
-		for (i = 0; i < 1; i = i+1)
-		{
-			var b  = Math.floor(Math.random())+1;
-		}
-		eval('platform'+b+'()');
-	},
+
 
 	timer1Up: function ()
 	{
@@ -647,28 +644,6 @@ var playState = {
 
 		score += 1;
 		scoreText.text = 'Score: ' + score;
-	},
-
-	platform1: function ()
-	{
-		var testen = this.schule();
-		if (schule == true) {
-			klausur1 = klausuren.create(c * 960, 68, 'klausur');
-		} else if (schule == false) {
-			boost2 = booster.create(c * 960, 68, 'booster')
-		}
-
-		platform1 = platforms.create(c * 960, 100,'ground');
-
-		c += 1;
-
-		timer1 = 0;
-
-		//timer2.reset();
-
-		platform1.scale.setTo(0.5,2);
-
-		platform1.body.immovable = true;
 	},
 
 	platform2: function ()
@@ -2119,12 +2094,6 @@ var playState = {
 		timer1 = 0;
 	},
 
-
-	destroyPlatform1Loader: function ()
-	{
-		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform1, this);
-	},
-
 	destroyPlatform2Loader:	function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform2, this);
@@ -2171,16 +2140,6 @@ var playState = {
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform11, this);
 	},
-	destroyPlatform1: function ()
-	{
-		if (player3.x - platform1.x >= 480)
-		{
-			platform1.destroy();
-		}
-	},
-
-
-
 	destroyPlatform8: function ()
 	{
 		if (player3.x - platform8.x >= 480)
@@ -2517,7 +2476,7 @@ var playState = {
 		}
 	},
 
-	destroyPlatform10: function ()
+	destroyPlatform11: function ()
 	{
 		if (player3.x - block268.x >= 480)
 		{

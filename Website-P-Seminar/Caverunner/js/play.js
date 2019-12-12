@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-//Hallo
->>>>>>> 81032f5b7966345e05d79645898ec1b2b46b6120
 var player1;
 var player2;
 var platforms;

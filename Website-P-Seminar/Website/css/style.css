@@ -39,7 +39,7 @@ body {
 
 }
 
-body,button,.form-control {
+body,button, {
 	color: #606368;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: 400;
@@ -174,66 +174,12 @@ font-family: "Times New Roman", Times, serif;}
 }
 
 
-.tm-media-icon {
-	margin-right: 30px;
-	margin-bottom: 0;
-}
 
 /* IE fix */
 .tm-media-body {
 	flex: 1 1 auto;
 	width: 100%;
 }
-
-
-.filter-wrapper li:last-child { margin-right: 0; }
-
-.filter-wrapper li a {
-	background-color: white;
-    color: #666;
-    font-weight: 400;
-    padding: 6px 20px;
-    display: block;
-    text-decoration: none;
-    transition: all 0.4s ease-in-out;
-}
-
-.filter-wrapper li a.selected {
-	background-color: #666666;
-	color: white;
-}
-.iso-box {
-    position: relative;
-    min-height: 50px;
-    float: left;
-    overflow: hidden;
-    margin-bottom: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-.iso-box-section {
-	margin-left: -8px;
-    margin-right: -8px;
-}
-
-/* Contact */
-.form-control {
-	background-color: transparent;
-	border-radius: 0;
-	font-size: 1.15rem;
-	padding: .9rem 1.25rem;
-}
-
-.form-control:focus {
-	background-color: transparent;
-	border-color: #983333;
-}
-
-.form-group { margin-bottom: 1.2rem; }
-.tm-section-contact { position: relative; }
-
-
-
 
 @media screen and (max-width: 991px) {
 	.tm-gallery-content { padding-top: 150px; }
@@ -274,24 +220,4 @@ font-family: "Times New Roman", Times, serif;}
 }
 * {
   box-sizing: border-box;
-}
-
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-.active,
-.demo:hover {
-  opacity: 1;
 }

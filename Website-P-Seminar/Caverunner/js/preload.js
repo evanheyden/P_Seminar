@@ -29,6 +29,8 @@ preload: function () {
   	game.load.image('4x4', 'assets/BlockQuadrat.png');
     game.load.image('klausur', 'assets/klausur.png');
     game.load.image('booster', 'assets/booster.png');
+    game.load.image('pausebuttonp', 'assets/pausebuttonp.png');
+    game.load.image('pausetext', 'assets/pausetext.png');
   	game.load.spritesheet('level', 'assets/Dreiplattformen.png', 800, 400);
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
   	game.load.spritesheet('baddie','assets/baddie.png', 32, 32);
@@ -43,7 +45,6 @@ preload: function () {
     game.load.spritesheet('restartbutton', 'assets/restartbutton.png', 64, 64);
     game.load.spritesheet('menubutton', 'assets/menubutton.png', 64, 64);
     game.load.spritesheet('pausebutton', 'assets/pausebutton.png', 64, 64);
-
 },
 create: function () {
 game.state.start("menu")

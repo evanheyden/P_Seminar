@@ -73,7 +73,7 @@ var playState = {
 
 	getlocation: function (){
 		//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
-		console.log('layer1')
+
 	},
 	schule: function() {
 		if (latitude > 40 && latitude < 50) {
@@ -82,27 +82,6 @@ var playState = {
 			var schule = false;
 		}
 
-	},
-
-	pause: function() {
-		game.paused = true;
-		this.input.disabled = true;
-
-		this.game.physics.gravity = 0;
-
-		player1.body.velocity.x = 0;
-
-		player1.body.velocity.y = 0;
-
-		player2.body.velocity.x = 0;
-
-		player2.body.velocity.y = 0;
-
-		player3.body.velocity.x = 0;
-
-		player3.body.velocity.y = 0;
-
-		console.log('success')
 	},
 
 	create: function () {
@@ -278,7 +257,7 @@ var playState = {
 		booster.enableBody = true;
 
 		//  Here we'll create 12 of them evenly spaced apart
-		for (var i = 0; i < 1; i++)
+	/*	for (var i = 0; i < 1; i++)
 		{
 			//  Create a  inside of the 'booster' group
 			var boost = booster.create(i * 1, 0, 'booster');
@@ -288,14 +267,14 @@ var playState = {
 
 			//  This just gives each  a slightly random bounce value
 			boost.body.bounce.y = 0.7 + Math.random() * 0.2;
-		}
+		}*/
 
 		klausuren = this.game.add.group();
 
 		//  We will enable physics for any  that is created in this group
 		klausuren.enableBody = true;
 
-		for (var i = 0; i < 1; i++)
+	/*	for (var i = 0; i < 1; i++)
 		{
 			//  Create a  inside of the 'booster' group
 			var klausur = klausuren.create(i * 10, 40, 'klausur');
@@ -305,7 +284,7 @@ var playState = {
 
 			//  This just gives each  a slightly random bounce value
 			klausur.body.bounce.y = 0.7 + Math.random() * 0.2;
-		}
+		}*/
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
 		game.camera.follow(player3	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
@@ -322,9 +301,6 @@ var playState = {
 		downButton = game.input.keyboard.addKey(Phaser.Keyboard.S);
 		rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
 		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
-
-	//	var pausebutton = this.game.add.button(870, 30, 'pausebutton', this.pause, this, 1, 0);
-		//pausebutton.fixedToCamera = true;
 
 	var pause = this.pausieren();
 	},

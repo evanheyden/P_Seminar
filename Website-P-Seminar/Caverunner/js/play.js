@@ -14,7 +14,6 @@ var frames;
 var prevCamX = 0;
 var prevCamY = 0;
 var ncounter = 0;
-var w = 960, h = 640;
 var timer1;
 var timer2;
 var camera;
@@ -504,7 +503,7 @@ pausieren: function () {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*11)+1;
+			x = Math.floor(Math.random()*15)+1;
 
 			switch (x)
 			{
@@ -513,7 +512,6 @@ pausieren: function () {
 					//c += 1;
 					this.platform1();
 					this.destroyPlatform1Loader();
-					console.log('p1')
 					break;
 				}
 				case 2:
@@ -581,7 +579,30 @@ pausieren: function () {
 				{
 					this.platform12();
 					this.destroyPlatform12Loader();
-					console.log('p12')
+					break;
+				}
+				case 13:
+				{
+					this.platform13();
+					this.destroyPlatform13Loader();
+					break;
+				}
+				case 14:
+				{
+					this.platform14();
+					this.destroyPlatform14Loader();
+					break;
+				}
+				case 15:
+				{
+					this.platform15();
+					this.destroyPlatform15Loader();
+					break;
+				}
+				case 16:
+				{
+					this.platform16();
+					this.destroyPlatform16Loader();
 					break;
 				}
 			}
@@ -620,9 +641,9 @@ pausieren: function () {
 		}
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 12 * 32, 12 * 32, 'klausur');
+			klausur2 = klausuren.create(c * 960 + 12 * 32, 12 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 12 * 32, 12 * 32, 'booster');
+			boost2 = booster.create(c * 960 + 12 * 32, 12 * 32, 'booster');
 		}
 
 
@@ -794,14 +815,14 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
+			klausur3 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
+			boost3 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur2 = klausuren.create(c * 960 + 8 * 32, 11 * 32, 'klausur');
+			klausur4 = klausuren.create(c * 960 + 8 * 32, 11 * 32, 'klausur');
 		} else if (schule == false) {
-			boost2 = booster.create(c * 960 + 8 * 32, 11 * 32, 'booster');
+			boost4 = booster.create(c * 960 + 8 * 32, 11 * 32, 'booster');
 		}
 
 
@@ -974,14 +995,14 @@ pausieren: function () {
 
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
+			klausur5 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
+			boost5 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
+			klausur6 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
+			boost6 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
 		}
 		block40 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
@@ -1161,14 +1182,14 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 3.5 * 32, 8 * 32, 'klausur');
+			klausur7 = klausuren.create(c * 960 + 3.5 * 32, 8 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 3.5 * 32, 8 * 32, 'booster');
+			boost7 = booster.create(c * 960 + 3.5 * 32, 8 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 3.5 * 32, 11 * 32, 'klausur');
+			klausur8 = klausuren.create(c * 960 + 3.5 * 32, 11 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 3.5 * 32, 11 * 32, 'booster');
+			boost8 = booster.create(c * 960 + 3.5 * 32, 11 * 32, 'booster');
 		}
 		block82 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
@@ -1323,14 +1344,14 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
+			klausur9 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
+			boost9 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 3 * 32, 14 * 32, 'klausur');
+			klausur10 = klausuren.create(c * 960 + 3 * 32, 14 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 3 * 32, 14 * 32, 'booster');
+			boost10 = booster.create(c * 960 + 3 * 32, 14 * 32, 'booster');
 		}
 		block118 = platforms.create(c * 960 + 0 * 32, 0 * 32,'2b');
 
@@ -1485,14 +1506,14 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 9 * 32, 4 * 32, 'klausur');
+			klausur11 = klausuren.create(c * 960 + 9 * 32, 4 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 9 * 32, 4 * 32, 'booster');
+			boost11 = booster.create(c * 960 + 9 * 32, 4 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 9 * 32, 15 * 32, 'klausur');
+			klausur12 = klausuren.create(c * 960 + 9 * 32, 15 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 9 * 32, 15 * 32, 'booster');
+			boost12 = booster.create(c * 960 + 9 * 32, 15 * 32, 'booster');
 		}
 		block154 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
@@ -1623,14 +1644,14 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
+			klausur13 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
+			boost13 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 7 * 32, 11 * 32, 'klausur');
+			klausur14 = klausuren.create(c * 960 + 7 * 32, 11 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 7 * 32, 11 * 32, 'booster');
+			boost14 = booster.create(c * 960 + 7 * 32, 11 * 32, 'booster');
 		}
 		block184= platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
@@ -1786,9 +1807,9 @@ pausieren: function () {
 		block11.body.immovable = true;
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 4 * 32, 13 * 32, 'klausur');
+			klausur15 = klausuren.create(c * 960 + 4 * 32, 13 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 4 * 32, 13 * 32, 'booster');
+			boost15 = booster.create(c * 960 + 4 * 32, 13 * 32, 'booster');
 		}
 
 		block12 = platforms.create(c * 960 + 7 * 32, 12 * 32,'2b');
@@ -1856,9 +1877,9 @@ pausieren: function () {
 		block27.body.immovable = true;
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 6 * 32, 3 * 32, 'klausur');
+			klausur16 = klausuren.create(c * 960 + 6 * 32, 3 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 6 * 32, 3 * 32, 'booster');
+			boost16 = booster.create(c * 960 + 6 * 32, 3 * 32, 'booster');
 		}
 
 		block28 = platforms.create(c * 960 + 7 * 32, 2 * 32,'1');
@@ -2143,14 +2164,14 @@ pausieren: function () {
 		block267.body.immovable = true;
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
+			klausur17 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
+			boost17 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 12 * 32, 'klausur');
+			klausur18 = klausuren.create(c * 960 + 10 * 32, 12 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 12 * 32, 'booster');
+			boost18 = booster.create(c * 960 + 10 * 32, 12 * 32, 'booster');
 		}
 
 		c += 0.5;
@@ -2277,20 +2298,20 @@ pausieren: function () {
 		block296.body.immovable = true;
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 10 * 32, 1 * 32, 'klausur');
+			klausur19 = klausuren.create(c * 960 + 10 * 32, 1 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 10 * 32, 1 * 32, 'booster');
+			boost19 = booster.create(c * 960 + 10 * 32, 1 * 32, 'booster');
 		}
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 14 * 32, 9 * 32, 'klausur');
+			klausur20 = klausuren.create(c * 960 + 14 * 32, 9 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 14 * 32, 9 * 32, 'booster');
+			boost20 = booster.create(c * 960 + 14 * 32, 9 * 32, 'booster');
 		}
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 7 * 32, 12 * 32, 'klausur');
+			klausur21 = klausuren.create(c * 960 + 7 * 32, 12 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 7 * 32, 12 * 32, 'booster');
+			boost21 = booster.create(c * 960 + 7 * 32, 12 * 32, 'booster');
 		}
 
 		c += 0.5;
@@ -2302,15 +2323,15 @@ pausieren: function () {
 	{
 		var testen = this.schule();
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 9 * 32, 6 * 32, 'klausur');
+			klausur22 = klausuren.create(c * 960 + 9 * 32, 6 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 9 * 32, 6 * 32, 'booster');
+			boost22 = booster.create(c * 960 + 9 * 32, 6 * 32, 'booster');
 		}
 
 		if (schule == true) {
-			klausur1 = klausuren.create(c * 960 + 2 * 32, 13 * 32, 'klausur');
+			klausur23 = klausuren.create(c * 960 + 2 * 32, 13 * 32, 'klausur');
 		} else if (schule == false) {
-			boost1 = booster.create(c * 960 + 2 * 32, 13 * 32, 'booster');
+			boost23 = booster.create(c * 960 + 2 * 32, 13 * 32, 'booster');
 		}
 
 
@@ -2478,6 +2499,441 @@ pausieren: function () {
 
 	},
 
+	platform13: function ()
+	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur24 = klausuren.create(c * 960 + 1 * 32, 1 * 32, 'klausur');
+		} else if (schule == false) {
+			boost24 = booster.create(c * 960 + 1 * 32, 1 * 32, 'booster');
+		}
+
+		if (schule == true) {
+			klausur25 = klausuren.create(c * 960 + 11 * 32, 14 * 32, 'klausur');
+		} else if (schule == false) {
+			boost25 = booster.create(c * 960 + 11 * 32, 14 * 32, 'booster');
+		}
+block130000 = platforms.create(c * 960 + 0 * 32, 0 * 32, '1'); block130000.body.immovable = true;
+block130001 = platforms.create(c * 960 + 0 * 32, 1 * 32, '1'); block130001.body.immovable = true;
+block130006 = platforms.create(c * 960 + 0 * 32, 6 * 32, '1'); block130006.body.immovable = true;
+block130016 = platforms.create(c * 960 + 0 * 32, 16 * 32, '1'); block130016.body.immovable = true;
+block130019 = platforms.create(c * 960 + 0 * 32, 19 * 32, '1'); block130019.body.immovable = true;
+block130100 = platforms.create(c * 960 + 1 * 32, 0 * 32, '1'); block130100.body.immovable = true;
+block130102 = platforms.create(c * 960 + 1 * 32, 2 * 32, '1'); block130102.body.immovable = true;
+block130103 = platforms.create(c * 960 + 1 * 32, 3 * 32, '1'); block130103.body.immovable = true;
+block130106 = platforms.create(c * 960 + 1 * 32, 6 * 32, '1'); block130106.body.immovable = true;
+block130111 = platforms.create(c * 960 + 1 * 32, 11 * 32, '1'); block130111.body.immovable = true;
+block130116 = platforms.create(c * 960 + 1 * 32, 16 * 32, '1'); block130116.body.immovable = true;
+block130119 = platforms.create(c * 960 + 1 * 32, 19 * 32, '1'); block130119.body.immovable = true;
+block130209 = platforms.create(c * 960 + 2 * 32, 9 * 32, '1'); block130209.body.immovable = true;
+block130210 = platforms.create(c * 960 + 2 * 32, 10 * 32, '1'); block130210.body.immovable = true;
+block130211 = platforms.create(c * 960 + 2 * 32, 11 * 32, '1'); block130211.body.immovable = true;
+block130214 = platforms.create(c * 960 + 2 * 32, 14 * 32, '1'); block130214.body.immovable = true;
+block130219 = platforms.create(c * 960 + 2 * 32, 19 * 32, '1'); block130219.body.immovable = true;
+block130300 = platforms.create(c * 960 + 3 * 32, 0 * 32, '1'); block130300.body.immovable = true;
+block130304 = platforms.create(c * 960 + 3 * 32, 4 * 32, '1'); block130304.body.immovable = true;
+block130307 = platforms.create(c * 960 + 3 * 32, 7 * 32, '1'); block130307.body.immovable = true;
+block130308 = platforms.create(c * 960 + 3 * 32, 8 * 32, '1'); block130308.body.immovable = true;
+block130309 = platforms.create(c * 960 + 3 * 32, 9 * 32, '1'); block130309.body.immovable = true;
+block130310 = platforms.create(c * 960 + 3 * 32, 10 * 32, '1'); block130310.body.immovable = true;
+block130317 = platforms.create(c * 960 + 3 * 32, 17 * 32, '1'); block130317.body.immovable = true;
+block130404 = platforms.create(c * 960 + 4 * 32, 4 * 32, '1'); block130404.body.immovable = true;
+block130415 = platforms.create(c * 960 + 4 * 32, 15 * 32, '1'); block130415.body.immovable = true;
+block130419 = platforms.create(c * 960 + 4 * 32, 19 * 32, '1'); block130419.body.immovable = true;
+block130501 = platforms.create(c * 960 + 5 * 32, 1 * 32, '1'); block130501.body.immovable = true;
+block130508 = platforms.create(c * 960 + 5 * 32, 8 * 32, '1'); block130508.body.immovable = true;
+block130509 = platforms.create(c * 960 + 5 * 32, 9 * 32, '1'); block130509.body.immovable = true;
+block130514 = platforms.create(c * 960 + 5 * 32, 14 * 32, '1'); block130514.body.immovable = true;
+block130515 = platforms.create(c * 960 + 5 * 32, 15 * 32, '1'); block130515.body.immovable = true;
+block130519 = platforms.create(c * 960 + 5 * 32, 19 * 32, '1'); block130519.body.immovable = true;
+block130601 = platforms.create(c * 960 + 6 * 32, 1 * 32, '1'); block130601.body.immovable = true;
+block130619 = platforms.create(c * 960 + 6 * 32, 19 * 32, '1'); block130619.body.immovable = true;
+block130701 = platforms.create(c * 960 + 7 * 32, 1 * 32, '1'); block130701.body.immovable = true;
+block130703 = platforms.create(c * 960 + 7 * 32, 3 * 32, '1'); block130703.body.immovable = true;
+block130704 = platforms.create(c * 960 + 7 * 32, 4 * 32, '1'); block130704.body.immovable = true;
+block130709 = platforms.create(c * 960 + 7 * 32, 9 * 32, '1'); block130709.body.immovable = true;
+block130710 = platforms.create(c * 960 + 7 * 32, 10 * 32, '1'); block130710.body.immovable = true;
+block130713 = platforms.create(c * 960 + 7 * 32, 13 * 32, '1'); block130713.body.immovable = true;
+block130716 = platforms.create(c * 960 + 7 * 32, 16 * 32, '1'); block130716.body.immovable = true;
+block130719 = platforms.create(c * 960 + 7 * 32, 19 * 32, '1'); block130719.body.immovable = true;
+block130800 = platforms.create(c * 960 + 8 * 32, 0 * 32, '1'); block130800.body.immovable = true;
+block130809 = platforms.create(c * 960 + 8 * 32, 9 * 32, '1'); block130809.body.immovable = true;
+block130810 = platforms.create(c * 960 + 8 * 32, 10 * 32, '1'); block130810.body.immovable = true;
+block130813 = platforms.create(c * 960 + 8 * 32, 13 * 32, '1'); block130813.body.immovable = true;
+block130816 = platforms.create(c * 960 + 8 * 32, 16 * 32, '1'); block130816.body.immovable = true;
+block130900 = platforms.create(c * 960 + 9 * 32, 0 * 32, '1'); block130900.body.immovable = true;
+block130906 = platforms.create(c * 960 + 9 * 32, 6 * 32, '1'); block130906.body.immovable = true;
+block130909 = platforms.create(c * 960 + 9 * 32, 9 * 32, '1'); block130909.body.immovable = true;
+block130918 = platforms.create(c * 960 + 9 * 32, 18 * 32, '1'); block130918.body.immovable = true;
+block131006 = platforms.create(c * 960 + 10 * 32, 6 * 32, '1'); block131006.body.immovable = true;
+block131012 = platforms.create(c * 960 + 10 * 32, 12 * 32, '1'); block131012.body.immovable = true;
+block131013 = platforms.create(c * 960 + 10 * 32, 13 * 32, '1'); block131013.body.immovable = true;
+block131014 = platforms.create(c * 960 + 10 * 32, 14 * 32, '1'); block131014.body.immovable = true;
+block131015 = platforms.create(c * 960 + 10 * 32, 15 * 32, '1'); block131015.body.immovable = true;
+block131018 = platforms.create(c * 960 + 10 * 32, 18 * 32, '1'); block131018.body.immovable = true;
+block131101 = platforms.create(c * 960 + 11 * 32, 1 * 32, '1'); block131101.body.immovable = true;
+block131108 = platforms.create(c * 960 + 11 * 32, 8 * 32, '1'); block131108.body.immovable = true;
+block131115 = platforms.create(c * 960 + 11 * 32, 15 * 32, '1'); block131115.body.immovable = true;
+block131204 = platforms.create(c * 960 + 12 * 32, 4 * 32, '1'); block131204.body.immovable = true;
+block131213 = platforms.create(c * 960 + 12 * 32, 13 * 32, '1'); block131213.body.immovable = true;
+block131214 = platforms.create(c * 960 + 12 * 32, 14 * 32, '1'); block131214.body.immovable = true;
+block131215 = platforms.create(c * 960 + 12 * 32, 15 * 32, '1'); block131215.body.immovable = true;
+block131219 = platforms.create(c * 960 + 12 * 32, 19 * 32, '1'); block131219.body.immovable = true;
+block131300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block131300.body.immovable = true;
+block131302 = platforms.create(c * 960 + 13 * 32, 2 * 32, '1'); block131302.body.immovable = true;
+block131304 = platforms.create(c * 960 + 13 * 32, 4 * 32, '1'); block131304.body.immovable = true;
+block131307 = platforms.create(c * 960 + 13 * 32, 7 * 32, '1'); block131307.body.immovable = true;
+block131308 = platforms.create(c * 960 + 13 * 32, 8 * 32, '1'); block131308.body.immovable = true;
+block131309 = platforms.create(c * 960 + 13 * 32, 9 * 32, '1'); block131309.body.immovable = true;
+block131310 = platforms.create(c * 960 + 13 * 32, 10 * 32, '1'); block131310.body.immovable = true;
+block131314 = platforms.create(c * 960 + 13 * 32, 14 * 32, '1'); block131314.body.immovable = true;
+block131319 = platforms.create(c * 960 + 13 * 32, 19 * 32, '1'); block131319.body.immovable = true;
+block131400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block131400.body.immovable = true;
+block131404 = platforms.create(c * 960 + 14 * 32, 4 * 32, '1'); block131404.body.immovable = true;
+block131407 = platforms.create(c * 960 + 14 * 32, 7 * 32, '1'); block131407.body.immovable = true;
+block131408 = platforms.create(c * 960 + 14 * 32, 8 * 32, '1'); block131408.body.immovable = true;
+block131409 = platforms.create(c * 960 + 14 * 32, 9 * 32, '1'); block131409.body.immovable = true;
+block131410 = platforms.create(c * 960 + 14 * 32, 10 * 32, '1'); block131410.body.immovable = true;
+block131414 = platforms.create(c * 960 + 14 * 32, 14 * 32, '1'); block131414.body.immovable = true;
+block131419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block131419.body.immovable = true;},
+
+	platform14: function ()
+	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur26 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
+		} else if (schule == false) {
+			boost26 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
+		}
+
+		if (schule == true) {
+			klausur27 = klausuren.create(c * 960 + 7 * 32, 11 * 32, 'klausur');
+		} else if (schule == false) {
+			boost27 = booster.create(c * 960 + 7 * 32, 11 * 32, 'booster');
+		}
+		block140000 = platforms.create(c * 960 + 0 * 32, 0 * 32, '1'); block140000.body.immovable = true;
+block140004 = platforms.create(c * 960 + 0 * 32, 4 * 32, '1'); block140004.body.immovable = true;
+block140005 = platforms.create(c * 960 + 0 * 32, 5 * 32, '1'); block140005.body.immovable = true;
+block140008 = platforms.create(c * 960 + 0 * 32, 8 * 32, '1'); block140008.body.immovable = true;
+block140011 = platforms.create(c * 960 + 0 * 32, 11 * 32, '1'); block140011.body.immovable = true;
+block140014 = platforms.create(c * 960 + 0 * 32, 14 * 32, '1'); block140014.body.immovable = true;
+block140015 = platforms.create(c * 960 + 0 * 32, 15 * 32, '1'); block140015.body.immovable = true;
+block140019 = platforms.create(c * 960 + 0 * 32, 19 * 32, '1'); block140019.body.immovable = true;
+block140100 = platforms.create(c * 960 + 1 * 32, 0 * 32, '1'); block140100.body.immovable = true;
+block140108 = platforms.create(c * 960 + 1 * 32, 8 * 32, '1'); block140108.body.immovable = true;
+block140111 = platforms.create(c * 960 + 1 * 32, 11 * 32, '1'); block140111.body.immovable = true;
+block140119 = platforms.create(c * 960 + 1 * 32, 19 * 32, '1'); block140119.body.immovable = true;
+block140200 = platforms.create(c * 960 + 2 * 32, 0 * 32, '1'); block140200.body.immovable = true;
+block140202 = platforms.create(c * 960 + 2 * 32, 2 * 32, '1'); block140202.body.immovable = true;
+block140217 = platforms.create(c * 960 + 2 * 32, 17 * 32, '1'); block140217.body.immovable = true;
+block140219 = platforms.create(c * 960 + 2 * 32, 19 * 32, '1'); block140219.body.immovable = true;
+block140300 = platforms.create(c * 960 + 3 * 32, 0 * 32, '1'); block140300.body.immovable = true;
+block140302 = platforms.create(c * 960 + 3 * 32, 2 * 32, '1'); block140302.body.immovable = true;
+block140303 = platforms.create(c * 960 + 3 * 32, 3 * 32, '1'); block140303.body.immovable = true;
+block140316 = platforms.create(c * 960 + 3 * 32, 16 * 32, '1'); block140316.body.immovable = true;
+block140317 = platforms.create(c * 960 + 3 * 32, 17 * 32, '1'); block140317.body.immovable = true;
+block140319 = platforms.create(c * 960 + 3 * 32, 19 * 32, '1'); block140319.body.immovable = true;
+block140405 = platforms.create(c * 960 + 4 * 32, 5 * 32, '1'); block140405.body.immovable = true;
+block140414 = platforms.create(c * 960 + 4 * 32, 14 * 32, '1'); block140414.body.immovable = true;
+block140506 = platforms.create(c * 960 + 5 * 32, 6 * 32, '1'); block140506.body.immovable = true;
+block140513 = platforms.create(c * 960 + 5 * 32, 13 * 32, '1'); block140513.body.immovable = true;
+block140600 = platforms.create(c * 960 + 6 * 32, 0 * 32, '1'); block140600.body.immovable = true;
+block140607 = platforms.create(c * 960 + 6 * 32, 7 * 32, '1'); block140607.body.immovable = true;
+block140612 = platforms.create(c * 960 + 6 * 32, 12 * 32, '1'); block140612.body.immovable = true;
+block140619 = platforms.create(c * 960 + 6 * 32, 19 * 32, '1'); block140619.body.immovable = true;
+block140700 = platforms.create(c * 960 + 7 * 32, 0 * 32, '1'); block140700.body.immovable = true;
+block140707 = platforms.create(c * 960 + 7 * 32, 7 * 32, '1'); block140707.body.immovable = true;
+block140709 = platforms.create(c * 960 + 7 * 32, 9 * 32, '1'); block140709.body.immovable = true;
+block140710 = platforms.create(c * 960 + 7 * 32, 10 * 32, '1'); block140710.body.immovable = true;
+block140712 = platforms.create(c * 960 + 7 * 32, 12 * 32, '1'); block140712.body.immovable = true;
+block140719 = platforms.create(c * 960 + 7 * 32, 19 * 32, '1'); block140719.body.immovable = true;
+block140800 = platforms.create(c * 960 + 8 * 32, 0 * 32, '1'); block140800.body.immovable = true;
+block140807 = platforms.create(c * 960 + 8 * 32, 7 * 32, '1'); block140807.body.immovable = true;
+block140812 = platforms.create(c * 960 + 8 * 32, 12 * 32, '1'); block140812.body.immovable = true;
+block140819 = platforms.create(c * 960 + 8 * 32, 19 * 32, '1'); block140819.body.immovable = true;
+block141005 = platforms.create(c * 960 + 10 * 32, 5 * 32, '1'); block141005.body.immovable = true;
+block141006 = platforms.create(c * 960 + 10 * 32, 6 * 32, '1'); block141006.body.immovable = true;
+block141007 = platforms.create(c * 960 + 10 * 32, 7 * 32, '1'); block141007.body.immovable = true;
+block141012 = platforms.create(c * 960 + 10 * 32, 12 * 32, '1'); block141012.body.immovable = true;
+block141013 = platforms.create(c * 960 + 10 * 32, 13 * 32, '1'); block141013.body.immovable = true;
+block141014 = platforms.create(c * 960 + 10 * 32, 14 * 32, '1'); block141014.body.immovable = true;
+block141105 = platforms.create(c * 960 + 11 * 32, 5 * 32, '1'); block141105.body.immovable = true;
+block141114 = platforms.create(c * 960 + 11 * 32, 14 * 32, '1'); block141114.body.immovable = true;
+block141119 = platforms.create(c * 960 + 11 * 32, 19 * 32, '1'); block141119.body.immovable = true;
+block141200 = platforms.create(c * 960 + 12 * 32, 0 * 32, '1'); block141200.body.immovable = true;
+block141219 = platforms.create(c * 960 + 12 * 32, 19 * 32, '1'); block141219.body.immovable = true;
+block141300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block141300.body.immovable = true;
+block141307 = platforms.create(c * 960 + 13 * 32, 7 * 32, '1'); block141307.body.immovable = true;
+block141308 = platforms.create(c * 960 + 13 * 32, 8 * 32, '1'); block141308.body.immovable = true;
+block141309 = platforms.create(c * 960 + 13 * 32, 9 * 32, '1'); block141309.body.immovable = true;
+block141310 = platforms.create(c * 960 + 13 * 32, 10 * 32, '1'); block141310.body.immovable = true;
+block141311 = platforms.create(c * 960 + 13 * 32, 11 * 32, '1'); block141311.body.immovable = true;
+block141319 = platforms.create(c * 960 + 13 * 32, 19 * 32, '1'); block141319.body.immovable = true;
+block141400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block141400.body.immovable = true;
+block141407 = platforms.create(c * 960 + 14 * 32, 7 * 32, '1'); block141407.body.immovable = true;
+block141411 = platforms.create(c * 960 + 14 * 32, 11 * 32, '1'); block141411.body.immovable = true;
+block141419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block141419.body.immovable = true;
+	},
+
+	platform15: function ()
+	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur28 = klausuren.create(c * 960 + 3 * 32, 8 * 32, 'klausur');
+		} else if (schule == false) {
+			boost28 = booster.create(c * 960 + 3 * 32, 8 * 32, 'booster');
+		}
+
+		if (schule == true) {
+			klausur29 = klausuren.create(c * 960 + 12 * 32, 6 * 32, 'klausur');
+		} else if (schule == false) {
+			boost29 = booster.create(c * 960 + 12 * 32, 6 * 32, 'booster');
+		}
+		block150000 = platforms.create(c * 960 + 0 * 32, 0 * 32, '1'); block150000.body.immovable = true;
+block150019 = platforms.create(c * 960 + 0 * 32, 19 * 32, '1'); block150019.body.immovable = true;
+block150100 = platforms.create(c * 960 + 1 * 32, 0 * 32, '1'); block150100.body.immovable = true;
+block150119 = platforms.create(c * 960 + 1 * 32, 19 * 32, '1'); block150119.body.immovable = true;
+block150200 = platforms.create(c * 960 + 2 * 32, 0 * 32, '1'); block150200.body.immovable = true;
+block150201 = platforms.create(c * 960 + 2 * 32, 1 * 32, '1'); block150201.body.immovable = true;
+block150202 = platforms.create(c * 960 + 2 * 32, 2 * 32, '1'); block150202.body.immovable = true;
+block150217 = platforms.create(c * 960 + 2 * 32, 17 * 32, '1'); block150217.body.immovable = true;
+block150218 = platforms.create(c * 960 + 2 * 32, 18 * 32, '1'); block150218.body.immovable = true;
+block150219 = platforms.create(c * 960 + 2 * 32, 19 * 32, '1'); block150219.body.immovable = true;
+block150300 = platforms.create(c * 960 + 3 * 32, 0 * 32, '1'); block150300.body.immovable = true;
+block150301 = platforms.create(c * 960 + 3 * 32, 1 * 32, '1'); block150301.body.immovable = true;
+block150302 = platforms.create(c * 960 + 3 * 32, 2 * 32, '1'); block150302.body.immovable = true;
+block150303 = platforms.create(c * 960 + 3 * 32, 3 * 32, '1'); block150303.body.immovable = true;
+block150305 = platforms.create(c * 960 + 3 * 32, 5 * 32, '1'); block150305.body.immovable = true;
+block150306 = platforms.create(c * 960 + 3 * 32, 6 * 32, '1'); block150306.body.immovable = true;
+block150307 = platforms.create(c * 960 + 3 * 32, 7 * 32, '1'); block150307.body.immovable = true;
+block150309 = platforms.create(c * 960 + 3 * 32, 9 * 32, '1'); block150309.body.immovable = true;
+block150310 = platforms.create(c * 960 + 3 * 32, 10 * 32, '1'); block150310.body.immovable = true;
+block150311 = platforms.create(c * 960 + 3 * 32, 11 * 32, '1'); block150311.body.immovable = true;
+block150312 = platforms.create(c * 960 + 3 * 32, 12 * 32, '1'); block150312.body.immovable = true;
+block150313 = platforms.create(c * 960 + 3 * 32, 13 * 32, '1'); block150313.body.immovable = true;
+block150314 = platforms.create(c * 960 + 3 * 32, 14 * 32, '1'); block150314.body.immovable = true;
+block150315 = platforms.create(c * 960 + 3 * 32, 15 * 32, '1'); block150315.body.immovable = true;
+block150317 = platforms.create(c * 960 + 3 * 32, 17 * 32, '1'); block150317.body.immovable = true;
+block150318 = platforms.create(c * 960 + 3 * 32, 18 * 32, '1'); block150318.body.immovable = true;
+block150319 = platforms.create(c * 960 + 3 * 32, 19 * 32, '1'); block150319.body.immovable = true;
+block150400 = platforms.create(c * 960 + 4 * 32, 0 * 32, '1'); block150400.body.immovable = true;
+block150401 = platforms.create(c * 960 + 4 * 32, 1 * 32, '1'); block150401.body.immovable = true;
+block150402 = platforms.create(c * 960 + 4 * 32, 2 * 32, '1'); block150402.body.immovable = true;
+block150403 = platforms.create(c * 960 + 4 * 32, 3 * 32, '1'); block150403.body.immovable = true;
+block150405 = platforms.create(c * 960 + 4 * 32, 5 * 32, '1'); block150405.body.immovable = true;
+block150406 = platforms.create(c * 960 + 4 * 32, 6 * 32, '1'); block150406.body.immovable = true;
+block150407 = platforms.create(c * 960 + 4 * 32, 7 * 32, '1'); block150407.body.immovable = true;
+block150411 = platforms.create(c * 960 + 4 * 32, 11 * 32, '1'); block150411.body.immovable = true;
+block150412 = platforms.create(c * 960 + 4 * 32, 12 * 32, '1'); block150412.body.immovable = true;
+block150413 = platforms.create(c * 960 + 4 * 32, 13 * 32, '1'); block150413.body.immovable = true;
+block150414 = platforms.create(c * 960 + 4 * 32, 14 * 32, '1'); block150414.body.immovable = true;
+block150415 = platforms.create(c * 960 + 4 * 32, 15 * 32, '1'); block150415.body.immovable = true;
+block150417 = platforms.create(c * 960 + 4 * 32, 17 * 32, '1'); block150417.body.immovable = true;
+block150418 = platforms.create(c * 960 + 4 * 32, 18 * 32, '1'); block150418.body.immovable = true;
+block150419 = platforms.create(c * 960 + 4 * 32, 19 * 32, '1'); block150419.body.immovable = true;
+block150500 = platforms.create(c * 960 + 5 * 32, 0 * 32, '1'); block150500.body.immovable = true;
+block150501 = platforms.create(c * 960 + 5 * 32, 1 * 32, '1'); block150501.body.immovable = true;
+block150502 = platforms.create(c * 960 + 5 * 32, 2 * 32, '1'); block150502.body.immovable = true;
+block150503 = platforms.create(c * 960 + 5 * 32, 3 * 32, '1'); block150503.body.immovable = true;
+block150505 = platforms.create(c * 960 + 5 * 32, 5 * 32, '1'); block150505.body.immovable = true;
+block150506 = platforms.create(c * 960 + 5 * 32, 6 * 32, '1'); block150506.body.immovable = true;
+block150507 = platforms.create(c * 960 + 5 * 32, 7 * 32, '1'); block150507.body.immovable = true;
+block150508 = platforms.create(c * 960 + 5 * 32, 8 * 32, '1'); block150508.body.immovable = true;
+block150509 = platforms.create(c * 960 + 5 * 32, 9 * 32, '1'); block150509.body.immovable = true;
+block150511 = platforms.create(c * 960 + 5 * 32, 11 * 32, '1'); block150511.body.immovable = true;
+block150512 = platforms.create(c * 960 + 5 * 32, 12 * 32, '1'); block150512.body.immovable = true;
+block150513 = platforms.create(c * 960 + 5 * 32, 13 * 32, '1'); block150513.body.immovable = true;
+block150514 = platforms.create(c * 960 + 5 * 32, 14 * 32, '1'); block150514.body.immovable = true;
+block150517 = platforms.create(c * 960 + 5 * 32, 17 * 32, '1'); block150517.body.immovable = true;
+block150518 = platforms.create(c * 960 + 5 * 32, 18 * 32, '1'); block150518.body.immovable = true;
+block150519 = platforms.create(c * 960 + 5 * 32, 19 * 32, '1'); block150519.body.immovable = true;
+block150600 = platforms.create(c * 960 + 6 * 32, 0 * 32, '1'); block150600.body.immovable = true;
+block150601 = platforms.create(c * 960 + 6 * 32, 1 * 32, '1'); block150601.body.immovable = true;
+block150607 = platforms.create(c * 960 + 6 * 32, 7 * 32, '1'); block150607.body.immovable = true;
+block150608 = platforms.create(c * 960 + 6 * 32, 8 * 32, '1'); block150608.body.immovable = true;
+block150609 = platforms.create(c * 960 + 6 * 32, 9 * 32, '1'); block150609.body.immovable = true;
+block150611 = platforms.create(c * 960 + 6 * 32, 11 * 32, '1'); block150611.body.immovable = true;
+block150612 = platforms.create(c * 960 + 6 * 32, 12 * 32, '1'); block150612.body.immovable = true;
+block150613 = platforms.create(c * 960 + 6 * 32, 13 * 32, '1'); block150613.body.immovable = true;
+block150616 = platforms.create(c * 960 + 6 * 32, 16 * 32, '1'); block150616.body.immovable = true;
+block150617 = platforms.create(c * 960 + 6 * 32, 17 * 32, '1'); block150617.body.immovable = true;
+block150618 = platforms.create(c * 960 + 6 * 32, 18 * 32, '1'); block150618.body.immovable = true;
+block150619 = platforms.create(c * 960 + 6 * 32, 19 * 32, '1'); block150619.body.immovable = true;
+block150700 = platforms.create(c * 960 + 7 * 32, 0 * 32, '1'); block150700.body.immovable = true;
+block150701 = platforms.create(c * 960 + 7 * 32, 1 * 32, '1'); block150701.body.immovable = true;
+block150703 = platforms.create(c * 960 + 7 * 32, 3 * 32, '1'); block150703.body.immovable = true;
+block150705 = platforms.create(c * 960 + 7 * 32, 5 * 32, '1'); block150705.body.immovable = true;
+block150707 = platforms.create(c * 960 + 7 * 32, 7 * 32, '1'); block150707.body.immovable = true;
+block150708 = platforms.create(c * 960 + 7 * 32, 8 * 32, '1'); block150708.body.immovable = true;
+block150709 = platforms.create(c * 960 + 7 * 32, 9 * 32, '1'); block150709.body.immovable = true;
+block150713 = platforms.create(c * 960 + 7 * 32, 13 * 32, '1'); block150713.body.immovable = true;
+block150715 = platforms.create(c * 960 + 7 * 32, 15 * 32, '1'); block150715.body.immovable = true;
+block150716 = platforms.create(c * 960 + 7 * 32, 16 * 32, '1'); block150716.body.immovable = true;
+block150717 = platforms.create(c * 960 + 7 * 32, 17 * 32, '1'); block150717.body.immovable = true;
+block150718 = platforms.create(c * 960 + 7 * 32, 18 * 32, '1'); block150718.body.immovable = true;
+block150719 = platforms.create(c * 960 + 7 * 32, 19 * 32, '1'); block150719.body.immovable = true;
+block150800 = platforms.create(c * 960 + 8 * 32, 0 * 32, '1'); block150800.body.immovable = true;
+block150801 = platforms.create(c * 960 + 8 * 32, 1 * 32, '1'); block150801.body.immovable = true;
+block150803 = platforms.create(c * 960 + 8 * 32, 3 * 32, '1'); block150803.body.immovable = true;
+block150805 = platforms.create(c * 960 + 8 * 32, 5 * 32, '1'); block150805.body.immovable = true;
+block150807 = platforms.create(c * 960 + 8 * 32, 7 * 32, '1'); block150807.body.immovable = true;
+block150808 = platforms.create(c * 960 + 8 * 32, 8 * 32, '1'); block150808.body.immovable = true;
+block150811 = platforms.create(c * 960 + 8 * 32, 11 * 32, '1'); block150811.body.immovable = true;
+block150815 = platforms.create(c * 960 + 8 * 32, 15 * 32, '1'); block150815.body.immovable = true;
+block150816 = platforms.create(c * 960 + 8 * 32, 16 * 32, '1'); block150816.body.immovable = true;
+block150817 = platforms.create(c * 960 + 8 * 32, 17 * 32, '1'); block150817.body.immovable = true;
+block150818 = platforms.create(c * 960 + 8 * 32, 18 * 32, '1'); block150818.body.immovable = true;
+block150819 = platforms.create(c * 960 + 8 * 32, 19 * 32, '1'); block150819.body.immovable = true;
+block150900 = platforms.create(c * 960 + 9 * 32, 0 * 32, '1'); block150900.body.immovable = true;
+block150901 = platforms.create(c * 960 + 9 * 32, 1 * 32, '1'); block150901.body.immovable = true;
+block150903 = platforms.create(c * 960 + 9 * 32, 3 * 32, '1'); block150903.body.immovable = true;
+block150905 = platforms.create(c * 960 + 9 * 32, 5 * 32, '1'); block150905.body.immovable = true;
+block150910 = platforms.create(c * 960 + 9 * 32, 10 * 32, '1'); block150910.body.immovable = true;
+block150911 = platforms.create(c * 960 + 9 * 32, 11 * 32, '1'); block150911.body.immovable = true;
+block150912 = platforms.create(c * 960 + 9 * 32, 12 * 32, '1'); block150912.body.immovable = true;
+block150914 = platforms.create(c * 960 + 9 * 32, 14 * 32, '1'); block150914.body.immovable = true;
+block150915 = platforms.create(c * 960 + 9 * 32, 15 * 32, '1'); block150915.body.immovable = true;
+block150916 = platforms.create(c * 960 + 9 * 32, 16 * 32, '1'); block150916.body.immovable = true;
+block150917 = platforms.create(c * 960 + 9 * 32, 17 * 32, '1'); block150917.body.immovable = true;
+block150918 = platforms.create(c * 960 + 9 * 32, 18 * 32, '1'); block150918.body.immovable = true;
+block150919 = platforms.create(c * 960 + 9 * 32, 19 * 32, '1'); block150919.body.immovable = true;
+block151000 = platforms.create(c * 960 + 10 * 32, 0 * 32, '1'); block151000.body.immovable = true;
+block151001 = platforms.create(c * 960 + 10 * 32, 1 * 32, '1'); block151001.body.immovable = true;
+block151003 = platforms.create(c * 960 + 10 * 32, 3 * 32, '1'); block151003.body.immovable = true;
+block151005 = platforms.create(c * 960 + 10 * 32, 5 * 32, '1'); block151005.body.immovable = true;
+block151006 = platforms.create(c * 960 + 10 * 32, 6 * 32, '1'); block151006.body.immovable = true;
+block151007 = platforms.create(c * 960 + 10 * 32, 7 * 32, '1'); block151007.body.immovable = true;
+block151009 = platforms.create(c * 960 + 10 * 32, 9 * 32, '1'); block151009.body.immovable = true;
+block151010 = platforms.create(c * 960 + 10 * 32, 10 * 32, '1'); block151010.body.immovable = true;
+block151011 = platforms.create(c * 960 + 10 * 32, 11 * 32, '1'); block151011.body.immovable = true;
+block151012 = platforms.create(c * 960 + 10 * 32, 12 * 32, '1'); block151012.body.immovable = true;
+block151014 = platforms.create(c * 960 + 10 * 32, 14 * 32, '1'); block151014.body.immovable = true;
+block151015 = platforms.create(c * 960 + 10 * 32, 15 * 32, '1'); block151015.body.immovable = true;
+block151016 = platforms.create(c * 960 + 10 * 32, 16 * 32, '1'); block151016.body.immovable = true;
+block151017 = platforms.create(c * 960 + 10 * 32, 17 * 32, '1'); block151017.body.immovable = true;
+block151018 = platforms.create(c * 960 + 10 * 32, 18 * 32, '1'); block151018.body.immovable = true;
+block151019 = platforms.create(c * 960 + 10 * 32, 19 * 32, '1'); block151019.body.immovable = true;
+block151100 = platforms.create(c * 960 + 11 * 32, 0 * 32, '1'); block151100.body.immovable = true;
+block151101 = platforms.create(c * 960 + 11 * 32, 1 * 32, '1'); block151101.body.immovable = true;
+block151103 = platforms.create(c * 960 + 11 * 32, 3 * 32, '1'); block151103.body.immovable = true;
+block151107 = platforms.create(c * 960 + 11 * 32, 7 * 32, '1'); block151107.body.immovable = true;
+block151109 = platforms.create(c * 960 + 11 * 32, 9 * 32, '1'); block151109.body.immovable = true;
+block151110 = platforms.create(c * 960 + 11 * 32, 10 * 32, '1'); block151110.body.immovable = true;
+block151111 = platforms.create(c * 960 + 11 * 32, 11 * 32, '1'); block151111.body.immovable = true;
+block151112 = platforms.create(c * 960 + 11 * 32, 12 * 32, '1'); block151112.body.immovable = true;
+block151115 = platforms.create(c * 960 + 11 * 32, 15 * 32, '1'); block151115.body.immovable = true;
+block151116 = platforms.create(c * 960 + 11 * 32, 16 * 32, '1'); block151116.body.immovable = true;
+block151117 = platforms.create(c * 960 + 11 * 32, 17 * 32, '1'); block151117.body.immovable = true;
+block151118 = platforms.create(c * 960 + 11 * 32, 18 * 32, '1'); block151118.body.immovable = true;
+block151119 = platforms.create(c * 960 + 11 * 32, 19 * 32, '1'); block151119.body.immovable = true;
+block151200 = platforms.create(c * 960 + 12 * 32, 0 * 32, '1'); block151200.body.immovable = true;
+block151204 = platforms.create(c * 960 + 12 * 32, 4 * 32, '1'); block151204.body.immovable = true;
+block151205 = platforms.create(c * 960 + 12 * 32, 5 * 32, '1'); block151205.body.immovable = true;
+block151207 = platforms.create(c * 960 + 12 * 32, 7 * 32, '1'); block151207.body.immovable = true;
+block151209 = platforms.create(c * 960 + 12 * 32, 9 * 32, '1'); block151209.body.immovable = true;
+block151210 = platforms.create(c * 960 + 12 * 32, 10 * 32, '1'); block151210.body.immovable = true;
+block151211 = platforms.create(c * 960 + 12 * 32, 11 * 32, '1'); block151211.body.immovable = true;
+block151212 = platforms.create(c * 960 + 12 * 32, 12 * 32, '1'); block151212.body.immovable = true;
+block151213 = platforms.create(c * 960 + 12 * 32, 13 * 32, '1'); block151213.body.immovable = true;
+block151215 = platforms.create(c * 960 + 12 * 32, 15 * 32, '1'); block151215.body.immovable = true;
+block151216 = platforms.create(c * 960 + 12 * 32, 16 * 32, '1'); block151216.body.immovable = true;
+block151217 = platforms.create(c * 960 + 12 * 32, 17 * 32, '1'); block151217.body.immovable = true;
+block151218 = platforms.create(c * 960 + 12 * 32, 18 * 32, '1'); block151218.body.immovable = true;
+block151219 = platforms.create(c * 960 + 12 * 32, 19 * 32, '1'); block151219.body.immovable = true;
+block151300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block151300.body.immovable = true;
+block151319 = platforms.create(c * 960 + 13 * 32, 19 * 32, '1'); block151319.body.immovable = true;
+block151400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block151400.body.immovable = true;
+block151419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block151419.body.immovable = true;
+	},
+
+	platform16: function ()
+	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur30 = klausuren.create(c * 960 + 7 * 32, 1 * 32, 'klausur');
+		} else if (schule == false) {
+			boost30 = booster.create(c * 960 + 7 * 32, 1 * 32, 'booster');
+		}
+
+		if (schule == true) {
+			klausur31 = klausuren.create(c * 960 + 5 * 32, 11 * 32, 'klausur');
+		} else if (schule == false) {
+			boost31 = booster.create(c * 960 + 5 * 32, 11 * 32, 'booster');
+		}
+		block160000 = platforms.create(c * 960 + 0 * 32, 0 * 32, '1'); block160000.body.immovable = true;
+block160003 = platforms.create(c * 960 + 0 * 32, 3 * 32, '1'); block160003.body.immovable = true;
+block160004 = platforms.create(c * 960 + 0 * 32, 4 * 32, '1'); block160004.body.immovable = true;
+block160010 = platforms.create(c * 960 + 0 * 32, 10 * 32, '1'); block160010.body.immovable = true;
+block160014 = platforms.create(c * 960 + 0 * 32, 14 * 32, '1'); block160014.body.immovable = true;
+block160015 = platforms.create(c * 960 + 0 * 32, 15 * 32, '1'); block160015.body.immovable = true;
+block160016 = platforms.create(c * 960 + 0 * 32, 16 * 32, '1'); block160016.body.immovable = true;
+block160100 = platforms.create(c * 960 + 1 * 32, 0 * 32, '1'); block160100.body.immovable = true;
+block160104 = platforms.create(c * 960 + 1 * 32, 4 * 32, '1'); block160104.body.immovable = true;
+block160110 = platforms.create(c * 960 + 1 * 32, 10 * 32, '1'); block160110.body.immovable = true;
+block160114 = platforms.create(c * 960 + 1 * 32, 14 * 32, '1'); block160114.body.immovable = true;
+block160119 = platforms.create(c * 960 + 1 * 32, 19 * 32, '1'); block160119.body.immovable = true;
+block160200 = platforms.create(c * 960 + 2 * 32, 0 * 32, '1'); block160200.body.immovable = true;
+block160202 = platforms.create(c * 960 + 2 * 32, 2 * 32, '1'); block160202.body.immovable = true;
+block160205 = platforms.create(c * 960 + 2 * 32, 5 * 32, '1'); block160205.body.immovable = true;
+block160219 = platforms.create(c * 960 + 2 * 32, 19 * 32, '1'); block160219.body.immovable = true;
+block160300 = platforms.create(c * 960 + 3 * 32, 0 * 32, '1'); block160300.body.immovable = true;
+block160306 = platforms.create(c * 960 + 3 * 32, 6 * 32, '1'); block160306.body.immovable = true;
+block160309 = platforms.create(c * 960 + 3 * 32, 9 * 32, '1'); block160309.body.immovable = true;
+block160317 = platforms.create(c * 960 + 3 * 32, 17 * 32, '1'); block160317.body.immovable = true;
+block160319 = platforms.create(c * 960 + 3 * 32, 19 * 32, '1'); block160319.body.immovable = true;
+block160406 = platforms.create(c * 960 + 4 * 32, 6 * 32, '1'); block160406.body.immovable = true;
+block160412 = platforms.create(c * 960 + 4 * 32, 12 * 32, '1'); block160412.body.immovable = true;
+block160417 = platforms.create(c * 960 + 4 * 32, 17 * 32, '1'); block160417.body.immovable = true;
+block160500 = platforms.create(c * 960 + 5 * 32, 0 * 32, '1'); block160500.body.immovable = true;
+block160506 = platforms.create(c * 960 + 5 * 32, 6 * 32, '1'); block160506.body.immovable = true;
+block160512 = platforms.create(c * 960 + 5 * 32, 12 * 32, '1'); block160512.body.immovable = true;
+block160517 = platforms.create(c * 960 + 5 * 32, 17 * 32, '1'); block160517.body.immovable = true;
+block160600 = platforms.create(c * 960 + 6 * 32, 0 * 32, '1'); block160600.body.immovable = true;
+block160601 = platforms.create(c * 960 + 6 * 32, 1 * 32, '1'); block160601.body.immovable = true;
+block160602 = platforms.create(c * 960 + 6 * 32, 2 * 32, '1'); block160602.body.immovable = true;
+block160606 = platforms.create(c * 960 + 6 * 32, 6 * 32, '1'); block160606.body.immovable = true;
+block160612 = platforms.create(c * 960 + 6 * 32, 12 * 32, '1'); block160612.body.immovable = true;
+block160619 = platforms.create(c * 960 + 6 * 32, 19 * 32, '1'); block160619.body.immovable = true;
+block160700 = platforms.create(c * 960 + 7 * 32, 0 * 32, '1'); block160700.body.immovable = true;
+block160702 = platforms.create(c * 960 + 7 * 32, 2 * 32, '1'); block160702.body.immovable = true;
+block160706 = platforms.create(c * 960 + 7 * 32, 6 * 32, '1'); block160706.body.immovable = true;
+block160714 = platforms.create(c * 960 + 7 * 32, 14 * 32, '1'); block160714.body.immovable = true;
+block160719 = platforms.create(c * 960 + 7 * 32, 19 * 32, '1'); block160719.body.immovable = true;
+block160800 = platforms.create(c * 960 + 8 * 32, 0 * 32, '1'); block160800.body.immovable = true;
+block160802 = platforms.create(c * 960 + 8 * 32, 2 * 32, '1'); block160802.body.immovable = true;
+block160805 = platforms.create(c * 960 + 8 * 32, 5 * 32, '1'); block160805.body.immovable = true;
+block160809 = platforms.create(c * 960 + 8 * 32, 9 * 32, '1'); block160809.body.immovable = true;
+block160817 = platforms.create(c * 960 + 8 * 32, 17 * 32, '1'); block160817.body.immovable = true;
+block160819 = platforms.create(c * 960 + 8 * 32, 19 * 32, '1'); block160819.body.immovable = true;
+block160900 = platforms.create(c * 960 + 9 * 32, 0 * 32, '1'); block160900.body.immovable = true;
+block160902 = platforms.create(c * 960 + 9 * 32, 2 * 32, '1'); block160902.body.immovable = true;
+block160905 = platforms.create(c * 960 + 9 * 32, 5 * 32, '1'); block160905.body.immovable = true;
+block160909 = platforms.create(c * 960 + 9 * 32, 9 * 32, '1'); block160909.body.immovable = true;
+block160915 = platforms.create(c * 960 + 9 * 32, 15 * 32, '1'); block160915.body.immovable = true;
+block161000 = platforms.create(c * 960 + 10 * 32, 0 * 32, '1'); block161000.body.immovable = true;
+block161005 = platforms.create(c * 960 + 10 * 32, 5 * 32, '1'); block161005.body.immovable = true;
+block161009 = platforms.create(c * 960 + 10 * 32, 9 * 32, '1'); block161009.body.immovable = true;
+block161010 = platforms.create(c * 960 + 10 * 32, 10 * 32, '1'); block161010.body.immovable = true;
+block161103 = platforms.create(c * 960 + 11 * 32, 3 * 32, '1'); block161103.body.immovable = true;
+block161105 = platforms.create(c * 960 + 11 * 32, 5 * 32, '1'); block161105.body.immovable = true;
+block161110 = platforms.create(c * 960 + 11 * 32, 10 * 32, '1'); block161110.body.immovable = true;
+block161111 = platforms.create(c * 960 + 11 * 32, 11 * 32, '1'); block161111.body.immovable = true;
+block161119 = platforms.create(c * 960 + 11 * 32, 19 * 32, '1'); block161119.body.immovable = true;
+block161203 = platforms.create(c * 960 + 12 * 32, 3 * 32, '1'); block161203.body.immovable = true;
+block161205 = platforms.create(c * 960 + 12 * 32, 5 * 32, '1'); block161205.body.immovable = true;
+block161211 = platforms.create(c * 960 + 12 * 32, 11 * 32, '1'); block161211.body.immovable = true;
+block161219 = platforms.create(c * 960 + 12 * 32, 19 * 32, '1'); block161219.body.immovable = true;
+block161300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block161300.body.immovable = true;
+block161305 = platforms.create(c * 960 + 13 * 32, 5 * 32, '1'); block161305.body.immovable = true;
+block161307 = platforms.create(c * 960 + 13 * 32, 7 * 32, '1'); block161307.body.immovable = true;
+block161315 = platforms.create(c * 960 + 13 * 32, 15 * 32, '1'); block161315.body.immovable = true;
+block161403 = platforms.create(c * 960 + 14 * 32, 3 * 32, '1'); block161403.body.immovable = true;
+block161407 = platforms.create(c * 960 + 14 * 32, 7 * 32, '1'); block161407.body.immovable = true;
+block161414 = platforms.create(c * 960 + 14 * 32, 14 * 32, '1'); block161414.body.immovable = true;
+block161415 = platforms.create(c * 960 + 14 * 32, 15 * 32, '1'); block161415.body.immovable = true;
+
+	},
+
 	destroyPlatform1Loader:	function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform1, this);
@@ -2526,7 +2982,22 @@ pausieren: function () {
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform12, this);
 	},
-
+	destroyPlatform13Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform13, this);
+	},
+	destroyPlatform14Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform14, this);
+	},
+	destroyPlatform15Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform15, this);
+	},
+	destroyPlatform16Loader: function ()
+	{
+		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform16, this);
+	},
 
 	destroyPlatform1:	function ()
 	{
@@ -2978,6 +3449,406 @@ pausieren: function () {
 			block367.destroy();
 		}
 	},
+
+	destroyPlatform13: function ()
+	{
+		if (player3.x - block130000.x >= 480)
+		{
+			block130000.destroy();
+block130001.destroy();
+block130006.destroy();
+block130016.destroy();
+block130019.destroy();
+block130100.destroy();
+block130102.destroy();
+block130103.destroy();
+block130106.destroy();
+block130111.destroy();
+block130116.destroy();
+block130119.destroy();
+block130209.destroy();
+block130210.destroy();
+block130211.destroy();
+block130214.destroy();
+block130219.destroy();
+block130300.destroy();
+block130304.destroy();
+block130307.destroy();
+block130308.destroy();
+block130309.destroy();
+block130310.destroy();
+block130317.destroy();
+block130404.destroy();
+block130415.destroy();
+block130419.destroy();
+block130501.destroy();
+block130508.destroy();
+block130509.destroy();
+block130514.destroy();
+block130515.destroy();
+block130519.destroy();
+block130601.destroy();
+block130619.destroy();
+block130701.destroy();
+block130703.destroy();
+block130704.destroy();
+block130709.destroy();
+block130710.destroy();
+block130713.destroy();
+block130716.destroy();
+block130719.destroy();
+block130800.destroy();
+block130809.destroy();
+block130810.destroy();
+block130813.destroy();
+block130816.destroy();
+block130900.destroy();
+block130906.destroy();
+block130909.destroy();
+block130918.destroy();
+block131006.destroy();
+block131012.destroy();
+block131013.destroy();
+block131014.destroy();
+block131015.destroy();
+block131018.destroy();
+block131101.destroy();
+block131108.destroy();
+block131115.destroy();
+block131204.destroy();
+block131213.destroy();
+block131214.destroy();
+block131215.destroy();
+block131219.destroy();
+block131300.destroy();
+block131302.destroy();
+block131304.destroy();
+block131307.destroy();
+block131308.destroy();
+block131309.destroy();
+block131310.destroy();
+block131314.destroy();
+block131319.destroy();
+block131400.destroy();
+block131404.destroy();
+block131407.destroy();
+block131408.destroy();
+block131409.destroy();
+block131410.destroy();
+block131414.destroy();
+block131419.destroy();
+		}
+	},
+	destroyPlatform14: function ()
+	{
+		if (player3.x - block140000.x >= 480)
+		{
+			block140000.destroy();
+			block140004.destroy();
+			block140005.destroy();
+			block140008.destroy();
+			block140011.destroy();
+			block140014.destroy();
+			block140015.destroy();
+			block140019.destroy();
+			block140100.destroy();
+			block140108.destroy();
+			block140111.destroy();
+			block140119.destroy();
+			block140200.destroy();
+			block140202.destroy();
+			block140217.destroy();
+			block140219.destroy();
+			block140300.destroy();
+			block140302.destroy();
+			block140303.destroy();
+			block140316.destroy();
+			block140317.destroy();
+			block140319.destroy();
+			block140405.destroy();
+			block140414.destroy();
+			block140506.destroy();
+			block140513.destroy();
+			block140600.destroy();
+			block140607.destroy();
+			block140612.destroy();
+			block140619.destroy();
+			block140700.destroy();
+			block140707.destroy();
+			block140709.destroy();
+			block140710.destroy();
+			block140712.destroy();
+			block140719.destroy();
+			block140800.destroy();
+			block140807.destroy();
+			block140812.destroy();
+			block140819.destroy();
+			block141005.destroy();
+			block141006.destroy();
+			block141007.destroy();
+			block141012.destroy();
+			block141013.destroy();
+			block141014.destroy();
+			block141105.destroy();
+			block141114.destroy();
+			block141119.destroy();
+			block141200.destroy();
+			block141219.destroy();
+			block141300.destroy();
+			block141307.destroy();
+			block141308.destroy();
+			block141309.destroy();
+			block141310.destroy();
+			block141311.destroy();
+			block141319.destroy();
+			block141400.destroy();
+			block141407.destroy();
+			block141411.destroy();
+			block141419.destroy();
+
+		}
+	},
+	destroyPlatform15: function ()
+	{
+		if (player3.x - block150000.x >= 480)
+		{
+			block150000.destroy();
+			block150019.destroy();
+			block150100.destroy();
+			block150119.destroy();
+			block150200.destroy();
+			block150201.destroy();
+			block150202.destroy();
+			block150217.destroy();
+			block150218.destroy();
+			block150219.destroy();
+			block150300.destroy();
+			block150301.destroy();
+			block150302.destroy();
+			block150303.destroy();
+			block150305.destroy();
+			block150306.destroy();
+			block150307.destroy();
+			block150309.destroy();
+			block150310.destroy();
+			block150311.destroy();
+			block150312.destroy();
+			block150313.destroy();
+			block150314.destroy();
+			block150315.destroy();
+			block150317.destroy();
+			block150318.destroy();
+			block150319.destroy();
+			block150400.destroy();
+			block150401.destroy();
+			block150402.destroy();
+			block150403.destroy();
+			block150405.destroy();
+			block150406.destroy();
+			block150407.destroy();
+			block150411.destroy();
+			block150412.destroy();
+			block150413.destroy();
+			block150414.destroy();
+			block150415.destroy();
+			block150417.destroy();
+			block150418.destroy();
+			block150419.destroy();
+			block150500.destroy();
+			block150501.destroy();
+			block150502.destroy();
+			block150503.destroy();
+			block150505.destroy();
+			block150506.destroy();
+			block150507.destroy();
+			block150508.destroy();
+			block150509.destroy();
+			block150511.destroy();
+			block150512.destroy();
+			block150513.destroy();
+			block150514.destroy();
+			block150517.destroy();
+			block150518.destroy();
+			block150519.destroy();
+			block150600.destroy();
+			block150601.destroy();
+			block150607.destroy();
+			block150608.destroy();
+			block150609.destroy();
+			block150611.destroy();
+			block150612.destroy();
+			block150613.destroy();
+			block150616.destroy();
+			block150617.destroy();
+			block150618.destroy();
+			block150619.destroy();
+			block150700.destroy();
+			block150701.destroy();
+			block150703.destroy();
+			block150705.destroy();
+			block150707.destroy();
+			block150708.destroy();
+			block150709.destroy();
+			block150713.destroy();
+			block150715.destroy();
+			block150716.destroy();
+			block150717.destroy();
+			block150718.destroy();
+			block150719.destroy();
+			block150800.destroy();
+			block150801.destroy();
+			block150803.destroy();
+			block150805.destroy();
+			block150807.destroy();
+			block150808.destroy();
+			block150811.destroy();
+			block150815.destroy();
+			block150816.destroy();
+			block150817.destroy();
+			block150818.destroy();
+			block150819.destroy();
+			block150900.destroy();
+			block150901.destroy();
+			block150903.destroy();
+			block150905.destroy();
+			block150910.destroy();
+			block150911.destroy();
+			block150912.destroy();
+			block150914.destroy();
+			block150915.destroy();
+			block150916.destroy();
+			block150917.destroy();
+			block150918.destroy();
+			block150919.destroy();
+			block151000.destroy();
+			block151001.destroy();
+			block151003.destroy();
+			block151005.destroy();
+			block151006.destroy();
+			block151007.destroy();
+			block151009.destroy();
+			block151010.destroy();
+			block151011.destroy();
+			block151012.destroy();
+			block151014.destroy();
+			block151015.destroy();
+			block151016.destroy();
+			block151017.destroy();
+			block151018.destroy();
+			block151019.destroy();
+			block151100.destroy();
+			block151101.destroy();
+			block151103.destroy();
+			block151107.destroy();
+			block151109.destroy();
+			block151110.destroy();
+			block151111.destroy();
+			block151112.destroy();
+			block151115.destroy();
+			block151116.destroy();
+			block151117.destroy();
+			block151118.destroy();
+			block151119.destroy();
+			block151200.destroy();
+			block151204.destroy();
+			block151205.destroy();
+			block151207.destroy();
+			block151209.destroy();
+			block151210.destroy();
+			block151211.destroy();
+			block151212.destroy();
+			block151213.destroy();
+			block151215.destroy();
+			block151216.destroy();
+			block151217.destroy();
+			block151218.destroy();
+			block151219.destroy();
+			block151300.destroy();
+			block151319.destroy();
+			block151400.destroy();
+			block151419.destroy();
+
+		}
+	},
+	destroyPlatform16: function ()
+	{
+		if (player3.x - block160000.x >= 480)
+		{
+			block160000.destroy();
+			block160003.destroy();
+			block160004.destroy();
+			block160010.destroy();
+			block160014.destroy();
+			block160015.destroy();
+			block160016.destroy();
+			block160100.destroy();
+			block160104.destroy();
+			block160110.destroy();
+			block160114.destroy();
+			block160119.destroy();
+			block160200.destroy();
+			block160202.destroy();
+			block160205.destroy();
+			block160219.destroy();
+			block160300.destroy();
+			block160306.destroy();
+			block160309.destroy();
+			block160317.destroy();
+			block160319.destroy();
+			block160406.destroy();
+			block160412.destroy();
+			block160417.destroy();
+			block160500.destroy();
+			block160506.destroy();
+			block160512.destroy();
+			block160517.destroy();
+			block160600.destroy();
+			block160601.destroy();
+			block160602.destroy();
+			block160606.destroy();
+			block160612.destroy();
+			block160619.destroy();
+			block160700.destroy();
+			block160702.destroy();
+			block160706.destroy();
+			block160714.destroy();
+			block160719.destroy();
+			block160800.destroy();
+			block160802.destroy();
+			block160805.destroy();
+			block160809.destroy();
+			block160817.destroy();
+			block160819.destroy();
+			block160900.destroy();
+			block160902.destroy();
+			block160905.destroy();
+			block160909.destroy();
+			block160915.destroy();
+			block161000.destroy();
+			block161005.destroy();
+			block161009.destroy();
+			block161010.destroy();
+			block161103.destroy();
+			block161105.destroy();
+			block161110.destroy();
+			block161111.destroy();
+			block161119.destroy();
+			block161203.destroy();
+			block161205.destroy();
+			block161211.destroy();
+			block161219.destroy();
+			block161300.destroy();
+			block161305.destroy();
+			block161307.destroy();
+			block161315.destroy();
+			block161403.destroy();
+			block161407.destroy();
+			block161414.destroy();
+			block161415.destroy();
+
+		}
+	},
+
 	Boost: function(player, boost)
 	{
 		if (schule == false) {

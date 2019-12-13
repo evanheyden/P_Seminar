@@ -321,7 +321,7 @@ var playState = {
 		downButton = game.input.keyboard.addKey(Phaser.Keyboard.S);
 		rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
 		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
-		
+
 		var pausebutton = this.game.add.button(870, 30, 'pausebutton', this.pause, this, 1, 0);
 		pausebutton.fixedToCamera = true;
 	},
@@ -654,6 +654,11 @@ var playState = {
 		} else if (schule == false) {
 			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
 		}
+		if (schule == true) {
+			klausur2 = klausuren.create(c * 960 + 8 * 32, 11 * 32, 'klausur');
+		} else if (schule == false) {
+			boost2 = booster.create(c * 960 + 8 * 32, 11 * 32, 'booster');
+		}
 
 
 		block1 = platforms.create(c * 960, 0,'3b');
@@ -822,6 +827,18 @@ var playState = {
 
 	platform3: function ()
 	{
+
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 2 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 2 * 32, 'booster');
+		}
 		block40 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
 		block40.body.immovable = true;
@@ -998,6 +1015,17 @@ var playState = {
 
 	platform4: function()
 	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 3.5 * 32, 8 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 3.5 * 32, 8 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 3.5 * 32, 11 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 3.5 * 32, 11 * 32, 'booster');
+		}
 		block82 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
 		block82.body.immovable = true;
@@ -1149,6 +1177,17 @@ var playState = {
 
 	platform5: function ()
 	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 10 * 32, 7 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 10 * 32, 7 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 3 * 32, 14 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 3 * 32, 14 * 32, 'booster');
+		}
 		block118 = platforms.create(c * 960 + 0 * 32, 0 * 32,'2b');
 
 		block118.body.immovable = true;
@@ -1300,6 +1339,17 @@ var playState = {
 
 	platform6: function()
 	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 9 * 32, 4 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 9 * 32, 4 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 9 * 32, 15 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 9 * 32, 15 * 32, 'booster');
+		}
 		block154 = platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
 		block154.body.immovable = true;
@@ -1427,6 +1477,17 @@ var playState = {
 
 	platform7: function ()
 	{
+		var testen = this.schule();
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 7 * 32, 8 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 7 * 32, 8 * 32, 'booster');
+		}
+		if (schule == true) {
+			klausur1 = klausuren.create(c * 960 + 7 * 32, 11 * 32, 'klausur');
+		} else if (schule == false) {
+			boost1 = booster.create(c * 960 + 7 * 32, 11 * 32, 'booster');
+		}
 		block184= platforms.create(c * 960 + 0 * 32, 0 * 32,'1');
 
 		block184.body.immovable = true;

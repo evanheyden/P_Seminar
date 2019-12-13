@@ -88,9 +88,6 @@ var playState = {
 		var location = this.getlocation();
 		this.game.time.events.repeat(Phaser.Timer.SECOND * 5.8, 10000, this.timer1Up, this);
 
-		//  We're going to be using physics, so enable the Arcade Physics system
-
-
 		//hier werden die Grenzen der Welt gesetzt:
 		this.game.world.setBounds(0, 0, 960*100000000000, 640);
 
@@ -107,11 +104,8 @@ var playState = {
 		timer2 = this.game.time.create();
 		timer2.start();
 
-
-		//The platforms group contains the ground and the 2 ledges we can jump on
 		platforms = this.game.add.group();
 
-		//We will enable physics for any object that is created in this group
 		platforms.enableBody = true;
 
 		blockA = platforms.create(0, 0,'3b');
@@ -216,13 +210,11 @@ var playState = {
 
 		//ab hier werden einfach immer die Eigenschaften doppelt genannt (nur die Schwerkraft ist für player2 negativ):
 
-		// We need to enable physics on the player
 		game.physics.arcade.enable(player1);
 		game.physics.arcade.enable(player2);
 		game.physics.arcade.enable(player3);
 
 
-		// Player physics properties. Give the little guy a slight bounce.
 		player1.body.bounce.y = 0;
 		player1.body.gravity.y = -300;
 		player1.body.collideWorldBounds = true;
@@ -236,7 +228,6 @@ var playState = {
 		player1.body.mass = 100;
 		player2.body.mass = 100;
 
-		//  Our two animations, walking left and right.
 		player1.animations.add('leftup1', [9, 10, 11, 12], 10, true);
 		player1.animations.add('rightup1', [14, 15, 16, 17], 10, true);
 
@@ -250,41 +241,15 @@ var playState = {
 		player2.animations.add('leftup2', [9, 10, 11, 12], 10, true);
 		player2.animations.add('rightup2', [14, 15, 16, 17], 10, true);
 
-		//  Finally some booster to collect
 		booster = this.game.add.group();
 
-		//  We will enable physics for any  that is created in this group
 		booster.enableBody = true;
-
-		//  Here we'll create 12 of them evenly spaced apart
-	/*	for (var i = 0; i < 1; i++)
-		{
-			//  Create a  inside of the 'booster' group
-			var boost = booster.create(i * 1, 0, 'booster');
-
-			//  Let gravity do its thing
-			boost.body.gravity.y = 0;
-
-			//  This just gives each  a slightly random bounce value
-			boost.body.bounce.y = 0.7 + Math.random() * 0.2;
-		}*/
 
 		klausuren = this.game.add.group();
 
-		//  We will enable physics for any  that is created in this group
 		klausuren.enableBody = true;
 
-	/*	for (var i = 0; i < 1; i++)
-		{
-			//  Create a  inside of the 'booster' group
-			var klausur = klausuren.create(i * 10, 40, 'klausur');
 
-			//  Let gravity do its thing
-			klausur.body.gravity.y = 0;
-
-			//  This just gives each  a slightly random bounce value
-			klausur.body.bounce.y = 0.7 + Math.random() * 0.2;
-		}*/
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
 		game.camera.follow(player3	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
@@ -292,7 +257,7 @@ var playState = {
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fcbc38' });
 		scoreText.fixedToCamera = true;
-		//  Our controls.
+
 		//hier werden zusätzlich zu den Standard-Pfeiltasten noch die WASD-Tasten für player2 und der ButtonGravity definiert:
 
 		cursors = game.input.keyboard.createCursorKeys();
@@ -300,14 +265,8 @@ var playState = {
 		leftButton = game.input.keyboard.addKey(Phaser.Keyboard.A);
 		downButton = game.input.keyboard.addKey(Phaser.Keyboard.S);
 		rightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
-		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.N);
-
-<<<<<<< HEAD
+		ButtonGravity = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 	var pause = this.pausieren();
-=======
-		var pausebutton = this.game.add.button(870, 30, 'pausebutton', this.pause, this, 1, 0);
-		pausebutton.fixedToCamera = true;
->>>>>>> c602ec6b948680dd445ec8a862da9781496c5bc3
 	},
 
 pausieren: function () {
@@ -380,14 +339,13 @@ pausieren: function () {
 
 		game.time.events.add(Phaser.Timer.SECOND *1, this.score, this) ;
 
-		//  Collide the player and the booster with the platforms
 		game.physics.arcade.collide(player1, platforms);
 		game.physics.arcade.collide(booster, platforms);
 
 		game.physics.arcade.collide(player2, platforms);
 		game.physics.arcade.collide(booster, platforms);
 
-		//  Checks to see if the player overlaps with any of the booster, if he does call the collect function
+
 		game.physics.arcade.overlap(player1, booster, this.Boost, null, this);
 
 		game.physics.arcade.overlap(player2, booster, this.Boost, null, this);
@@ -395,14 +353,13 @@ pausieren: function () {
 		game.physics.arcade.overlap(player1, klausuren, this.Stress, null, this);
 
 		game.physics.arcade.overlap(player2, klausuren, this.Stress, null, this);
-		//  Reset the players velocity (movement)
+
 		player1.body.velocity.x = 0;
 
 
 
 		if (cursors.left.isDown && player1.body.touching.down == true)
 		{
-			//  Move to the left
 			player1.body.velocity.x = -playerSpeed;
 
 			player1.animations.play('leftup1');
@@ -422,7 +379,6 @@ pausieren: function () {
 		}
 		else if (cursors.right.isDown && player1.body.touching.down == true)
 		{
-			//  Move to the right
 			player1.body.velocity.x = playerSpeed;
 
 			player1.animations.play('rightup1');
@@ -430,7 +386,6 @@ pausieren: function () {
 
 		else if (cursors.right.isDown && player1.body.touching.up == true)
 		{
-			//  Move to the right
 			player1.body.velocity.x = playerSpeed;
 
 			player1.animations.play('rightup1');
@@ -445,13 +400,11 @@ pausieren: function () {
 
 		else
 		{
-			//  Stand still
 			player1.animations.stop();
 
 			player1.frame = 13;
 		}
 
-		//hier soll der ButtonGravity für player1 programmiert werden, allerdings kann er bisher nur positive Schwerkraft (man wird nach unten gezogen) in Negative (man wird nach oben gezogen) umwandeln:
 		if (ButtonGravity.isDown && player1.body.touching.down )
 		{
 			player1.body.gravity.y = -300;
@@ -469,7 +422,6 @@ pausieren: function () {
 			player2.scale.y *= -1;
 		}
 
-		// hier soll die Sprungrichtung an die Schwerkraft-Richtung angepasst werden, allerdings funktioniert das momentan nur bei positiver Schwerkraft:
 		if (upButton.isDown && player2.body.touching.down)
 		{
 			player2.body.velocity.y = -playerJump;
@@ -501,7 +453,6 @@ pausieren: function () {
 
 		if (leftButton.isDown && player2.body.touching.down == true)
 		{
-			//  Move to the left
 			player2.body.velocity.x = -playerSpeed;
 
 			player2.animations.play('leftdown2');
@@ -509,7 +460,6 @@ pausieren: function () {
 
 		else if (leftButton.isDown && player2.body.touching.up == true)
 		{
-			//  Move to the left
 			player2.body.velocity.x = -playerSpeed;
 
 			player2.animations.play('leftdown2');
@@ -524,7 +474,6 @@ pausieren: function () {
 
 		else if (rightButton.isDown && player2.body.touching.down == true)
 		{
-			//  Move to the right
 			player2.body.velocity.x = playerSpeed;
 
 			player2.animations.play('rightdown2');
@@ -532,7 +481,6 @@ pausieren: function () {
 
 		else if (rightButton.isDown && player2.body.touching.up == true)
 		{
-			//  Move to the right
 			player2.body.velocity.x = playerSpeed;
 
 			player2.animations.play('rightdown2');
@@ -547,7 +495,6 @@ pausieren: function () {
 
 		else
 		{
-			//  Stand still
 			player2.animations.stop();
 
 			player2.frame = 4;
@@ -2575,13 +2522,6 @@ pausieren: function () {
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform11, this);
 	},
-	destroyPlatform8: function ()
-	{
-		if (player3.x - platform8.x >= 480)
-		{
-			platform8.destroy();
-		}
-	},
 	destroyPlatform12Loader: function ()
 	{
 		game.time.events.add(Phaser.Timer.SECOND * 12, this.destroyPlatform12, this);
@@ -2881,6 +2821,14 @@ pausieren: function () {
 			block206.destroy();
 			block207.destroy();
 			block208.destroy();
+		}
+	},
+
+	destroyPlatform8: function ()
+	{
+		if (player3.x - block1 >= 480)
+		{
+			platform8.destroy();
 		}
 	},
 

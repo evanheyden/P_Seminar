@@ -251,7 +251,7 @@ var playState = {
 
 		//hier wird festgelegt, dass die Kamera immer mit player3 mitläuft:
 
-		game.camera.follow(player3	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
+		game.camera.follow(player1	, Phaser.Camera.FOLLOW_LOCKON, 0.1);
 
 		//  The score
 		scoreText = this.game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#fcbc38' });
@@ -279,23 +279,10 @@ pausieren: function () {
 			 unpausierer.fixedToCamera = true;
 	 });
 
-	 game.input.onDown.add(unpause, self);
+	 game.input.onDown.add(unpause);
 
 	 function unpause(event){
 			 if(game.paused){
-				/*	 var x1 = player3.body.position.x - 480, x2 = player3.body.position.x + 480,
-							 y1 = 0, y2 = 640;
-					 if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
-
-						 this.unpausierer.destroy();
-
- 						game.paused = false;
-						console.log('success')
-					} else {
-						this.unpausierer.destroy();
-						game.paused = false;
-						console.log('why?')
-					}*/
 					this.unpausierer.destroy();
 					game.paused = false;
 			 }

@@ -7,7 +7,6 @@ var gameoverState = {
     {
       highScore = score;
     }
-  //  highScore = Math.max(score, highScore);
     localStorage.setItem(localStorageName, highScore);
     var backOver = game.add.image(0, 0, 'backgroundgameover');
     var text = game.add.text(140, 110, "Game Over\n\nDein score: " + score + "\nBest score: " + highScore , {font: '50px Verdana',  fill: '	#000'});

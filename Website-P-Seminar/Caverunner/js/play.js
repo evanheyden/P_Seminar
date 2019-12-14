@@ -279,18 +279,25 @@ pausieren: function () {
 			 unpausierer.fixedToCamera = true;
 	 });
 
-	 game.input.onDown.add(unpause);
+	 game.input.onDown.add(unpause, self);
 
 	 function unpause(event){
 			 if(game.paused){
-					 var x1 = player3.body.position.x - 480, x2 = player3.body.position.x + 480,
+				/*	 var x1 = player3.body.position.x - 480, x2 = player3.body.position.x + 480,
 							 y1 = 0, y2 = 640;
 					 if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
 
 						 this.unpausierer.destroy();
 
  						game.paused = false;
-					 }
+						console.log('success')
+					} else {
+						this.unpausierer.destroy();
+						game.paused = false;
+						console.log('why?')
+					}*/
+					this.unpausierer.destroy();
+					game.paused = false;
 			 }
 	 };
 },
@@ -512,7 +519,6 @@ pausieren: function () {
 					//c += 1;
 					this.platform1();
 					this.destroyPlatform1Loader();
-					console.log("c1")
 					break;
 				}
 				case 2:
@@ -520,105 +526,90 @@ pausieren: function () {
 					//c += 1;
 					this.platform2();
 					this.destroyPlatform2Loader();
-					console.log("c2")
 					break;
 				}
 				case 3:
 				{
 					this.platform3();
 					this.destroyPlatform3Loader();
-					console.log("c3")
 					break;
 				}
 				case 4:
 				{
 					this.platform4();
 					this.destroyPlatform4Loader();
-					console.log("c4")
 					break;
 				}
 				case 5:
 				{
 					this.platform5();
 					this.destroyPlatform5Loader();
-					console.log("c5")
 					break;
 				}
 				case 6:
 				{
 					this.platform6();
 					this.destroyPlatform6Loader();
-					console.log("c6")
 					break;
 				}
 				case 7:
 				{
 					this.platform7();
 					this.destroyPlatform7Loader();
-					console.log("c7")
 					break;
 				}
 				case 8:
 				{
 					this.platform8();
 					this.destroyPlatform8Loader();
-					console.log("c8")
 					break;
 				}
 				case 9:
 				{
 					this.platform9();
 					this.destroyPlatform9Loader();
-					console.log("c9")
 					break;
 				}
 				case 10:
 				{
 					this.platform10();
 					this.destroyPlatform10Loader();
-					console.log("c10")
 					break;
 				}
 				case 11:
 				{
 					this.platform11();
 					this.destroyPlatform11Loader();
-					console.log("c11")
 					break;
 				}
 				case 12:
 				{
 					this.platform12();
 					this.destroyPlatform12Loader();
-					console.log("c12")
 					break;
 				}
 				case 13:
 				{
 					this.platform13();
 					this.destroyPlatform13Loader();
-					console.log("c13")
 					break;
 				}
 				case 14:
 				{
 					this.platform14();
 					this.destroyPlatform14Loader();
-					console.log("c14")
 					break;
 				}
 				case 15:
 				{
 					this.platform15();
 					this.destroyPlatform15Loader();
-					console.log("c15")
 					break;
 				}
 				case 16:
 				{
 					this.platform16();
 					this.destroyPlatform16Loader();
-					console.log("c16")
 					break;
 				}
 			}

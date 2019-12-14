@@ -71,11 +71,11 @@ var timeCheck;
 var playState = {
 
 	getlocation: function (){
-		//	navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
+			navigator.geolocation.getCurrentPosition(position=>{latitude = position.coords.latitude; longitude = position.coords.longitude;});
 
 	},
 	schule: function() {
-		if (latitude > 40 && latitude < 50) {
+		if (latitude > 48.106 && latitude < 48.114 && longitude > 11.670 && longitude < 11.678) {
 			var schule = true;
 		} else {
 			var schule = false;
@@ -287,7 +287,7 @@ pausieren: function () {
 							 y1 = 0, y2 = 640;
 					 if(event.x > x1 && event.x < x2 && event.y > y1 && event.y < y2 ){
 
-						 unpausierer.destroy();
+						 this.unpausierer.destroy();
 
  						game.paused = false;
 					 }
@@ -503,7 +503,7 @@ pausieren: function () {
 
 		if ((timer1 >= 1)) //Number.isInteger(player1.body.position.x / 800)
 		{
-			x = Math.floor(Math.random()*15)+1;
+			x = Math.floor(Math.random()*16)+1;
 
 			switch (x)
 			{
@@ -512,6 +512,7 @@ pausieren: function () {
 					//c += 1;
 					this.platform1();
 					this.destroyPlatform1Loader();
+					console.log("c1")
 					break;
 				}
 				case 2:
@@ -519,90 +520,105 @@ pausieren: function () {
 					//c += 1;
 					this.platform2();
 					this.destroyPlatform2Loader();
+					console.log("c2")
 					break;
 				}
 				case 3:
 				{
 					this.platform3();
 					this.destroyPlatform3Loader();
+					console.log("c3")
 					break;
 				}
 				case 4:
 				{
 					this.platform4();
 					this.destroyPlatform4Loader();
+					console.log("c4")
 					break;
 				}
 				case 5:
 				{
 					this.platform5();
 					this.destroyPlatform5Loader();
+					console.log("c5")
 					break;
 				}
 				case 6:
 				{
 					this.platform6();
 					this.destroyPlatform6Loader();
+					console.log("c6")
 					break;
 				}
 				case 7:
 				{
 					this.platform7();
 					this.destroyPlatform7Loader();
+					console.log("c7")
 					break;
 				}
 				case 8:
 				{
 					this.platform8();
 					this.destroyPlatform8Loader();
+					console.log("c8")
 					break;
 				}
 				case 9:
 				{
 					this.platform9();
 					this.destroyPlatform9Loader();
+					console.log("c9")
 					break;
 				}
 				case 10:
 				{
 					this.platform10();
 					this.destroyPlatform10Loader();
+					console.log("c10")
 					break;
 				}
 				case 11:
 				{
 					this.platform11();
 					this.destroyPlatform11Loader();
+					console.log("c11")
 					break;
 				}
 				case 12:
 				{
 					this.platform12();
 					this.destroyPlatform12Loader();
+					console.log("c12")
 					break;
 				}
 				case 13:
 				{
 					this.platform13();
 					this.destroyPlatform13Loader();
+					console.log("c13")
 					break;
 				}
 				case 14:
 				{
 					this.platform14();
 					this.destroyPlatform14Loader();
+					console.log("c14")
 					break;
 				}
 				case 15:
 				{
 					this.platform15();
 					this.destroyPlatform15Loader();
+					console.log("c15")
 					break;
 				}
 				case 16:
 				{
 					this.platform16();
 					this.destroyPlatform16Loader();
+					console.log("c16")
 					break;
 				}
 			}
@@ -2844,6 +2860,7 @@ block151300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block151300.body
 block151319 = platforms.create(c * 960 + 13 * 32, 19 * 32, '1'); block151319.body.immovable = true;
 block151400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block151400.body.immovable = true;
 block151419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block151419.body.immovable = true;
+console.log("b15")
 	},
 
 	platform16: function ()

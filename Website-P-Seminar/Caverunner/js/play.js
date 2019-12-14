@@ -2611,7 +2611,11 @@ block131408 = platforms.create(c * 960 + 14 * 32, 8 * 32, '1'); block131408.body
 block131409 = platforms.create(c * 960 + 14 * 32, 9 * 32, '1'); block131409.body.immovable = true;
 block131410 = platforms.create(c * 960 + 14 * 32, 10 * 32, '1'); block131410.body.immovable = true;
 block131414 = platforms.create(c * 960 + 14 * 32, 14 * 32, '1'); block131414.body.immovable = true;
-block131419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block131419.body.immovable = true;},
+block131419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block131419.body.immovable = true;
+c += 0.5;
+
+timer1 = 0;
+},
 
 	platform14: function ()
 	{
@@ -2689,6 +2693,9 @@ block141400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block141400.body
 block141407 = platforms.create(c * 960 + 14 * 32, 7 * 32, '1'); block141407.body.immovable = true;
 block141411 = platforms.create(c * 960 + 14 * 32, 11 * 32, '1'); block141411.body.immovable = true;
 block141419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block141419.body.immovable = true;
+c += 0.5;
+
+timer1 = 0;
 	},
 
 	platform15: function ()
@@ -2860,7 +2867,10 @@ block151300 = platforms.create(c * 960 + 13 * 32, 0 * 32, '1'); block151300.body
 block151319 = platforms.create(c * 960 + 13 * 32, 19 * 32, '1'); block151319.body.immovable = true;
 block151400 = platforms.create(c * 960 + 14 * 32, 0 * 32, '1'); block151400.body.immovable = true;
 block151419 = platforms.create(c * 960 + 14 * 32, 19 * 32, '1'); block151419.body.immovable = true;
-console.log("b15")
+c += 0.5;
+
+timer1 = 0;
+
 	},
 
 	platform16: function ()
@@ -2948,7 +2958,9 @@ block161403 = platforms.create(c * 960 + 14 * 32, 3 * 32, '1'); block161403.body
 block161407 = platforms.create(c * 960 + 14 * 32, 7 * 32, '1'); block161407.body.immovable = true;
 block161414 = platforms.create(c * 960 + 14 * 32, 14 * 32, '1'); block161414.body.immovable = true;
 block161415 = platforms.create(c * 960 + 14 * 32, 15 * 32, '1'); block161415.body.immovable = true;
+c += 0.5;
 
+timer1 = 0;
 	},
 
 	destroyPlatform1Loader:	function ()

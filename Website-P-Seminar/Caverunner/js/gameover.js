@@ -17,9 +17,15 @@ var gameoverState = {
 restart: function() {
     game.state.start("play");
     score = 0;
+    playerSpeed = 150;
+    playerSpeedJumping = 75;
+    playerJump = 230;
   },
 backto: function() {
   game.state.start('menu');
   score = 0;
+  playerSpeed = 150;
+  playerSpeedJumping = 75;
+  playerJump = 230;
 },
 };

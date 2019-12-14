@@ -607,6 +607,8 @@ pausieren: function () {
 
 		prevCamX = game.camera.x;
 
+if (playerJump >= 231) {
+}
 
 	},
 

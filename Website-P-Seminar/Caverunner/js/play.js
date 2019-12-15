@@ -85,7 +85,7 @@ var playState = {
 
 	create: function () {
 		var location = this.getlocation();
-		this.game.time.events.repeat(Phaser.Timer.SECOND * 8, 10000, this.timer1Up, this);
+		this.game.time.events.repeat(Phaser.Timer.SECOND * 6, 10000, this.timer1Up, this);
 
 		//hier werden die Grenzen der Welt gesetzt:
 		this.game.world.setBounds(0, 0, 960*100000000000, 640);
@@ -3095,75 +3095,75 @@ platform18: function()
 
 destroyPlatform1Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform1, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform1, this);
 },
 destroyPlatform2Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform2, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform2, this);
 },
 destroyPlatform3Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform3, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform3, this);
 },
 destroyPlatform4Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform4, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform4, this);
 },
 destroyPlatform5Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform5, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform5, this);
 },
 destroyPlatform6Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform6, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform6, this);
 },
 destroyPlatform7Loader:	function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform7, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform7, this);
 },
 destroyPlatform8Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform8, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform8, this);
 },
 destroyPlatform9Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform9, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform9, this);
 },
 destroyPlatform10Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform10, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform10, this);
 },
 destroyPlatform11Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform11, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform11, this);
 },
 destroyPlatform12Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform12, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform12, this);
 },
 destroyPlatform13Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform13, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform13, this);
 },
 destroyPlatform14Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform14, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform14, this);
 },
 destroyPlatform15Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform15, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform15, this);
 },
 destroyPlatform16Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform16, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform16, this);
 },
 destroyPlatform17Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform17, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform17, this);
 },
 destroyPlatform18Loader: function ()
 {
-	game.time.events.add(Phaser.Timer.SECOND * 8, this.destroyPlatform18, this);
+	game.time.events.add(Phaser.Timer.SECOND * 1, this.destroyPlatform18, this);
 },
 
 destroyPlatform1:	function ()

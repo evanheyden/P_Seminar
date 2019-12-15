@@ -305,6 +305,15 @@ update: function () {
 	{
 		gameover();
 	}
+	if ((player1.body.position.x - game.camera.x) > 960)
+	{
+		gameover();
+	}
+
+	if ((player2.body.position.x - game.camera.x) > 960)
+	{
+		gameover();
+	}
 
 	if ((player1.body.position.y) > 607)
 	{
